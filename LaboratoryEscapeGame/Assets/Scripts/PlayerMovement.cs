@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput, verticalInput, mouseXInput, mouseYInput, runInput;
     Vector3 cameraRotation, playerRotation, playerMovement; // camera rotation = up-down, player rotation = left-right
     float cameraXAxisClamp;
-    float rotationSensitivity = 2f;
+    float rotationSensitivity = 4f;
 
     float movementSpeed;
     bool staminaRegenState;
