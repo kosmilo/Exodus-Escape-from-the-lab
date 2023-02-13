@@ -18,6 +18,7 @@ public class Inventory : MonoBehaviour
         GiveItem(8);
         GiveItem(7);
         GiveItem(6);
+        RemoveItem(9);
     }
 
     public void GiveItem(int id) // give player an item by id
