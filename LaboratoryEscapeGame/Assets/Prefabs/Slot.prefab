@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1434962022857453262}
   - component: {fileID: 1434962022857453264}
   - component: {fileID: 1434962022857453265}
+  - component: {fileID: 382876778578495641}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -77,6 +78,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &382876778578495641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1434962022857453263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efbf08ddce267c74d80af72f7c4757a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeSprite: {fileID: 21300000, guid: 8d4b7864b4ed5c244a504588e2e30668, type: 3}
 --- !u!1 &4187268341698961274
 GameObject:
   m_ObjectHideFlags: 0

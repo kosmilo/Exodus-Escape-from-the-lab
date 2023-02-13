@@ -11,10 +11,13 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        GiveItem(1);
-        GiveItem(2);
-        GiveItem(4);
-        GiveItem(5);
+        GiveItem(12);
+        GiveItem(11);
+        GiveItem(10);
+        GiveItem(9);
+        GiveItem(8);
+        GiveItem(7);
+        GiveItem(6);
     }
 
     public void GiveItem(int id) // give player an item by id

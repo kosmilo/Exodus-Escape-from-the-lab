@@ -31,33 +31,29 @@ public class ItemDatabase : MonoBehaviour
                 {
                     {"Durability", 99 }
                 }),
-                new Item(1, "Red vial", "A vial of strange liquid. Seems to have a slowing effect but evaporates quickly.",
+                new Item(1, "Red vial", "A vial of strange liquid. Seems to have a slowing effect.",
                 new Dictionary<string, int>
                 {
                     {"Slow", 10 },
-                    {"Durability", 1 },
-                    {"Lifespan", 10 } //seconds
+                    {"Durability", 1 }
                 }),
-                new Item(2, "Murky vial", "A vial of strange liquid. Seems to have a slightly slowing effect. It doesn't evaporate that quickly.",
+                new Item(2, "Murky vial", "A vial of strange liquid. Seems to have a slightly slowing effect.",
                 new Dictionary<string, int>
                 {
                     {"Slow", 3 },
-                    {"Durability", 1 },
-                    {"Lifespan", 40 }
+                    {"Durability", 1 }
                 }),
-                new Item(4, "Purple vial", "A vial of strange liquid. Seems to cause brief incapacitation but evaporates quickly.",
+                new Item(4, "Purple vial", "A vial of strange liquid. Seems to cause brief incapacitation.",
                 new Dictionary<string, int>
                 {
                     {"Stun", 5 }, //seconds
-                    {"Durability", 1 },
-                    {"Lifespan", 10 }
+                    {"Durability", 1 }
                 }),
-                new Item(5, "Translucent vial", "A vial of strange liquid. Seems to cause incapacitation but evaporates quickly.",
+                new Item(5, "Translucent vial", "A vial of strange liquid. Seems to cause incapacitation.",
                 new Dictionary<string, int>
                 {
                     {"Stun", 15 },
-                    {"Durability", 1 },
-                    {"Lifespan", 10 }
+                    {"Durability", 1 }
                 }),
                 new Item(6, "First aid kit", "A first aid kit commonly found in medical facilities.",
                 new Dictionary<string, int>
@@ -93,7 +89,7 @@ public class ItemDatabase : MonoBehaviour
                 {
                     {"Durability", 99 }
                 }),
-                new Item(12, "Elevator control panel part", "A bundle of cables and machine parts. Can be used to fix the elevator.",
+                new Item(12, "Machine parts", "A bundle of cables and machine parts. Might be useful in fixing the elevator.",
                 new Dictionary<string, int>
                 {
                     {"Durability", 99 }
