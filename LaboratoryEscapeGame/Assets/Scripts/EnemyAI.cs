@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
 
+// Handles movement, states, attacking and animations
 public class EnemyAI : MonoBehaviour
 {
     enum EnemyStates
@@ -17,21 +18,16 @@ public class EnemyAI : MonoBehaviour
 
     [SerializeField] NavMeshAgent agent;
     [SerializeField] Transform playerTransform;
+    [SerializeField] Animator animator;
     [SerializeField] LayerMask whatIsGround, whatIsPlayer;
+
     [SerializeField] float sightRange, attackRange;
     bool playerInSight, playerInAttackRange, isStunned;
-
-    // Navigating
     [SerializeField] Vector3 walkPoint;
     [SerializeField] float walkPointRange;
     bool walkPointSet;
-
-    // Attacking
-    [SerializeField] float timeBetweenAttacks;
-    bool alreadyAttacked;
-
     [SerializeField] float roamSpeed, chaseSpeed;
-    float chaseTime = 4f;
+    [SerializeField] float chaseTime;
     float speedMultiplier = 1;
     Vector3 lookOffset = new Vector3(0, 0.5f, 0);
 
@@ -39,29 +35,27 @@ public class EnemyAI : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         SetEnemyState();
+        SetEnemyAnimParameters();
 
         // Act
         switch (currentState)
         {
             case EnemyStates.Roam:
-                Debug.Log(gameObject.name + " roaming");
                 Roaming();
                 break;
             case EnemyStates.Chase:
-                Debug.Log(gameObject.name + " chasing");
                 ChasePlayer();
                 break;
             case EnemyStates.Attack:
-                Debug.Log(gameObject.name + " attacking");
                 AttackPlayer();
                 break;
             case EnemyStates.Stunned:
-                Debug.Log(gameObject.name + " stunned");
                 Stunned();
                 break;
         }
@@ -79,6 +73,7 @@ public class EnemyAI : MonoBehaviour
         {
             if (Physics.CheckSphere(transform.position, sightRange, whatIsPlayer))
             {
+                // Check with two raycasts if enemy can see the player
                 Ray ray_1 = new Ray(transform.position, playerTransform.position - transform.position);
                 Physics.Raycast(ray_1, out RaycastHit hit_1);
                 Ray ray_2 = new Ray(transform.position + lookOffset, playerTransform.position + lookOffset - transform.position);
@@ -87,6 +82,7 @@ public class EnemyAI : MonoBehaviour
             }
             else { playerInSight = false; }
 
+            // Check if player is in attack range
             playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
             // Set state
@@ -103,20 +99,31 @@ public class EnemyAI : MonoBehaviour
             }
             else
             {
-                if (!playerInAttackRange)
-                {
-                    currentState = EnemyStates.Chase;
-                }
-                else
-                {
-                    currentState = EnemyStates.Attack;
-                }
+                currentState = !playerInAttackRange ? EnemyStates.Chase : EnemyStates.Attack;
                 CancelInvoke("SetStateToRoam");
             }
         }
     }
 
+    // Invoked after enemy hasn't seen player in [chaseTime]
     void SetStateToRoam() { currentState = EnemyStates.Roam; }
+
+    // SETTING ANIMATION PARAMETERS 
+
+    void SetEnemyAnimParameters()
+    {
+        animator.SetFloat("movingAtSpeed", agent.velocity.magnitude);
+        animator.SetBool("isStunned", isStunned);
+
+        if (currentState == EnemyStates.Attack)
+        {
+            animator.SetBool("isAttacking", true);
+        }
+        else
+        {
+            animator.SetBool("isAttacking", false);
+        }
+    }
 
     // ROAMING STATE
 
@@ -157,6 +164,7 @@ public class EnemyAI : MonoBehaviour
 
     void ChasePlayer()
     {
+        // Change speed and set destination to player
         agent.speed = chaseSpeed * speedMultiplier;
         agent.SetDestination(playerTransform.position);
     }
@@ -168,20 +176,6 @@ public class EnemyAI : MonoBehaviour
         // Stop moving and look at player
         agent.SetDestination(transform.position);
         transform.LookAt(playerTransform);
-
-        if (!alreadyAttacked)
-        {
-            // TRIGGER ATTACK
-
-            
-            alreadyAttacked = true;
-            Invoke("ResetAttack", timeBetweenAttacks);
-        }
-    }
-
-    void ResetAttack()
-    {
-        alreadyAttacked = false;
     }
 
     // STUNNED STATE
