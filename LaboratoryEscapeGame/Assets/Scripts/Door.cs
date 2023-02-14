@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class Door : MonoBehaviour
 {
@@ -100,4 +103,30 @@ public class Door : MonoBehaviour
         }
     }
 
+
+#if UNITY_EDITOR
+    [CustomEditor(typeof(Door))]
+    public class DoorEditor : Editor
+    {
+        public override void OnInspectorGUI()
+        {
+            base.OnInspectorGUI();
+
+            Door controller = (Door)target;
+
+            if (GUILayout.Button("Open Door"))
+            {
+                controller.Open(Vector3.zero);
+            }
+
+           if (GUILayout.Button("Close Door"))
+            {
+                controller.Close();
+            }
+        }
+    }
+#endif
 }
+
+
+
