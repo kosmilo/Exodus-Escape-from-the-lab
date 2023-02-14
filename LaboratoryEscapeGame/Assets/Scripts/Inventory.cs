@@ -15,18 +15,35 @@ public class Inventory : MonoBehaviour
         GiveItem(11);
         GiveItem(10);
         GiveItem(9);
+        GiveItem(1);
+        GiveItem(2);
+        GiveItem(4);
+        GiveItem(5);
         GiveItem(8);
-        GiveItem(7);
-        GiveItem(6);
-        RemoveItem(9);
     }
 
     public void GiveItem(int id) // give player an item by id
     {
-        Item itemToAdd = itemDatabase.GetItem(id);
-        characterItems.Add(itemToAdd);
-        inventoryUI.AddNewItem(itemToAdd);
-        Debug.Log("Added item: " + itemToAdd.title);
+        int amountOfItems = 0;
+        foreach (UIItem u in inventoryUI.uIItems)
+        {
+            if(u.item != null)
+            {
+                amountOfItems++;
+            }
+        }
+        if(amountOfItems < inventoryUI.numberOfSlots)
+        {
+            Item itemToAdd = itemDatabase.GetItem(id);
+            characterItems.Add(itemToAdd);
+            inventoryUI.AddNewItem(itemToAdd);
+            Debug.Log("Added item: " + itemToAdd.title);
+        }
+        else
+        {
+            Debug.Log("Inventory full, item not added");
+        }
+
     }
 
     public void GiveItem(string itemName) // give player an item by title

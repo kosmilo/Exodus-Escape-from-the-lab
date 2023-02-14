@@ -15,7 +15,7 @@ public class UIItem : MonoBehaviour
     {
         spriteImage = GetComponent<Image>();
         parentSlot = transform.parent.gameObject;
-        slotImage = GetComponentInParent<Image>();
+        slotImage = parentSlot.GetComponent<Image>();
         UpdateItem(null);
     }
 
@@ -27,12 +27,10 @@ public class UIItem : MonoBehaviour
         {
             spriteImage.color = Color.white;
             spriteImage.sprite = this.item.icon;
-            parentSlot.SetActive(true);
         }
         else
         {
             spriteImage.color = Color.clear;
-            parentSlot.SetActive(false);
         }
     }
 
