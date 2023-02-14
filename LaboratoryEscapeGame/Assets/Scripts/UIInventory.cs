@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIInventory : MonoBehaviour
 {
     public List<UIItem> uIItems = new List<UIItem>();
-    public List<UISlot> uISlots = new List<UISlot>();
+    public Inventory inventory;
     public Sprite inactiveSlot;
     public Sprite activeSlot;
     public GameObject slotPrefab;
@@ -21,7 +21,6 @@ public class UIInventory : MonoBehaviour
             GameObject instance = Instantiate(slotPrefab);
             instance.transform.SetParent(slotPanel);
             uIItems.Add(instance.GetComponentInChildren<UIItem>());
-            uISlots.Add(instance.GetComponent<UISlot>());
         }
         
     }
@@ -38,16 +37,15 @@ public class UIInventory : MonoBehaviour
     }
 
 
-
     public void UpdateSlot(int slot, Item item)
     {
-        uIItems[slot].UpdateItem(item);
+            uIItems[slot].UpdateItem(item);        
     }
 
     public void ActivateOneSlot(int slot)
     {
-        uISlots[slot].ChangeSlotType(activeSlot);
-        for (int i = 0; i < uISlots.Count; i++)
+        uIItems[slot].ChangeSlotType(activeSlot, true);
+        for (int i = 0; i < uIItems.Count; i++)
         {
             if (i == slot)
             {
@@ -55,7 +53,7 @@ public class UIInventory : MonoBehaviour
             }
             else
             {
-                uISlots[i].ChangeSlotType(inactiveSlot);
+                uIItems[i].ChangeSlotType(inactiveSlot, false);
             }
         }
     }
@@ -67,5 +65,13 @@ public class UIInventory : MonoBehaviour
     public void RemoveItem(Item item)
     {
         UpdateSlot(uIItems.FindIndex(i => i.item == item), null);
+        foreach(UIItem u in uIItems)
+        {
+            if(u.item == item)
+            {
+                uIItems.Remove(u);
+                Debug.Log("Removed " + u);
+            }
+        }
     }
 }

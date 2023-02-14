@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UISlot : MonoBehaviour
 {
     public Image slotImage;
-    public Sprite activeSprite;
+    public UIInventory uIInventory;
 
     private void Awake()
     {
@@ -17,5 +17,19 @@ public class UISlot : MonoBehaviour
     {
         slotImage.sprite = sprite;
     }
+
+    public void UpdateSlot(Image slot)
+    {
+        this.slotImage = slot;
+        if (this.slotImage != null)
+        {
+            slotImage.color = Color.white;
+            slotImage.sprite = uIInventory.inactiveSlot;
+        }
+        else
+        {
+            slotImage.color = Color.clear;
+        }
+    } 
 
 }
