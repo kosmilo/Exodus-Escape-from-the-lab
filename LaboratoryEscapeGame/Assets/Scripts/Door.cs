@@ -23,12 +23,18 @@ public class Door : MonoBehaviour
 
     private Coroutine animationCoroutine;
 
+    GameObject player;
+
     private void Awake()
     {
         startRotation = transform.rotation.eulerAngles;
         forward = transform.right;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
+    // Open the door if it currently isn't open
+    // If it's currently in the middle of the animation coroutine, stop the coroutine
+    // If the door is a rotating door, start the coroutine based on dot
     public void Open(Vector3 userPosition)
     {
         if (!isOpen)
@@ -42,15 +48,19 @@ public class Door : MonoBehaviour
             {
                 float dot = Vector3.Dot(forward, (userPosition - transform.position).normalized);
                 animationCoroutine = StartCoroutine(DoRotationOpen(dot));
+                Debug.Log("Dot: " + dot);
             }
         }
     }
 
+    // Opening coroutine animation
     private IEnumerator DoRotationOpen(float forwardAmount)
     {
         Quaternion StartRotation = transform.rotation;
         Quaternion EndRotation;
 
+        // Change the direction the door opens based on the user's position relative to the door
+        // For some reason the door still always opens in only one direction but that might be because the interaction raycast stuff isn't implemented yet
         if (forwardAmount >= forwardDirection)
         {
             EndRotation = Quaternion.Euler(new Vector3(0, startRotation.y - rotationAmount, 0));
@@ -71,6 +81,9 @@ public class Door : MonoBehaviour
         }
     }
 
+    // Close the door
+    // If the door is open and the coroutine is happening, stop the coroutine
+    // If the door is a rotating door, start the closing coroutine
     public void Close()
     {
         if (isOpen)
@@ -87,6 +100,7 @@ public class Door : MonoBehaviour
         }
     }
 
+    // Closing coroutine animation
     private IEnumerator DoRotationClose()
     {
         Quaternion StartRotation = transform.rotation;
@@ -103,7 +117,22 @@ public class Door : MonoBehaviour
         }
     }
 
+    // Method to be called when player is interacting with the door
+    // If the door is closed and not in the middle of a coroutine, open it and vice versa
+    public void DoorInteraction()
+    {
+        if(!isOpen && animationCoroutine == null)
+        {
+            Open(player.transform.position);
+        }
+        if(isOpen && animationCoroutine == null)
+        {
+            Close();
+        }
+    }
 
+    // Add buttons to inspector for opening and closing door 
+    // I have no idea how this actually works (thanks ChatGPT!)
 #if UNITY_EDITOR
     [CustomEditor(typeof(Door))]
     public class DoorEditor : Editor
