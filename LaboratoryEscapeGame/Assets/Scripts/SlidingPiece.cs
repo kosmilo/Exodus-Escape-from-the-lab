@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlidingBlock : MonoBehaviour
+public class SlidingPiece : MonoBehaviour
 {
     [SerializeField] GameObject emptySpace;
     Vector3 correctPosition;
@@ -15,28 +15,25 @@ public class SlidingBlock : MonoBehaviour
     }
 
     // Switch places with [EmptySpace] gameobject if it is close enough
-    public void SlideBlock()
+    public void SlidePiece()
     {
         if (Vector3.Distance(emptySpace.transform.position, transform.position) < 0.3)
         {
-            Vector3 lastTilePosition = transform.position;
+            Vector3 lastPosition = transform.position;
             StartCoroutine(Slide(emptySpace.transform.position)); // Start a coroutine that moves the block
-            emptySpace.transform.position = lastTilePosition;
+            emptySpace.transform.position = lastPosition;
         }
     }
 
-    public bool CheckPlace()
-    {
-        return transform.position == correctPosition;
-    }
+    public bool CheckPlace() { return transform.position == correctPosition; }
     
-    // Slide block to the empty space
-    IEnumerator Slide(Vector3 finalPos)
+    // Slide piece to the empty space
+    IEnumerator Slide(Vector3 targetPos)
     {
-        while (transform.position != finalPos)
+        while (transform.position != targetPos)
         {
-            transform.position = Vector3.MoveTowards(transform.position, finalPos, moveSpeed * Time.deltaTime);
-            yield return 0;
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
+            yield return 0; // continue on next frame
         }
 
         // Check for completion
@@ -44,6 +41,6 @@ public class SlidingBlock : MonoBehaviour
         {
             transform.parent.GetComponent<SlidePuzzleManager>().CheckForCompletion();
         }
-        yield return null;
+        yield return null; // Stop coroutine
     }
 }

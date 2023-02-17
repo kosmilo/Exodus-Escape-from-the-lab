@@ -26,6 +26,12 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] Vector3 walkPoint;
     [SerializeField] float walkPointRange;
     bool walkPointSet;
+
+    // Attacking
+    [SerializeField] float timeBetweenAttacks;
+    bool alreadyAttacked;
+
+    // Moving
     [SerializeField] float roamSpeed, chaseSpeed;
     [SerializeField] float chaseTime;
     float speedMultiplier = 1;
@@ -47,15 +53,19 @@ public class EnemyAI : MonoBehaviour
         switch (currentState)
         {
             case EnemyStates.Roam:
+                // Debug.Log(gameObject.name + " roaming");
                 Roaming();
                 break;
             case EnemyStates.Chase:
+                // Debug.Log(gameObject.name + " chasing");
                 ChasePlayer();
                 break;
             case EnemyStates.Attack:
+                // Debug.Log(gameObject.name + " attacking");
                 AttackPlayer();
                 break;
             case EnemyStates.Stunned:
+                // Debug.Log(gameObject.name + " stunned");
                 Stunned();
                 break;
         }
@@ -71,6 +81,7 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
+            // Search for player in A set area with raycasts
             if (Physics.CheckSphere(transform.position, sightRange, whatIsPlayer))
             {
                 // Check with two raycasts if enemy can see the player
@@ -92,10 +103,7 @@ public class EnemyAI : MonoBehaviour
                 {
                     Invoke("SetStateToRoam", chaseTime);
                 }
-                else
-                {
-                    currentState = EnemyStates.Roam;
-                }
+                else { currentState = EnemyStates.Roam; }
             }
             else
             {
@@ -129,7 +137,9 @@ public class EnemyAI : MonoBehaviour
 
     void Roaming()
     {
-        agent.speed = roamSpeed * speedMultiplier;
+        agent.speed = roamSpeed * speedMultiplier; // Change speed to walking speed
+
+
         if (!walkPointSet)
         {
             SearchWalkPoint();
@@ -139,7 +149,7 @@ public class EnemyAI : MonoBehaviour
             agent.SetDestination(walkPoint);
         }
 
-        // Check distance to walk point
+        // Check if walkpoint was reached and a new one is needed
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
         if (distanceToWalkPoint.magnitude < 1f)
         {
@@ -147,6 +157,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    // Look for a new walkpoint
     void SearchWalkPoint()
     {
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
@@ -154,10 +165,8 @@ public class EnemyAI : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
-        {
-            walkPointSet = true;
-        }
+        // Check if walkpoint is valid (not in air)
+        walkPointSet = Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround) ? true : false;
     }
 
     // CHASE STATE
@@ -166,7 +175,7 @@ public class EnemyAI : MonoBehaviour
     {
         // Change speed and set destination to player
         agent.speed = chaseSpeed * speedMultiplier;
-        agent.SetDestination(playerTransform.position);
+        agent.SetDestination(playerTransform.position); // Set navigation point to player
     }
 
     // ATTACK STATE
@@ -199,6 +208,7 @@ public class EnemyAI : MonoBehaviour
 
     // SLOW EFFECT
 
+    // Change enemy speed multiplier to create a slow effect
     public void slowEnemy(float newSpeedMultiplier, float slowTime)
     {
         speedMultiplier = newSpeedMultiplier;
@@ -206,11 +216,8 @@ public class EnemyAI : MonoBehaviour
         Invoke("ResetSpeed", slowTime);
     }
 
-    void ResetSpeed()
-    {
-        speedMultiplier = 1f;
-    }
-    
+    // Set speed back to normal when slow effect stops
+    void ResetSpeed() { speedMultiplier = 1f; }
 
     // Draw ranges on editor
     private void OnDrawGizmos()
