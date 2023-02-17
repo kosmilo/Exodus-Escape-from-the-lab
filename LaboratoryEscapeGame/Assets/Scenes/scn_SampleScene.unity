@@ -1592,6 +1592,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6308119633241641875, guid: ff6e6d67c017e3543b863284876d69f3, type: 3}
+      propertyPath: inventoryUI
+      value: 
+      objectReference: {fileID: 2801094}
+    - target: {fileID: 6308119633241641875, guid: ff6e6d67c017e3543b863284876d69f3, type: 3}
+      propertyPath: itemDatabase
+      value: 
+      objectReference: {fileID: 381822221}
     - target: {fileID: 8402582663086078473, guid: ff6e6d67c017e3543b863284876d69f3, type: 3}
       propertyPath: m_RootOrder
       value: 2
