@@ -10,7 +10,7 @@ public class PlayerInteractor : MonoBehaviour
     void Update()
     {
         // Do a raycast in front of the player when mause button is pressed, 
-        // if hit object has [interactable] script, call a function
+        // if hit object has [interactable] script, call a [Interact]
         if (Input.GetMouseButtonDown(0) && Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 5))
         {
             Debug.Log(hit.collider.name);
