@@ -7,18 +7,27 @@ using UnityEditor;
 
 public class Door : MonoBehaviour
 {
+    [SerializeField]
     private bool isOpen = false;
     [SerializeField]
     private bool isRotatingDoor = true;
     [SerializeField]
     private float speed = 1f;
+
     [Header("Rotation configs")]
     [SerializeField]
     private float rotationAmount = 90f;
     [SerializeField]
     private float forwardDirection;
 
+    [Header("Sliding Configs")]
+    [SerializeField]
+    private Vector3 slideDirection = Vector3.back;
+    [SerializeField]
+    private float slideAmount = 2.6f;
+
     private Vector3 startRotation;
+    private Vector3 startPosition;
     private Vector3 forward;
 
     private Coroutine animationCoroutine;
@@ -30,6 +39,7 @@ public class Door : MonoBehaviour
         startRotation = transform.rotation.eulerAngles;
         forward = transform.right;
         player = GameObject.FindGameObjectWithTag("Player");
+        startPosition = transform.position;
     }
 
     // Open the door if it currently isn't open
@@ -49,6 +59,10 @@ public class Door : MonoBehaviour
                 float dot = Vector3.Dot(forward, (userPosition - transform.position).normalized);
                 animationCoroutine = StartCoroutine(DoRotationOpen(dot));
                 Debug.Log("Dot: " + dot);
+            }
+            else
+            {
+                animationCoroutine = StartCoroutine(DoSlidingOpen());
             }
         }
     }
@@ -81,6 +95,21 @@ public class Door : MonoBehaviour
         }
     }
 
+    private IEnumerator DoSlidingOpen()
+    {
+        Vector3 endPosition = startPosition + slideAmount * slideDirection;
+        Vector3 StartPosition = transform.position;
+
+        float time = 0;
+        isOpen = true;
+        while(time < 1)
+        {
+            transform.position = Vector3.Lerp(StartPosition, endPosition, time);
+            yield return null;
+            time += Time.deltaTime * speed;
+        }
+    }
+
     // Close the door
     // If the door is open and the coroutine is happening, stop the coroutine
     // If the door is a rotating door, start the closing coroutine
@@ -97,6 +126,10 @@ public class Door : MonoBehaviour
             {
                 animationCoroutine = StartCoroutine(DoRotationClose());
             }
+            else
+            {
+                animationCoroutine = StartCoroutine(DoSlidingClose());
+                    }
         }
     }
 
@@ -115,6 +148,23 @@ public class Door : MonoBehaviour
             yield return null;
             time += Time.deltaTime * speed;
         }
+    }
+
+    private IEnumerator DoSlidingClose()
+    {
+        Vector3 endPosition = startPosition;
+        Vector3 StartPosition = transform.position;
+        float time = 0;
+
+        isOpen = false;
+
+        while(time < 1)
+        {
+            transform.position = Vector3.Lerp(StartPosition, endPosition, time);
+            yield return null;
+            time += Time.deltaTime * speed;
+        }
+
     }
 
     // Method to be called when player is interacting with the door
