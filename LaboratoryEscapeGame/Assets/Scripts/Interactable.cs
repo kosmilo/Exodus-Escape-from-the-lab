@@ -7,6 +7,7 @@ public class Interactable : MonoBehaviour
 {
     [SerializeField] UnityEvent interact;
 
+
     // Invoke the event set in object's inspector
     public void Interact()
     {

@@ -34,6 +34,14 @@ public class UIInventory : MonoBehaviour
                 ActivateOneSlot(i);
             }   
         }
+
+        // If player clicks with mouse inactivate all the inventory slots
+        if (Input.GetMouseButtonDown(0)) {
+            for (int i = 0; i < slotKeys.Length; i++)
+            { 
+                uIItems[i].ChangeSlotType(inactiveSlot, false);
+            }
+        }
     }
 
 
