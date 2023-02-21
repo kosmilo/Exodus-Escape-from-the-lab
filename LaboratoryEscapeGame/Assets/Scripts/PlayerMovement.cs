@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     float movementSpeed;
     bool staminaRegenState;
-    float walkSpeed = 4f;
+    float walkSpeed = 3f;
     float runSpeed = 6f;
     float maxStamina = 600f;
     float stamina;

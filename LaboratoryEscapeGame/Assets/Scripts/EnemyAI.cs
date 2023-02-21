@@ -16,15 +16,15 @@ public class EnemyAI : MonoBehaviour
     }
     EnemyStates currentState;
 
-    [SerializeField] NavMeshAgent agent;
+    NavMeshAgent agent;
+    Animator animator;
     [SerializeField] Transform playerTransform;
-    [SerializeField] Animator animator;
     [SerializeField] LayerMask whatIsGround, whatIsPlayer;
 
     [SerializeField] float sightRange, attackRange;
-    bool playerInSight, playerInAttackRange, isStunned;
-    [SerializeField] Vector3 walkPoint;
     [SerializeField] float walkPointRange;
+    bool playerInSight, playerInAttackRange, isStunned;
+    Vector3 walkPoint;
     bool walkPointSet;
 
     // Attacking
@@ -53,19 +53,15 @@ public class EnemyAI : MonoBehaviour
         switch (currentState)
         {
             case EnemyStates.Roam:
-                // Debug.Log(gameObject.name + " roaming");
                 Roaming();
                 break;
             case EnemyStates.Chase:
-                // Debug.Log(gameObject.name + " chasing");
                 ChasePlayer();
                 break;
             case EnemyStates.Attack:
-                // Debug.Log(gameObject.name + " attacking");
                 AttackPlayer();
                 break;
             case EnemyStates.Stunned:
-                // Debug.Log(gameObject.name + " stunned");
                 Stunned();
                 break;
         }
@@ -81,20 +77,24 @@ public class EnemyAI : MonoBehaviour
         }
         else
         {
-            // Search for player in A set area with raycasts
-            if (Physics.CheckSphere(transform.position, sightRange, whatIsPlayer))
+            // Search for player in a set area with raycasts
+            if ((playerTransform.position - transform.position).sqrMagnitude < sightRange * sightRange)
             {
                 // Check with two raycasts if enemy can see the player
+                // Use (pos1 - pos2).sqrMagnitude < x*x for better performance
                 Ray ray_1 = new Ray(transform.position, playerTransform.position - transform.position);
                 Physics.Raycast(ray_1, out RaycastHit hit_1);
                 Ray ray_2 = new Ray(transform.position + lookOffset, playerTransform.position + lookOffset - transform.position);
                 Physics.Raycast(ray_2, out RaycastHit hit_2);
                 playerInSight = hit_1.collider.gameObject.CompareTag("Player") || hit_2.collider.gameObject.CompareTag("Player");
-            }
-            else { playerInSight = false; }
 
-            // Check if player is in attack range
-            playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+                // Check if player is in attack range
+                playerInAttackRange = ((playerTransform.position - transform.position).sqrMagnitude < (attackRange * attackRange));
+            }
+            else { 
+                playerInSight = false; 
+                playerInAttackRange = false;
+            }
 
             // Set state
             if (!playerInSight)
@@ -122,15 +122,7 @@ public class EnemyAI : MonoBehaviour
     {
         animator.SetFloat("movingAtSpeed", agent.velocity.magnitude);
         animator.SetBool("isStunned", isStunned);
-
-        if (currentState == EnemyStates.Attack)
-        {
-            animator.SetBool("isAttacking", true);
-        }
-        else
-        {
-            animator.SetBool("isAttacking", false);
-        }
+        animator.SetBool("isAttacking", (currentState == EnemyStates.Attack));
     }
 
     // ROAMING STATE
@@ -138,7 +130,6 @@ public class EnemyAI : MonoBehaviour
     void Roaming()
     {
         agent.speed = roamSpeed * speedMultiplier; // Change speed to walking speed
-
 
         if (!walkPointSet)
         {
@@ -151,10 +142,7 @@ public class EnemyAI : MonoBehaviour
 
         // Check if walkpoint was reached and a new one is needed
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
-        if (distanceToWalkPoint.magnitude < 1f)
-        {
-            walkPointSet = false;
-        }
+        if (distanceToWalkPoint.magnitude < 1f) { walkPointSet = false; }
     }
 
     // Look for a new walkpoint
@@ -201,10 +189,7 @@ public class EnemyAI : MonoBehaviour
         Invoke("ResetStun", stunTime);
     }
 
-    void ResetStun()
-    {
-        isStunned = false;
-    }
+    void ResetStun() { isStunned = false; }
 
     // SLOW EFFECT
 
@@ -216,7 +201,7 @@ public class EnemyAI : MonoBehaviour
         Invoke("ResetSpeed", slowTime);
     }
 
-    // Set speed back to normal when slow effect stops
+    // Set speed back to normal when slow effect ends
     void ResetSpeed() { speedMultiplier = 1f; }
 
     // Draw ranges on editor
