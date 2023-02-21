@@ -26,10 +26,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         cameraObj = transform.GetChild(0).gameObject;
         stamina = maxStamina;
-
-        // Lock and hide the cursor while the game is playing
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     void Update()

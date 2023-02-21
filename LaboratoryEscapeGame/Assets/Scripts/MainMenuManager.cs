@@ -10,6 +10,10 @@ public class MainMenuManager : MonoBehaviour
 
     void Start() {
         settings.SetActive(false);
+
+        // Make sure the cursor is visible
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void StartGame() {
