@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Holds information of all items in the game
 public class ItemDatabase : MonoBehaviour
 {
     public List<Item> items = new List<Item>();
@@ -9,7 +10,6 @@ public class ItemDatabase : MonoBehaviour
     private void Awake()
     {
         BuildDatabase();
-
     }
 
     public Item GetItem(int id) // find an item by id
@@ -22,7 +22,7 @@ public class ItemDatabase : MonoBehaviour
         return items.Find(item => item.title == itemName);
     }
 
-    void BuildDatabase() // item database
+    void BuildDatabase() // Creates a list of all items in the game
     {
         items = new List<Item>()
         {

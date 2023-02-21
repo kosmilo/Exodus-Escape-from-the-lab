@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Inventory in player game object
 public class Inventory : MonoBehaviour
 {
     public List<Item> characterItems = new List<Item>();
@@ -12,6 +13,8 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         GiveItem(12);
+        /*
+        GiveItem(12);
         GiveItem(11);
         GiveItem(10);
         GiveItem(9);
@@ -20,9 +23,10 @@ public class Inventory : MonoBehaviour
         GiveItem(4);
         GiveItem(5);
         GiveItem(8);
+        */
     }
 
-    public void GiveItem(int id) // give player an item by id
+    public bool GiveItem(int id) // give player an item by id (return bool to know if item game object should be restroyed)
     {
         int amountOfItems = 0;
         foreach (UIItem u in inventoryUI.uIItems)
@@ -38,10 +42,12 @@ public class Inventory : MonoBehaviour
             characterItems.Add(itemToAdd);
             inventoryUI.AddNewItem(itemToAdd);
             Debug.Log("Added item: " + itemToAdd.title);
+            return true;
         }
         else
         {
             Debug.Log("Inventory full, item not added");
+            return false;
         }
 
     }

@@ -21,7 +21,6 @@ public class UIItem : MonoBehaviour
 
     public void UpdateItem(Item item)
     {
-
         this.item = item;
         if(this.item != null)
         {
