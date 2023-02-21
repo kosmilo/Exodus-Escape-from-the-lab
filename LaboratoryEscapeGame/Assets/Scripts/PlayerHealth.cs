@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] GameOverScreenManager gameOverScreenManager;
+    [SerializeField] GameObject damageFlashPanel;
     [SerializeField] int playerMaxHealth = 100;
     [SerializeField] int playerHealth;
 
@@ -16,6 +18,14 @@ public class PlayerHealth : MonoBehaviour
     {
         playerHealth -= damage;
         playerHealth = Mathf.Clamp(playerHealth, 0, playerMaxHealth);
+
+        if (playerHealth <= 0) {
+            gameOverScreenManager.GameOver();
+        }
+        else {
+            // Play an animation that flashes a red screen when taking damage
+            damageFlashPanel.GetComponent<Animator>().Play("DamageFlash");
+        }
     }
 
     public void HealPlayer(int heal)

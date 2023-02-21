@@ -14,7 +14,7 @@ public class PauseMenuManager : MonoBehaviour
 
     void Start()
     {
-        bool isGamePaused = false;
+        isGamePaused = false;
         ui.SetActive(true);
         pauseMenu.SetActive(false);
         settings.SetActive(false);
@@ -24,6 +24,9 @@ public class PauseMenuManager : MonoBehaviour
         // Lock and hide the cursor while the game is playing
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        // Make sure the timescale is 1
+        Time.timeScale = 1;
     }
 
     void Update()
