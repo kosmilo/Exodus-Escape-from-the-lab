@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77bbc4e0aa4fac5438c55af83b4559e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 20
 --- !u!1 &9015778615777733398
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,6 +238,7 @@ MonoBehaviour:
   attackRange: 1
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 50
+  timeBetweenAttacks: 0
   roamSpeed: 1
   chaseSpeed: 2.5
   chaseTime: 3
