@@ -5,11 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuManager : MonoBehaviour
 {
+    
     [SerializeField] GameObject ui;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject settings;
     [SerializeField] PlayerMovement playerMovement;
-    [SerializeField] PlayerInteractor playerInteractor;
+    // [SerializeField] PlayerInteractor playerInteractor;
     bool isGamePaused;
 
     void Start()
@@ -19,7 +20,7 @@ public class PauseMenuManager : MonoBehaviour
         pauseMenu.SetActive(false);
         settings.SetActive(false);
         playerMovement.enabled = true;
-        playerInteractor.enabled = true;
+        // playerInteractor.enabled = true;
 
         // Lock and hide the cursor while the game is playing
         Cursor.lockState = CursorLockMode.Locked;
@@ -43,7 +44,7 @@ public class PauseMenuManager : MonoBehaviour
 
         // Disable/enable player movement and interaction
         playerMovement.enabled = !isGamePaused;
-        playerInteractor.enabled = !isGamePaused;
+        // playerInteractor.enabled = !isGamePaused;
 
         // Lock/Unlock cursor 
         if (!isGamePaused) {
@@ -68,4 +69,5 @@ public class PauseMenuManager : MonoBehaviour
     public void ToMainMenu() {
         SceneManager.LoadScene(0);
     }
+    
 }
