@@ -17,7 +17,7 @@ public class DataRoomSlidePuzzle : MonoBehaviour
             slidingPieces[i] = transform.GetChild(i).gameObject;
         }
 
-        Suffle();
+        // Suffle();
     }
 
     // Change places of random pieces to suffle
