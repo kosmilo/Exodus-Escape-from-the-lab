@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlidePuzzleManager : MonoBehaviour
+public class DataRoomSlidePuzzle : MonoBehaviour
 {
     GameObject[] slidingPieces = new GameObject[9];
+    [SerializeField] DataRoomPuzzleManager dataRoomPuzzleManager;
+    public bool isCompleted = false;
 
     // Collect all sliding pieces to an array
     void Start()
     {
+        dataRoomPuzzleManager = transform.parent.parent.gameObject.GetComponent<DataRoomPuzzleManager>();
         for (int i = 0; i < slidingPieces.Length; i++)
         {
             slidingPieces[i] = transform.GetChild(i).gameObject;
@@ -32,13 +35,18 @@ public class SlidePuzzleManager : MonoBehaviour
     }
 
     // Check if all pieces are in correct positions
-    public void CheckForCompletion()
+    public void CheckSectionCompletion()
     {
-        bool isCompleted = true;
+        bool completion = true;
 
         for (int i = 0; i < slidingPieces.Length - 1; i++) {
-            isCompleted = isCompleted && slidingPieces[i].GetComponent<SlidingPiece>().CheckPlace();
+            completion = completion && slidingPieces[i].GetComponent<SlidingPiece>().CheckPlace();
         }
-        Debug.Log("Puzzle complition: " + isCompleted);
+
+        Debug.Log("Puzzle complition: " + completion);
+        isCompleted = completion;
+        if (isCompleted) {
+            dataRoomPuzzleManager.CheckPuzzleCompletion();
+        }
     }
 }

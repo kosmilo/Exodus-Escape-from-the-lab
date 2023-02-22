@@ -39,7 +39,7 @@ public class SlidingPiece : MonoBehaviour
         // Check for completion
         if (transform.position == correctPosition)
         {
-            transform.parent.GetComponent<SlidePuzzleManager>().CheckForCompletion();
+            transform.parent.GetComponent<DataRoomSlidePuzzle>().CheckSectionCompletion();
         }
         yield return null; // Stop coroutine
     }
