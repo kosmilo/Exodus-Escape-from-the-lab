@@ -9,39 +9,31 @@ public class Inventory : MonoBehaviour
     public ItemDatabase itemDatabase;
     public UIInventory inventoryUI;
 
-
     private void Start()
     {
-        GiveItem(12);
-        /*
-        GiveItem(12);
-        GiveItem(11);
-        GiveItem(10);
-        GiveItem(9);
-        GiveItem(1);
         GiveItem(2);
         GiveItem(4);
-        GiveItem(5);
-        GiveItem(8);
-        */
+        GiveItem(2);
+        GiveItem(4);
+        GiveItem(2);
     }
 
-    public bool GiveItem(int id) // give player an item by id (return bool to know if item game object should be restroyed)
+    public bool GiveItem(int id) // give the player an item by id (return bool to know if item game object should be restroyed)
     {
+        // Check amount of items in UI inventory
         int amountOfItems = 0;
         foreach (UIItem u in inventoryUI.uIItems)
         {
-            if(u.item != null)
-            {
-                amountOfItems++;
-            }
+            if(u.item != null) { amountOfItems++; }
         }
+
+        // Check if there are empty slots in UI inventory
         if(amountOfItems < inventoryUI.numberOfSlots)
         {
             Item itemToAdd = itemDatabase.GetItem(id);
             characterItems.Add(itemToAdd);
             inventoryUI.AddNewItem(itemToAdd);
-            Debug.Log("Added item: " + itemToAdd.title);
+            // Debug.Log("Added item: " + itemToAdd.title);
             return true;
         }
         else
@@ -52,6 +44,7 @@ public class Inventory : MonoBehaviour
 
     }
 
+    /*
     public void GiveItem(string itemName) // give player an item by title
     {
         Item itemToAdd = itemDatabase.GetItem(itemName);
@@ -59,6 +52,7 @@ public class Inventory : MonoBehaviour
         inventoryUI.AddNewItem(itemToAdd);
         Debug.Log("Added item: " + itemToAdd.title);
     }
+    */
 
     public Item CheckForItem(int id) // check if the item is in inventory by id
     {

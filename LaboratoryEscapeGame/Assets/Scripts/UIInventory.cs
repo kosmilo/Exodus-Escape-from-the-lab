@@ -22,17 +22,21 @@ public class UIInventory : MonoBehaviour
             instance.transform.SetParent(slotPanel);
             uIItems.Add(instance.GetComponentInChildren<UIItem>());
         }
-        
     }
 
     private void Update()
     {
+        // Check if any of the number keys are pressed
         for (int i = 0; i < slotKeys.Length; i++)
         { 
-            if (Input.GetKeyDown(slotKeys[i]))
-            {
-                ActivateOneSlot(i);
-            }   
+            // Activate inventory slot if a key is pressed
+            if (Input.GetKeyDown(slotKeys[i])) { ActivateOneSlot(i); }   
+        }
+
+        if (Input.GetKeyDown("q"))
+        {
+            Debug.Log("Drop item");
+            GameObject.Find("pref_Player").GetComponent<Inventory>().RemoveItem(2);
         }
 
         // If player clicks with mouse inactivate all the inventory slots
@@ -50,9 +54,13 @@ public class UIInventory : MonoBehaviour
             uIItems[slot].UpdateItem(item);        
     }
 
+    // Activate slot
     public void ActivateOneSlot(int slot)
     {
-        uIItems[slot].ChangeSlotType(activeSlot, true);
+        // Activate (or deactivate if already activate) selected slot
+        uIItems[slot].ChangeSlotType((!(uIItems[slot].active) ? activeSlot : inactiveSlot), !(uIItems[slot].active));
+
+        // Deactivate all other slots
         for (int i = 0; i < uIItems.Count; i++)
         {
             if (i == slot)
@@ -70,6 +78,8 @@ public class UIInventory : MonoBehaviour
     {
         UpdateSlot(uIItems.FindIndex(i => i.item == null), item);
     }
+
+
     public void RemoveItem(Item item)
     {
         UpdateSlot(uIItems.FindIndex(i => i.item == item), null);

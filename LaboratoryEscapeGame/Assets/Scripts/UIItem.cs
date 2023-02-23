@@ -8,7 +8,7 @@ public class UIItem : MonoBehaviour
     public Item item;
     public Image slotImage;
     private Image spriteImage;
-    public bool active;
+    public bool active; 
     public GameObject parentSlot;
 
     private void Awake()
