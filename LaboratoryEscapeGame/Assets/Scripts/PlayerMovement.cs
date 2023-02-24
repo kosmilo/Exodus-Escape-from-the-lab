@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
     GameObject cameraObj;
+    [SerializeField] StaminaBar staminaBar;
 
     float horizontalInput, verticalInput, mouseXInput, mouseYInput, runInput;
     Vector3 cameraRotation, playerRotation, playerMovement; // camera rotation = up-down, player rotation = left-right
@@ -16,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     bool staminaRegenState;
     float walkSpeed = 3f;
     float runSpeed = 6f;
-    float maxStamina = 600f;
+    float maxStamina = 400f;
     float stamina;
     float staminaDrain = 1f;
     float staminaRegen = 0.2f;
@@ -38,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         runInput = Input.GetAxis("Run");
 
         HandleRotation();
+        staminaBar.UpdateStamina((stamina/maxStamina));
     }
 
     private void FixedUpdate()

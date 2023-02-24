@@ -6,18 +6,23 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] GameOverScreenManager gameOverScreenManager;
     [SerializeField] GameObject damageFlashPanel;
+    [SerializeField] HealthBar healthBar;
     [SerializeField] int playerMaxHealth = 100;
     [SerializeField] int playerHealth;
 
     void Start()
     {
         playerHealth = playerMaxHealth;
+        float barWidth = ((float) playerHealth) / ((float) playerMaxHealth);
+        healthBar.UpdateHealth(barWidth);
     }
 
     public void TakeDamage(int damage)
     {
         playerHealth -= damage;
         playerHealth = Mathf.Clamp(playerHealth, 0, playerMaxHealth);
+        float barWidth = ((float) playerHealth) / ((float) playerMaxHealth);
+        healthBar.UpdateHealth(barWidth);
 
         if (playerHealth <= 0) {
             gameOverScreenManager.GameOver();
@@ -32,5 +37,7 @@ public class PlayerHealth : MonoBehaviour
     {
         playerHealth += heal;
         playerHealth = Mathf.Clamp(playerHealth, 0, playerMaxHealth);
+        float barWidth = ((float) playerHealth) / ((float) playerMaxHealth);
+        healthBar.UpdateHealth(barWidth);
     }
 }
