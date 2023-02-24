@@ -225,18 +225,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50d032181176ec459627abb4dc80d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 3399308742375434152}
   playerTransform: {fileID: 0}
-  animator: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 8
-  sightRange: 12
+  sightRange: 18
   attackRange: 1.5
-  walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 50
   timeBetweenAttacks: 0
   roamSpeed: 1
