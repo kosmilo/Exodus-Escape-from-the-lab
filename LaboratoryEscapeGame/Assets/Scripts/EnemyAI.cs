@@ -153,8 +153,17 @@ public class EnemyAI : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        // Check if walkpoint is valid (not in air)
+        // Check if walkpoint is valid (not in air or unrechable)
         walkPointSet = Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround) ? true : false;
+        Invoke("CheckWalkpointValidity", .5f);
+    }
+
+    void CheckWalkpointValidity()
+    {
+        if (agent.velocity.magnitude == 0)
+        {
+            SearchWalkPoint();
+        }
     }
 
     // CHASE STATE
