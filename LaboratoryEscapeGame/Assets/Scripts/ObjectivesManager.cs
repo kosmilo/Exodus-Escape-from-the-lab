@@ -6,20 +6,14 @@ using TMPro;
 public class ObjectivesManager : MonoBehaviour
 {
     TextMeshProUGUI objectivesText;
-    Dictionary<string, string> objectives = new Dictionary<string, string>() 
-    {
-        {"WayOut", "Find a way out"},
-        {"Elevator", "Fix the elevator"}
-    };
-
 
     void Start()
     {
         objectivesText = gameObject.GetComponent<TextMeshProUGUI>();
-        UpdateObjectives("WayOut");
+        UpdateObjective("Find a way out");
     }
 
-    public void UpdateObjectives(string objective) {
-        objectivesText.text = "- " + objectives[objective];
+    public void UpdateObjective(string objective) {
+        objectivesText.text = "- " + objective;
     }
 }

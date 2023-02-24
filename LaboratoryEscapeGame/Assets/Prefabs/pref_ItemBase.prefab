@@ -126,6 +126,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: Pick up
 --- !u!114 &6356695482721485118
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -127,6 +127,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: Open
 --- !u!114 &1720546609273354509
 MonoBehaviour:
   m_ObjectHideFlags: 0
