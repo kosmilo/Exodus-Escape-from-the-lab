@@ -239,6 +239,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: Move
 --- !u!1 &1957507951663429027
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +381,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: Move
 --- !u!1 &2050753839278874051
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,6 +523,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: Move
 --- !u!1 &3211814056245503316
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +665,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: Move
 --- !u!1 &3343884535030506336
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +905,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: Move
 --- !u!1 &4276751875717668046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,6 +1602,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: Move
 --- !u!1 &7739000168887589459
 GameObject:
   m_ObjectHideFlags: 0
@@ -1965,6 +1971,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: Move
 --- !u!1 &8322598575555233929
 GameObject:
   m_ObjectHideFlags: 0
@@ -2204,3 +2211,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: Move

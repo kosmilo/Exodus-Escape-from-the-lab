@@ -5,19 +5,29 @@ using UnityEngine;
 public class PlayerInteractor : MonoBehaviour
 {
     [SerializeField] Camera cam;
+    [SerializeField] InteractionIndicator interactionIndicator;
     RaycastHit hit;
 
     void Update()
     {
         // Do a raycast in front of the player when mause button is pressed, 
         // if hit object has [interactable] script, call a [Interact]
-        if (Input.GetMouseButtonDown(0) && Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 5))
-        {
-            Debug.Log(hit.collider.name);
+
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, 5)) {
             if (hit.collider.gameObject.GetComponent<Interactable>() != null)
             {
-                hit.collider.gameObject.GetComponent<Interactable>().Interact();
+                string text = hit.collider.gameObject.GetComponent<Interactable>().interactionText;
+                Debug.Log(text);
+                interactionIndicator.UpdateIndicator(text);
+                if (Input.GetMouseButtonDown(0)) {
+                    hit.collider.gameObject.GetComponent<Interactable>().Interact();
+                }
             }
+            else {
+                interactionIndicator.UpdateIndicator(" ");
+            }
+        } else {
+            interactionIndicator.UpdateIndicator(" ");
         }
     }
 }
