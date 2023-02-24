@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIItem : MonoBehaviour
 {
@@ -10,13 +11,31 @@ public class UIItem : MonoBehaviour
     private Image spriteImage;
     public bool active; 
     public GameObject parentSlot;
+    public int itemCount;
+    public TextMeshProUGUI counterText;
 
     private void Awake()
     {
         spriteImage = GetComponent<Image>();
         parentSlot = transform.parent.gameObject;
         slotImage = parentSlot.GetComponent<Image>();
+        counterText = FindObjectOfType<TextMeshProUGUI>();
         UpdateItem(null);
+        itemCount = 0;
+    }
+
+    public void UpdateCount(int count)
+    {
+        itemCount += count;
+        counterText.text = itemCount.ToString();
+        if (itemCount > 1)
+        {
+            counterText.enabled = true;
+        }
+        else
+        {
+            counterText.enabled = false;
+        }
     }
 
     public void UpdateItem(Item item)
