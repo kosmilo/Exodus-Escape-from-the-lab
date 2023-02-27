@@ -13,17 +13,8 @@ public class Inventory : MonoBehaviour
     private void Start()
     {
         GiveItem(12);
-        /*
-        GiveItem(12);
-        GiveItem(11);
-        GiveItem(10);
-        GiveItem(9);
-        GiveItem(1);
-        GiveItem(2);
-        GiveItem(4);
-        GiveItem(5);
         GiveItem(8);
-        */
+        GiveItem(0);
     }
 
     public bool GiveItem(int id) // give player an item by id (return bool to know if item game object should be restroyed)

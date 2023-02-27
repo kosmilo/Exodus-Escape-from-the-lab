@@ -14,6 +14,12 @@ public class Door : MonoBehaviour
     [SerializeField]
     private float speed = 1f;
 
+    [Header("Lock configs")]
+    [SerializeField]
+    private bool isLocked = false;
+    [SerializeField]
+    private int keyId = 8;
+
     [Header("Rotation configs")]
     [SerializeField]
     private float rotationAmount = 90f;
@@ -33,10 +39,13 @@ public class Door : MonoBehaviour
 
     GameObject player;
 
+    UIInventory uiinventory;
+
     private void Awake()
     {
         startRotation = transform.rotation.eulerAngles;
         player = GameObject.FindGameObjectWithTag("Player");
+        uiinventory = FindObjectOfType<UIInventory>();
         startPosition = transform.position;
     }
 
@@ -159,17 +168,29 @@ public class Door : MonoBehaviour
 
     // Method to be called when player is interacting with the door
     // If the door is closed and not in the middle of a coroutine, open it and vice versa
+    // First checks if the door is not locked OR if the player is currently holding its key
     public void DoorInteraction()
     {
-        Debug.Log("Interact with the door");
-        if(!isOpen)
+        if (uiinventory.activeItem != null | !isLocked)
         {
-            Open();
+            if (uiinventory.activeItem.item.id == keyId | !isLocked)
+            {
+                Debug.Log("Interact with the door");
+                if (!isOpen)
+                {
+                    Open();
+                }
+                else if (isOpen)
+                {
+                    Close();
+                }
+            }
         }
-        else if(isOpen)
+        else
         {
-            Close();
+            Debug.Log("The door is locked and cannot be opened.");
         }
+        
     }
 
     /*

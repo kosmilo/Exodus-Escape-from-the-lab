@@ -6,9 +6,12 @@ using UnityEngine.UI;
 public class UIInventory : MonoBehaviour
 {
     public List<UIItem> uIItems = new List<UIItem>();
+    public UIItem activeItem;
+    public int lastSlot;
+    public bool lastSlotActive;
     public Inventory inventory;
-    public Sprite inactiveSlot;
-    public Sprite activeSlot;
+    public Sprite inactiveSlotSprite;
+    public Sprite activeSlotSprite;
     public GameObject slotPrefab;
     public Transform slotPanel;
     public int numberOfSlots = 8;
@@ -34,14 +37,15 @@ public class UIInventory : MonoBehaviour
                 ActivateOneSlot(i);
             }   
         }
-
+        /*
         // If player clicks with mouse inactivate all the inventory slots
         if (Input.GetMouseButtonDown(0)) {
             for (int i = 0; i < slotKeys.Length; i++)
             { 
-                uIItems[i].ChangeSlotType(inactiveSlot, false);
+                uIItems[i].ChangeSlotType(inactiveSlotSprite, false);
+                activeItemId = 567;
             }
-        }
+        } */
     }
 
 
@@ -52,18 +56,41 @@ public class UIInventory : MonoBehaviour
 
     public void ActivateOneSlot(int slot)
     {
-        uIItems[slot].ChangeSlotType(activeSlot, true);
-        for (int i = 0; i < uIItems.Count; i++)
+        // If the activeItem and slot match, the slot deactivates
+        if (slot == lastSlot && lastSlotActive)
         {
-            if (i == slot)
+            activeItem = null;
+            uIItems[lastSlot].ChangeSlotType(inactiveSlotSprite, false);
+            lastSlotActive = false;
+        }
+        else
+        {
+            // Activate the specified slot
+            uIItems[slot].ChangeSlotType(activeSlotSprite, true);
+            lastSlot = slot;
+            lastSlotActive = true;
+
+            // Set the active item to be the uiitem in the slot if it isn't null
+            if (uIItems[slot].item != null)
             {
-                continue;
+                activeItem = uIItems[lastSlot];
             }
-            else
+
+            // Deactivate all other slots
+            for (int i = 0; i < uIItems.Count; i++)
             {
-                uIItems[i].ChangeSlotType(inactiveSlot, false);
+                if (i == slot)
+                {
+                    continue;
+                }
+                else
+                {
+                    uIItems[i].ChangeSlotType(inactiveSlotSprite, false);
+                }
             }
         }
+
+        
     }
 
     public void AddNewItem(Item item)
