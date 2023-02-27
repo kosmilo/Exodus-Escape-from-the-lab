@@ -10,14 +10,14 @@ public class SlidingPiece : MonoBehaviour
 
     void Awake()
     {
-        emptySpace = transform.parent.GetChild(8).gameObject;
+        emptySpace = transform.parent.GetChild(8 + 2).gameObject;
         correctPosition = transform.position;
     }
 
     // Switch places with [EmptySpace] gameobject if it is close enough
     public void SlidePiece()
     {
-        if (Vector3.Distance(emptySpace.transform.position, transform.position) < 0.3)
+        if (Vector3.Distance(emptySpace.transform.position, transform.position) < 0.2)
         {
             Vector3 lastPosition = transform.position;
             StartCoroutine(Slide(emptySpace.transform.position)); // Start a coroutine that moves the block
@@ -39,7 +39,7 @@ public class SlidingPiece : MonoBehaviour
         // Check for completion
         if (transform.position == correctPosition)
         {
-            transform.parent.GetComponent<DataRoomSlidePuzzle>().CheckSectionCompletion();
+            transform.parent.parent.GetComponent<DataRoomSlidePuzzle>().CheckSectionCompletion();
         }
         yield return null; // Stop coroutine
     }

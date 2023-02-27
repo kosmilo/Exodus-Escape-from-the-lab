@@ -17,7 +17,6 @@ public class DataRoomPuzzleManager : MonoBehaviour
 
         if (puzzleFinished) {
             boxAnimator.Play("openPartBox");
-            Debug.Log("Dataroom completed");
         }
     }
 }

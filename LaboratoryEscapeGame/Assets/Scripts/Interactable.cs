@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class Interactable : MonoBehaviour
 {
     [SerializeField] UnityEvent interact;
-    public string interactionText = "artjrjnsth";
+    public string interactionText = "";
 
 
     // Invoke the event set in object's inspector

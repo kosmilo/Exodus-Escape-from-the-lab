@@ -1,0 +1,555 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2611430746612737764
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+      propertyPath: m_Name
+      value: pref_SlidingPuzzle Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: -2307273910680229262, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+    - {fileID: -2068761740438201752, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+    - {fileID: 3722054555613378526, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+    - {fileID: -8768282476449198016, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+    - {fileID: -2704187537260611126, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+--- !u!1 &388685030477606553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2403031677816506493, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+  m_PrefabInstance: {fileID: 2611430746612737764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5109529895669583240
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388685030477606553}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00015145657, y: 0.0018375396, z: 0.0018387423}
+  m_Center: {x: 0.00002673479, y: 0.000009068781, z: -0.000015320544}
+--- !u!114 &1203686843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388685030477606553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2354ea427d2ad39479c274583f45746d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptySpace: {fileID: 0}
+--- !u!114 &3919303279511857824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388685030477606553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64e60a693c0c846b35c552a38aece5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1203686843}
+        m_TargetAssemblyTypeName: SlidingPiece, Assembly-CSharp
+        m_MethodName: SlidePiece
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  interactionText: Slide
+--- !u!1 &2512133560079976973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8727608548172419863, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+  m_PrefabInstance: {fileID: 2611430746612737764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2500877530304202540
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512133560079976973}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00014764079, y: 0.0018375402, z: 0.0018375398}
+  m_Center: {x: 0.000023639193, y: 0.0000019901158, z: -0.00000036801788}
+--- !u!114 &1203686844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512133560079976973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2354ea427d2ad39479c274583f45746d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptySpace: {fileID: 0}
+--- !u!114 &3654469978668192460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2512133560079976973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64e60a693c0c846b35c552a38aece5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1203686844}
+        m_TargetAssemblyTypeName: SlidingPiece, Assembly-CSharp
+        m_MethodName: SlidePiece
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  interactionText: Slide
+--- !u!1 &2953450669806164917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+  m_PrefabInstance: {fileID: 2611430746612737764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &308261357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2953450669806164917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c38d0fa7f76ed84e8006d4b126711a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataRoomPuzzleManager: {fileID: 0}
+  isCompleted: 0
+--- !u!1 &5189907790171149351 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1424285583423982909, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+  m_PrefabInstance: {fileID: 2611430746612737764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3070166704816820867
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5189907790171149351}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00015145658, y: 0.0018375396, z: 0.0018394153}
+  m_Center: {x: 0.000022894515, y: -0.000011939233, z: 0.0000070964766}
+--- !u!114 &1214691441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5189907790171149351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2354ea427d2ad39479c274583f45746d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptySpace: {fileID: 0}
+--- !u!114 &1136410039841506188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5189907790171149351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64e60a693c0c846b35c552a38aece5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1214691441}
+        m_TargetAssemblyTypeName: SlidingPiece, Assembly-CSharp
+        m_MethodName: SlidePiece
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  interactionText: Slide
+--- !u!1 &6435057760639468638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9038795498599473850, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+  m_PrefabInstance: {fileID: 2611430746612737764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7237151962288092985
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435057760639468638}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.000116254814, y: 0.0018375403, z: 0.0018375402}
+  m_Center: {x: 0.000008670302, y: 0.0000036747927, z: -0.0000006588524}
+--- !u!114 &1203686841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435057760639468638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2354ea427d2ad39479c274583f45746d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptySpace: {fileID: 0}
+--- !u!114 &4560902918343782057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6435057760639468638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64e60a693c0c846b35c552a38aece5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1203686841}
+        m_TargetAssemblyTypeName: SlidingPiece, Assembly-CSharp
+        m_MethodName: SlidePiece
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  interactionText: Slide
+--- !u!1 &6955015746380037636 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4951856865611372768, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+  m_PrefabInstance: {fileID: 2611430746612737764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5926461523558351083
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6955015746380037636}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00015145658, y: 0.0018394678, z: 0.0018387424}
+  m_Center: {x: 0.00002329171, y: -0.000010796006, z: -0.000019898722}
+--- !u!114 &1203686845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6955015746380037636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2354ea427d2ad39479c274583f45746d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptySpace: {fileID: 0}
+--- !u!114 &7404201892876632583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6955015746380037636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64e60a693c0c846b35c552a38aece5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1203686845}
+        m_TargetAssemblyTypeName: SlidingPiece, Assembly-CSharp
+        m_MethodName: SlidePiece
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  interactionText: Slide
+--- !u!1 &8959322118677315397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6370426962634938785, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+  m_PrefabInstance: {fileID: 2611430746612737764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4679795081988870466
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959322118677315397}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00015145658, y: 0.0018385524, z: 0.001839416}
+  m_Center: {x: 0.000021682374, y: 0.000011448223, z: -0.0000042905167}
+--- !u!114 &1203686842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959322118677315397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2354ea427d2ad39479c274583f45746d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptySpace: {fileID: 0}
+--- !u!114 &3937539836985215284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8959322118677315397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64e60a693c0c846b35c552a38aece5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1203686842}
+        m_TargetAssemblyTypeName: SlidingPiece, Assembly-CSharp
+        m_MethodName: SlidePiece
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  interactionText: Slide
+--- !u!1 &9113214734675140662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2718750401975793966, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+  m_PrefabInstance: {fileID: 2611430746612737764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &277585214745765619
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9113214734675140662}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.00014764082, y: 0.0018375396, z: 0.0018375395}
+  m_Center: {x: 0.000025817282, y: -0.000011077993, z: 0.000014528862}
+--- !u!114 &2038747483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9113214734675140662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2354ea427d2ad39479c274583f45746d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptySpace: {fileID: 0}
+--- !u!114 &7273566000683173548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9113214734675140662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64e60a693c0c846b35c552a38aece5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2038747483}
+        m_TargetAssemblyTypeName: SlidingPiece, Assembly-CSharp
+        m_MethodName: SlidePiece
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  interactionText: Slide
+--- !u!1 &9208521561073620964 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6626651026368966912, guid: 484372080c2b9094d8c70c89c5740df6, type: 3}
+  m_PrefabInstance: {fileID: 2611430746612737764}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6207114380477858521
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9208521561073620964}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0001514566, y: 0.0018375396, z: 0.0018375395}
+  m_Center: {x: 0.000022440845, y: -0.0000061115998, z: -0.0000063180914}
+--- !u!114 &1876730387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9208521561073620964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2354ea427d2ad39479c274583f45746d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptySpace: {fileID: 0}
+--- !u!114 &4342377658595566046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9208521561073620964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb64e60a693c0c846b35c552a38aece5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interact:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1876730387}
+        m_TargetAssemblyTypeName: SlidingPiece, Assembly-CSharp
+        m_MethodName: SlidePiece
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  interactionText: Slide

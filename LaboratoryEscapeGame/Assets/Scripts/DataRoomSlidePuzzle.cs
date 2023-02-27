@@ -11,10 +11,11 @@ public class DataRoomSlidePuzzle : MonoBehaviour
     // Collect all sliding pieces to an array
     void Start()
     {
-        dataRoomPuzzleManager = transform.parent.parent.gameObject.GetComponent<DataRoomPuzzleManager>();
+        dataRoomPuzzleManager = transform.parent.gameObject.GetComponent<DataRoomPuzzleManager>();
         for (int i = 0; i < slidingPieces.Length; i++)
         {
-            slidingPieces[i] = transform.GetChild(i).gameObject;
+            int piece = i + 2;
+            slidingPieces[i] = transform.GetChild(0).GetChild(piece).gameObject;
         }
 
         // Suffle();

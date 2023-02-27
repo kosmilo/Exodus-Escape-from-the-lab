@@ -3,7 +3,32 @@ guid: 484372080c2b9094d8c70c89c5740df6
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Frame
+    second: {fileID: 2100000, guid: fc7e2f648226bb7479152aa715c4accf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Grid
+    second: {fileID: 2100000, guid: 177311872bf63ac419b676b75002865a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Symbol
+    second: {fileID: 2100000, guid: 1192cd840db0b75489a44659e59f08fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_cornerPieces
+    second: {fileID: 2100000, guid: 447b038c2e7c5c24c94217788bec2444, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_pieces
+    second: {fileID: 2100000, guid: a9f2641e4946b01429afbd1d936fe482, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -37,12 +62,12 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
+    importCameras: 1
     importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2

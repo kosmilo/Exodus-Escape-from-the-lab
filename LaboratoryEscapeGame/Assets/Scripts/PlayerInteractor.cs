@@ -17,7 +17,6 @@ public class PlayerInteractor : MonoBehaviour
             if (hit.collider.gameObject.GetComponent<Interactable>() != null)
             {
                 string text = hit.collider.gameObject.GetComponent<Interactable>().interactionText;
-                Debug.Log(text);
                 interactionIndicator.UpdateIndicator(text);
                 if (Input.GetMouseButtonDown(0)) {
                     hit.collider.gameObject.GetComponent<Interactable>().Interact();
