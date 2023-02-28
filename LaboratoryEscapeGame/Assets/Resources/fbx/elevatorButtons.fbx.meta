@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 10f0dd3a480ff13469f05d36951ed238
+guid: 4fb02b4db55294c4fa0153551d387808
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: mat_Doors
-    second: {fileID: 2100000, guid: c63bcd6bc1f8b3643a81dc34095156b7, type: 2}
+      name: mat_elevatorButtons
+    second: {fileID: 2100000, guid: 11621334b19b8ad42aa87ea36299b8a9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_elevatorButtonsLights
+    second: {fileID: 2100000, guid: 1192cd840db0b75489a44659e59f08fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_elevatorPanel
+    second: {fileID: 2100000, guid: db4c0cc7b466b7a41a50bb505dc28cc1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
