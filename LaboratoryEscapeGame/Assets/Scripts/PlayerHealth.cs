@@ -13,14 +13,14 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         playerHealth = playerMaxHealth;
-        float barWidth = ((float) playerHealth) / ((float) playerMaxHealth);
-        healthBar.UpdateHealth(barWidth);
     }
 
     public void TakeDamage(int damage)
     {
         playerHealth -= damage;
         playerHealth = Mathf.Clamp(playerHealth, 0, playerMaxHealth);
+
+        // Update health bar
         float barWidth = ((float) playerHealth) / ((float) playerMaxHealth);
         healthBar.UpdateHealth(barWidth);
 
@@ -37,6 +37,8 @@ public class PlayerHealth : MonoBehaviour
     {
         playerHealth += heal;
         playerHealth = Mathf.Clamp(playerHealth, 0, playerMaxHealth);
+
+        // Update health bar
         float barWidth = ((float) playerHealth) / ((float) playerMaxHealth);
         healthBar.UpdateHealth(barWidth);
     }

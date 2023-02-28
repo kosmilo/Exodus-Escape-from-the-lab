@@ -1,29 +1,9 @@
 fileFormatVersion: 2
-guid: b65e456256d7b0a4cbdedb7fef18e08d
+guid: 64cc40721eb95dc40ac1fe646978c69e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
   externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mat_Cealings
-    second: {fileID: 2100000, guid: a20a1bb904b66664b905ee7beade428d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mat_Floor
-    second: {fileID: 2100000, guid: a20a1bb904b66664b905ee7beade428d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mat_Walls
-    second: {fileID: 2100000, guid: be017b1a2ddd5494b9aa8edd0713aa9a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mat_doorPlace
-    second: {fileID: 2100000, guid: e41914eb254f00942b3940a91376e9c8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -67,8 +47,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0

@@ -39,12 +39,12 @@ public class PlayerMovement : MonoBehaviour
         runInput = Input.GetAxis("Run");
 
         HandleRotation();
-        staminaBar.UpdateStamina((stamina/maxStamina));
     }
 
     private void FixedUpdate()
     {
         HandleMovement();
+        staminaBar.UpdateStamina((stamina/maxStamina));
     }
 
     void HandleRotation()
