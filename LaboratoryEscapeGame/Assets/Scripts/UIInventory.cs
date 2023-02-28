@@ -22,17 +22,20 @@ public class UIInventory : MonoBehaviour
             instance.transform.SetParent(slotPanel);
             uIItems.Add(instance.GetComponentInChildren<UIItem>());
         }
-        
     }
 
     private void Update()
     {
+        // Check if any of the number keys are pressed
         for (int i = 0; i < slotKeys.Length; i++)
         { 
-            if (Input.GetKeyDown(slotKeys[i]))
-            {
-                ActivateOneSlot(i);
-            }   
+            // Activate inventory slot if a key is pressed
+            if (Input.GetKeyDown(slotKeys[i])) { ActivateOneSlot(i); }   
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            DropItem();
         }
 
         // If player clicks with mouse inactivate all the inventory slots
@@ -50,9 +53,13 @@ public class UIInventory : MonoBehaviour
             uIItems[slot].UpdateItem(item);        
     }
 
+    // Activate slot
     public void ActivateOneSlot(int slot)
     {
-        uIItems[slot].ChangeSlotType(activeSlot, true);
+        // Activate (or deactivate if already activate) selected slot
+        uIItems[slot].ChangeSlotType((!(uIItems[slot].active) ? activeSlot : inactiveSlot), !(uIItems[slot].active));
+
+        // Deactivate all other slots
         for (int i = 0; i < uIItems.Count; i++)
         {
             if (i == slot)
@@ -68,17 +75,55 @@ public class UIInventory : MonoBehaviour
 
     public void AddNewItem(Item item)
     {
-        UpdateSlot(uIItems.FindIndex(i => i.item == null), item);
+        //if there is already a uiitem with the same item, then
+        //update count of uiitem to 2
+        //if there isnt a uiitem with the same item yet, then
+        //add new item
+        int index = uIItems.FindIndex(i => i.item == item);
+        if (index != -1)
+        {
+            uIItems[index].UpdateCount(1);
+            Debug.Log("Added count of item");
+        }
+        else
+        {
+            UpdateSlot(uIItems.FindIndex(i => i.item == null), item);
+            uIItems[uIItems.FindIndex(i => i.item == item)].UpdateCount(1);
+            Debug.Log("Added new item");
+        }
+
     }
+
+
     public void RemoveItem(Item item)
     {
-        UpdateSlot(uIItems.FindIndex(i => i.item == item), null);
+        
         foreach(UIItem u in uIItems)
         {
             if(u.item == item)
             {
-                uIItems.Remove(u);
-                Debug.Log("Removed " + u);
+                u.UpdateCount(-1);
+                Debug.Log("Removed count");
+                if (u.itemCount == 0)
+                {
+                    UpdateSlot(uIItems.FindIndex(i => i.item == item), null);
+                    // uIItems.Remove(u);
+                    Debug.Log("Removed " + u);
+                }
+                
+                
+            }
+        }
+    }
+
+    public void DropItem()
+    {
+        for (int i = 0; i < uIItems.Count; i++)
+        {
+            if (uIItems[i].active == true && uIItems[i].item != null)
+            {
+                inventory.RemoveItem(uIItems[i].item.id);
+                Debug.Log("Dropped item");
             }
         }
     }
