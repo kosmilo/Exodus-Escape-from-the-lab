@@ -19,6 +19,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: mat_Walls
     second: {fileID: 2100000, guid: be017b1a2ddd5494b9aa8edd0713aa9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_doorPlace
+    second: {fileID: 2100000, guid: e41914eb254f00942b3940a91376e9c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_elevatorDoors
+    second: {fileID: 2100000, guid: b2272615fcd4a2f45954b7e9e233a25b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -51,7 +61,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 0
+    meshCompression: 1
     addColliders: 1
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1

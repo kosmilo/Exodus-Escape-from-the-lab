@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: mat_Grid
-    second: {fileID: 2100000, guid: 177311872bf63ac419b676b75002865a, type: 2}
+    second: {fileID: 2100000, guid: 1192cd840db0b75489a44659e59f08fe, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule

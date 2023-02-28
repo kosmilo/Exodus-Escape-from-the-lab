@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 10f0dd3a480ff13469f05d36951ed238
+guid: 64cc40721eb95dc40ac1fe646978c69e
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: mat_Doors
-    second: {fileID: 2100000, guid: c63bcd6bc1f8b3643a81dc34095156b7, type: 2}
+      name: mat_elevatorDoors
+    second: {fileID: 2100000, guid: b2272615fcd4a2f45954b7e9e233a25b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -47,8 +47,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0

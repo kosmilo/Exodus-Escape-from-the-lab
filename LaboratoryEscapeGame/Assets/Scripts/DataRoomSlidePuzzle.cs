@@ -18,13 +18,13 @@ public class DataRoomSlidePuzzle : MonoBehaviour
             slidingPieces[i] = transform.GetChild(0).GetChild(piece).gameObject;
         }
 
-        // Suffle();
+        Suffle();
     }
 
     // Change places of random pieces to suffle
     void Suffle()
     {
-        for (int i = 0; i < 6; i++)
+        for (int i = 0; i < 10; i++)
         {
             int randomIndex1 = Random.Range(0, slidingPieces.Length);
             int randomIndex2 = Random.Range(0, slidingPieces.Length);
