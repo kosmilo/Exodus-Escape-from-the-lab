@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
 
-// Handles movement, states, attacking and animations
 public class EnemyAI : MonoBehaviour
 {
     enum EnemyStates
@@ -20,8 +19,11 @@ public class EnemyAI : MonoBehaviour
     Animator animator;
     [SerializeField] Transform playerTransform;
     [SerializeField] LayerMask whatIsGround, whatIsPlayer;
-
     [SerializeField] float sightRange, attackRange;
+    bool playerInSight, playerInAttackRange, isStunned;
+
+    // Navigating
+    [SerializeField] Vector3 walkPoint;
     [SerializeField] float walkPointRange;
     bool playerInSight, playerInAttackRange, isStunned;
     Vector3 walkPoint;
@@ -31,9 +33,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] float timeBetweenAttacks;
     bool alreadyAttacked;
 
-    // Moving
     [SerializeField] float roamSpeed, chaseSpeed;
-    [SerializeField] float chaseTime;
+    float chaseTime = 4f;
     float speedMultiplier = 1;
     Vector3 lookOffset = new Vector3(0, 0.5f, 0);
 
@@ -41,13 +42,11 @@ public class EnemyAI : MonoBehaviour
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
         SetEnemyState();
-        SetEnemyAnimParameters();
 
         // Act
         switch (currentState)
@@ -103,17 +102,26 @@ public class EnemyAI : MonoBehaviour
                 {
                     Invoke("SetStateToRoam", chaseTime);
                 }
-                else { currentState = EnemyStates.Roam; }
+                else
+                {
+                    currentState = EnemyStates.Roam;
+                }
             }
             else
             {
-                currentState = !playerInAttackRange ? EnemyStates.Chase : EnemyStates.Attack;
+                if (!playerInAttackRange)
+                {
+                    currentState = EnemyStates.Chase;
+                }
+                else
+                {
+                    currentState = EnemyStates.Attack;
+                }
                 CancelInvoke("SetStateToRoam");
             }
         }
     }
 
-    // Invoked after enemy hasn't seen player in [chaseTime]
     void SetStateToRoam() { currentState = EnemyStates.Roam; }
 
     // SETTING ANIMATION PARAMETERS 
@@ -140,12 +148,11 @@ public class EnemyAI : MonoBehaviour
             agent.SetDestination(walkPoint);
         }
 
-        // Check if walkpoint was reached and a new one is needed
+        // Check distance to walk point
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
         if (distanceToWalkPoint.magnitude < 1f) { walkPointSet = false; }
     }
 
-    // Look for a new walkpoint
     void SearchWalkPoint()
     {
         float randomZ = Random.Range(-walkPointRange, walkPointRange);
@@ -153,17 +160,18 @@ public class EnemyAI : MonoBehaviour
 
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
-        // Check if walkpoint is valid (not in air)
-        walkPointSet = Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround) ? true : false;
+        if (Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround))
+        {
+            walkPointSet = true;
+        }
     }
 
     // CHASE STATE
 
     void ChasePlayer()
     {
-        // Change speed and set destination to player
         agent.speed = chaseSpeed * speedMultiplier;
-        agent.SetDestination(playerTransform.position); // Set navigation point to player
+        agent.SetDestination(playerTransform.position);
     }
 
     // ATTACK STATE
@@ -173,6 +181,20 @@ public class EnemyAI : MonoBehaviour
         // Stop moving and look at player
         agent.SetDestination(transform.position);
         transform.LookAt(playerTransform);
+
+        if (!alreadyAttacked)
+        {
+            // TRIGGER ATTACK
+
+            
+            alreadyAttacked = true;
+            Invoke("ResetAttack", timeBetweenAttacks);
+        }
+    }
+
+    void ResetAttack()
+    {
+        alreadyAttacked = false;
     }
 
     // STUNNED STATE
@@ -193,7 +215,6 @@ public class EnemyAI : MonoBehaviour
 
     // SLOW EFFECT
 
-    // Change enemy speed multiplier to create a slow effect
     public void slowEnemy(float newSpeedMultiplier, float slowTime)
     {
         speedMultiplier = newSpeedMultiplier;
