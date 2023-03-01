@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8402582663086078474}
   - component: {fileID: 8402582663086078582}
   - component: {fileID: 8402582663086078583}
+  - component: {fileID: 4280438402146064448}
+  - component: {fileID: 7330982306161532561}
   m_Layer: 3
   m_Name: pref_Player
   m_TagString: Player
@@ -58,7 +60,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8402582663086078477}
   serializedVersion: 2
-  m_Mass: 3
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 1
@@ -133,7 +135,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8402582663173738183}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.32000005, z: 0}
+  m_LocalPosition: {x: 0, y: 0.724, z: 0.231}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
