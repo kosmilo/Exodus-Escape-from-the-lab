@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class ElevatorEntered : MonoBehaviour
 {
     [SerializeField] Animator elevatorDoorsAnimator;
-    [SerializeField] UnityEvent elevatorStopped;
+    [SerializeField] UnityEvent gameWon;
     [SerializeField] Vector3 targetPos;
     [SerializeField] float moveSpeed;
 
@@ -17,16 +17,13 @@ public class ElevatorEntered : MonoBehaviour
 
     IEnumerator MoveElevator() {
         yield return new WaitForSeconds(2f); // Wait a few seconds before starting
-        Debug.Log("Started coroutine");
+        gameWon.Invoke();
 
         while (transform.parent.position != targetPos)
         {
             transform.parent.position = Vector3.MoveTowards(transform.parent.position, targetPos, moveSpeed * Time.deltaTime);
-            Debug.Log("Moving");
             yield return 0; // continue on next frame
         }
-
-        elevatorStopped.Invoke();
 
         yield return null; // Stop coroutine
     }
