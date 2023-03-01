@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7f109fe0845cdbe4e8543895fffaa6ef
+guid: e5ace72c5e767c3468bf86838cf4def1
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material
-    second: {fileID: 2100000, guid: b2272615fcd4a2f45954b7e9e233a25b, type: 2}
+      name: mat_Black
+    second: {fileID: 2100000, guid: 5eae67bb0e4075c4292761fdd9d5a514, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Fuse
+    second: {fileID: 2100000, guid: 6ed30f240e9bfb8498b0e4026275bd8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_FuseBox
+    second: {fileID: 2100000, guid: 9481b622d39761b44bbff96b6a30a3ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Light
+    second: {fileID: 2100000, guid: 1a3c672910fe64945bfc7a8afdf583c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Metallic
+    second: {fileID: 2100000, guid: 2779dcade21633e41a5693e3256b4a29, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_red
+    second: {fileID: 2100000, guid: 6cee231c52706e44189a42e9a1e27fca, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -42,9 +67,9 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     useSRGBMaterialColor: 1
-    sortHierarchyByName: 1
+    sortHierarchyByName: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

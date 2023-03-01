@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: mat_elevatorButtons
-    second: {fileID: 2100000, guid: 11621334b19b8ad42aa87ea36299b8a9, type: 2}
+    second: {fileID: 2100000, guid: 5eae67bb0e4075c4292761fdd9d5a514, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -18,7 +18,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: mat_elevatorPanel
-    second: {fileID: 2100000, guid: db4c0cc7b466b7a41a50bb505dc28cc1, type: 2}
+    second: {fileID: 2100000, guid: b2272615fcd4a2f45954b7e9e233a25b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
