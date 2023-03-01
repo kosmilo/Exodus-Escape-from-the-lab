@@ -14,12 +14,6 @@ public class Door : MonoBehaviour
     [SerializeField]
     private float speed = 1f;
 
-    [Header("Lock configs")]
-    [SerializeField]
-    private bool isLocked = false;
-    [SerializeField]
-    private int keyId = 8;
-
     [Header("Rotation configs")]
     [SerializeField]
     private float rotationAmount = 90f;
@@ -34,25 +28,24 @@ public class Door : MonoBehaviour
 
     private Vector3 startRotation;
     private Vector3 startPosition;
+    private Vector3 forward;
 
     private Coroutine animationCoroutine;
 
     GameObject player;
 
-    UIInventory uiinventory;
-
     private void Awake()
     {
         startRotation = transform.rotation.eulerAngles;
+        forward = transform.right;
         player = GameObject.FindGameObjectWithTag("Player");
-        uiinventory = FindObjectOfType<UIInventory>();
         startPosition = transform.position;
     }
 
     // Open the door if it currently isn't open
     // If it's currently in the middle of the animation coroutine, stop the coroutine
     // If the door is a rotating door, start the coroutine based on dot
-    public void Open()
+    public void Open(Vector3 userPosition)
     {
         if (!isOpen)
         {
@@ -63,7 +56,9 @@ public class Door : MonoBehaviour
 
             if (isRotatingDoor)
             {
-                animationCoroutine = StartCoroutine(DoRotationOpen());
+                float dot = Vector3.Dot(forward, (userPosition - transform.position).normalized);
+                animationCoroutine = StartCoroutine(DoRotationOpen(dot));
+                Debug.Log("Dot: " + dot);
             }
             else
             {
@@ -73,15 +68,21 @@ public class Door : MonoBehaviour
     }
 
     // Opening coroutine animation
-    private IEnumerator DoRotationOpen()
+    private IEnumerator DoRotationOpen(float forwardAmount)
     {
         Quaternion StartRotation = transform.rotation;
         Quaternion EndRotation;
 
         // Change the direction the door opens based on the user's position relative to the door
         // For some reason the door still always opens in only one direction but that might be because the interaction raycast stuff isn't implemented yet
-        
-        EndRotation = Quaternion.Euler(new Vector3(0, startRotation.y - rotationAmount, 0));
+        if (forwardAmount >= forwardDirection)
+        {
+            EndRotation = Quaternion.Euler(new Vector3(0, startRotation.y - rotationAmount, 0));
+        }
+        else
+        {
+            EndRotation = Quaternion.Euler(new Vector3(0, startRotation.y + rotationAmount, 0));
+        }
 
         isOpen = true;
 
@@ -168,32 +169,18 @@ public class Door : MonoBehaviour
 
     // Method to be called when player is interacting with the door
     // If the door is closed and not in the middle of a coroutine, open it and vice versa
-    // First checks if the door is not locked OR if the player is currently holding its key
     public void DoorInteraction()
     {
-        if (uiinventory.activeItem != null | !isLocked)
+        if(!isOpen && animationCoroutine == null)
         {
-            if (uiinventory.activeItem.item.id == keyId | !isLocked)
-            {
-                Debug.Log("Interact with the door");
-                if (!isOpen)
-                {
-                    Open();
-                }
-                else if (isOpen)
-                {
-                    Close();
-                }
-            }
+            Open(player.transform.position);
         }
-        else
+        if(isOpen && animationCoroutine == null)
         {
-            Debug.Log("The door is locked and cannot be opened.");
+            Close();
         }
-        
     }
 
-    /*
     // Add buttons to inspector for opening and closing door 
     // I have no idea how this actually works (thanks ChatGPT!)
 #if UNITY_EDITOR
@@ -218,9 +205,7 @@ public class Door : MonoBehaviour
         }
     }
 #endif
-    */
 }
-
 
 
 
