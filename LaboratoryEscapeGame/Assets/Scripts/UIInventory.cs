@@ -14,16 +14,6 @@ public class UIInventory : MonoBehaviour
     public int numberOfSlots = 8;
     public KeyCode[] slotKeys = new KeyCode[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7, KeyCode.Alpha8 };
 
-    private void Awake()
-    {
-        for (int i = 0; i < numberOfSlots; i++)
-        {
-            GameObject instance = Instantiate(slotPrefab);
-            instance.transform.SetParent(slotPanel);
-            uIItems.Add(instance.GetComponentInChildren<UIItem>());
-        }
-    }
-
     private void Update()
     {
         // Check if any of the number keys are pressed
@@ -76,7 +66,7 @@ public class UIInventory : MonoBehaviour
     public void AddNewItem(Item item)
     {
         //if there is already a uiitem with the same item, then
-        //update count of uiitem to 2
+        //update count of uiitem
         //if there isnt a uiitem with the same item yet, then
         //add new item
         int index = uIItems.FindIndex(i => i.item == item);
@@ -88,10 +78,8 @@ public class UIInventory : MonoBehaviour
         else
         {
             UpdateSlot(uIItems.FindIndex(i => i.item == null), item);
-            uIItems[uIItems.FindIndex(i => i.item == item)].UpdateCount(1);
             Debug.Log("Added new item");
         }
-
     }
 
 

@@ -12,16 +12,16 @@ public class UIItem : MonoBehaviour
     public bool active; 
     public GameObject parentSlot;
     public int itemCount;
-    public TextMeshProUGUI counterText;
+    [SerializeField] TextMeshProUGUI counterText;
 
     private void Awake()
     {
         spriteImage = GetComponent<Image>();
         parentSlot = transform.parent.gameObject;
         slotImage = parentSlot.GetComponent<Image>();
-        counterText = FindObjectOfType<TextMeshProUGUI>();
         UpdateItem(null);
         itemCount = 0;
+        UpdateCount(0);
     }
 
     public void UpdateCount(int count)
@@ -45,10 +45,12 @@ public class UIItem : MonoBehaviour
         {
             spriteImage.color = Color.white;
             spriteImage.sprite = this.item.icon;
+            itemCount = 1;
         }
         else
         {
             spriteImage.color = Color.clear;
+            itemCount = 0;
         }
     }
 
