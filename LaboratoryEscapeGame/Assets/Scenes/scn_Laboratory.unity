@@ -140,18 +140,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206682, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
       propertyPath: m_Name
-      value: pref_button (2)
+      value: pref_buttonOptions
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206684, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1754128560}
     - target: {fileID: 6098989145713206684, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: OpenSettings
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206684, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: PauseMenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206685, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
@@ -2246,15 +2246,15 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6072947764944726289, guid: 34c3a385b807adb4b9fd143530fa62da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1754128560}
     - target: {fileID: 6072947764944726289, guid: 34c3a385b807adb4b9fd143530fa62da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: CloseSettings
       objectReference: {fileID: 0}
     - target: {fileID: 6072947764944726289, guid: 34c3a385b807adb4b9fd143530fa62da, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: PauseMenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3123,18 +3123,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206682, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
       propertyPath: m_Name
-      value: pref_button
+      value: pref_buttonContinue
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206684, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1754128560}
     - target: {fileID: 6098989145713206684, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: PauseOrResumeGame
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206684, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: PauseMenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206685, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
@@ -3349,18 +3349,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206682, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
       propertyPath: m_Name
-      value: pref_button (1)
+      value: pref_buttonMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206684, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1754128560}
     - target: {fileID: 6098989145713206684, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ToMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206684, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: PauseMenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206685, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
@@ -3892,16 +3892,16 @@ PrefabInstance:
       value: GameOverPanel
       objectReference: {fileID: 0}
     - target: {fileID: 5134555405552462899, guid: 5672fa9a09ffa8a4a9521da62d2d157e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1754128560}
+      objectReference: {fileID: 1754128561}
     - target: {fileID: 5134555405552462899, guid: 5672fa9a09ffa8a4a9521da62d2d157e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ToMainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 5134555405552462899, guid: 5672fa9a09ffa8a4a9521da62d2d157e, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PauseMenuManager, Assembly-CSharp
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: GameOverScreenManager, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5672fa9a09ffa8a4a9521da62d2d157e, type: 3}

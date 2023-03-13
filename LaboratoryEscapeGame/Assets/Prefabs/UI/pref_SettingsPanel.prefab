@@ -226,15 +226,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206682, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
       propertyPath: m_Name
-      value: pref_buttonCloseOptions (1)
+      value: pref_buttonCloseOptions
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206684, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 64325280905527712}
     - target: {fileID: 6098989145713206684, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: CloseSettings
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6098989145713206685, guid: f896deb7336c70a4293f1bf11e1d4a7c, type: 3}
       propertyPath: m_Pivot.x
