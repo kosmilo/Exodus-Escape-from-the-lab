@@ -258,6 +258,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1003060677605583733}
+  - component: {fileID: 2213067861387432367}
+  - component: {fileID: 4129437745357852732}
+  - component: {fileID: 4935421977143652690}
+  - component: {fileID: 5791022874807889716}
   m_Layer: 0
   m_Name: pref_barsBroken
   m_TagString: Untagged
@@ -302,6 +306,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
+--- !u!65 &2213067861387432367
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477459572851192271}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3813704, y: 5.1360426, z: 0.361164}
+  m_Center: {x: 0.074879736, y: 2.5839906, z: -0.06927489}
+--- !u!65 &4129437745357852732
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477459572851192271}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.17016587, y: 5.13912, z: 2.4069242}
+  m_Center: {x: 0.00021823496, y: 2.5616312, z: -2.589996}
+--- !u!114 &4935421977143652690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477459572851192271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fff20325d114d5408bee618b0399609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  isRotatingDoor: 0
+  speed: 1
+  rotationAmount: 90
+  forwardDirection: 0
+  slideDirection: {x: 0, y: 1, z: 0}
+  slideAmount: 2.6
+--- !u!114 &5791022874807889716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477459572851192271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fff20325d114d5408bee618b0399609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  isRotatingDoor: 1
+  speed: 1
+  rotationAmount: 90
+  forwardDirection: 0
+  slideDirection: {x: 0, y: 0, z: -1}
+  slideAmount: 2.6
 --- !u!1 &2547953954945438007
 GameObject:
   m_ObjectHideFlags: 0

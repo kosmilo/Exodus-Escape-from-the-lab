@@ -923,6 +923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4324004592242094764}
   - component: {fileID: 1152455437154227757}
+  - component: {fileID: -7925384123633262772}
   m_Layer: 0
   m_Name: pref_bars
   m_TagString: Untagged
@@ -977,6 +978,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.14171976, y: 5.134374, z: 3.9162126}
   m_Center: {x: 0.020739198, y: 2.589462, z: -1.8229754}
+--- !u!114 &-7925384123633262772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984036303008114710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fff20325d114d5408bee618b0399609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  isRotatingDoor: 0
+  speed: 1
+  rotationAmount: 90
+  forwardDirection: 0
+  slideDirection: {x: 0, y: 1, z: 0}
+  slideAmount: 2.6
 --- !u!1 &4842607305831477841
 GameObject:
   m_ObjectHideFlags: 0

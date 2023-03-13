@@ -922,6 +922,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6514486224401883278}
+  - component: {fileID: 2780435404524404117}
+  - component: {fileID: 5457735468027825414}
   m_Layer: 0
   m_Name: pref_barsWide
   m_TagString: Untagged
@@ -971,6 +973,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2780435404524404117
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5846738946374384180}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15316935, y: 5.2165146, z: 5.940417}
+  m_Center: {x: 0.009092234, y: 2.6241417, z: -2.812382}
+--- !u!114 &5457735468027825414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5846738946374384180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fff20325d114d5408bee618b0399609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  isRotatingDoor: 0
+  speed: 1
+  rotationAmount: 90
+  forwardDirection: 0
+  slideDirection: {x: 0, y: 1, z: 0}
+  slideAmount: 2.6
 --- !u!1 &6219771333419279135
 GameObject:
   m_ObjectHideFlags: 0

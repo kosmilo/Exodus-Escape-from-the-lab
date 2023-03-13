@@ -1669,6 +1669,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4463535781862898857}
+  - component: {fileID: 7272148122846733268}
+  - component: {fileID: 8408099967378283755}
+  - component: {fileID: 346885268749800077}
   m_Layer: 0
   m_Name: pref_barsWideBroken
   m_TagString: Untagged
@@ -1721,6 +1724,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!65 &7272148122846733268
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3943599154871051795}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.28447342, y: 5.154938, z: 0.8052559}
+  m_Center: {x: 0.12848854, y: 2.5280206, z: -0.2552204}
+--- !u!65 &8408099967378283755
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3943599154871051795}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.22350693, y: 5.161245, z: 3.5256996}
+  m_Center: {x: -0.0044612885, y: 2.592151, z: -4.029703}
+--- !u!114 &346885268749800077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3943599154871051795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fff20325d114d5408bee618b0399609, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  isRotatingDoor: 0
+  speed: 1
+  rotationAmount: 90
+  forwardDirection: 0
+  slideDirection: {x: 0, y: 1, z: 0}
+  slideAmount: 2.6
 --- !u!1 &4804602886640425810
 GameObject:
   m_ObjectHideFlags: 0
