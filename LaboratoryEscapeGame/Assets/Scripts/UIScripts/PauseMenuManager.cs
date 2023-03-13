@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuManager : MonoBehaviour
 {
-    [SerializeField] GameObject ui;
+    [SerializeField] GameObject hud;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject settings;
     [SerializeField] PlayerMovement playerMovement;
@@ -15,7 +15,7 @@ public class PauseMenuManager : MonoBehaviour
     void Start()
     {
         isGamePaused = false;
-        ui.SetActive(true);
+        hud.SetActive(true);
         pauseMenu.SetActive(false);
         settings.SetActive(false);
         playerMovement.enabled = true;
@@ -37,7 +37,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public void PauseOrResumeGame() {
         isGamePaused = !isGamePaused;
-        ui.SetActive(!isGamePaused);
+        hud.SetActive(!isGamePaused);
         pauseMenu.SetActive(isGamePaused);
         settings.SetActive(false);
 

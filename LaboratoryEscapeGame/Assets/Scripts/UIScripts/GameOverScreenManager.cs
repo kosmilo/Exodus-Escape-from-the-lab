@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameOverScreenManager : MonoBehaviour
 {
     [SerializeField] GameObject gameOverScreen;
-    [SerializeField] GameObject ui;
+    [SerializeField] GameObject hud;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject settings;
     [SerializeField] PlayerMovement playerMovement;
@@ -25,7 +25,7 @@ public class GameOverScreenManager : MonoBehaviour
 
         // Hide ui, pausemenu and settings, stop player movement and interaction
         pauseMenuManager.enabled = false;
-        ui.SetActive(false);
+        hud.SetActive(false);
         pauseMenu.SetActive(false);
         settings.SetActive(false);
         playerMovement.enabled = false;
