@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -33,11 +34,17 @@ public class Door : MonoBehaviour
 
     GameObject player;
 
+    AudioSource audioSource;
+    [SerializeField] AudioClip doorOpenClip;
+    [SerializeField] AudioClip doorClosedClip;
+
     private void Awake()
     {
         startRotation = transform.rotation.eulerAngles;
         player = GameObject.FindGameObjectWithTag("Player");
         startPosition = transform.position;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.loop = false;
     }
 
     // Open the door if it currently isn't open
@@ -60,6 +67,9 @@ public class Door : MonoBehaviour
             {
                 animationCoroutine = StartCoroutine(DoSlidingOpen());
             }
+            audioSource.Stop();
+            audioSource.clip = doorOpenClip;
+            audioSource.Play(); // Play door sound effect
         }
     }
 
@@ -119,7 +129,10 @@ public class Door : MonoBehaviour
             else
             {
                 animationCoroutine = StartCoroutine(DoSlidingClose());
-                    }
+            }
+            audioSource.Stop();
+            audioSource.clip = doorClosedClip;
+            audioSource.Play(); // Play door sound effect
         }
     }
 
