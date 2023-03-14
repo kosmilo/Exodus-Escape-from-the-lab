@@ -284,6 +284,7 @@ GameObject:
   - component: {fileID: 1925084879085439086}
   - component: {fileID: 1393248136279543886}
   - component: {fileID: 4257137180499020379}
+  - component: {fileID: 6578315303641636272}
   m_Layer: 5
   m_Name: SettingsContent
   m_TagString: Untagged
@@ -350,6 +351,19 @@ MonoBehaviour:
   musicSlider: {fileID: 4730189294479860293}
   uiSfxSlider: {fileID: 1667645532012291230}
   gameSfxSlider: {fileID: 7017076742770388671}
+--- !u!114 &6578315303641636272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915486030072083659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11ad3e30569e2b447bea5913949d3ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensSlider: {fileID: 4403479430392369323}
 --- !u!1 &1339200023895820567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1803,8 +1817,23 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8832442328266948187, guid: 58d904133773a22448b7f3bd392808ab, type: 3}
+      propertyPath: m_MaxValue
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58d904133773a22448b7f3bd392808ab, type: 3}
+--- !u!114 &4403479430392369323 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8832442328266948187, guid: 58d904133773a22448b7f3bd392808ab, type: 3}
+  m_PrefabInstance: {fileID: 5156461827588058864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &7518926217642058022 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3447498061336694742, guid: 58d904133773a22448b7f3bd392808ab, type: 3}

@@ -8,10 +8,13 @@ public class PlayerMovement : MonoBehaviour
     GameObject cameraObj;
     [SerializeField] StaminaBar staminaBar;
 
+    // Key for player prefs
+    const string SENS_KEY = "mouseSenstivity";
+
     float horizontalInput, verticalInput, mouseXInput, mouseYInput, runInput;
     Vector3 cameraRotation, playerRotation, playerMovement; // camera rotation = up-down, player rotation = left-right
     float cameraXAxisClamp;
-    float rotationSensitivity = 4f;
+    float rotationSensitivity;
 
     float movementSpeed;
     bool staminaRegenState;
@@ -24,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        rotationSensitivity = PlayerPrefs.GetFloat(SENS_KEY, 5f); // Find the previous rotation sensitivity from player preffs
         rb = GetComponent<Rigidbody>();
         cameraObj = transform.GetChild(0).gameObject;
         stamina = maxStamina;
@@ -108,5 +112,10 @@ public class PlayerMovement : MonoBehaviour
         playerMovement.y = rb.velocity.y;
 
         rb.velocity = playerMovement;
+    }
+
+    // Set rotation sensitivity (added as a listener in MouseSensitivitySettings.cs)
+    public void SetMouseSens(float value) {
+        rotationSensitivity = value;
     }
 }

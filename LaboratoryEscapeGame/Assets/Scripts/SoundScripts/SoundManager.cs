@@ -29,7 +29,7 @@ public class SoundManager : MonoBehaviour
         LoadVolume();
     }
 
-    // Load volume settings from player prefs
+    // Load and set volume settings from player prefs
     void LoadVolume() {
         float musicVolume = PlayerPrefs.GetFloat(MUSIC_KEY, 0.8f);
         float uiVolume = PlayerPrefs.GetFloat(UISFX_KEY, 0.8f);
