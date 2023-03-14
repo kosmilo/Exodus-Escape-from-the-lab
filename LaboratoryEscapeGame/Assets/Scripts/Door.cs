@@ -13,6 +13,8 @@ public class Door : MonoBehaviour
     private bool isRotatingDoor = true;
     [SerializeField]
     private float speed = 1f;
+    [SerializeField]
+    private bool startOpen;
 
     [Header("Rotation configs")]
     [SerializeField]
@@ -40,6 +42,10 @@ public class Door : MonoBehaviour
         forward = transform.right;
         player = GameObject.FindGameObjectWithTag("Player");
         startPosition = transform.position;
+        if (startOpen)
+        {
+            Open(player.transform.position);
+        }
     }
 
     // Open the door if it currently isn't open
@@ -49,6 +55,7 @@ public class Door : MonoBehaviour
     {
         if (!isOpen)
         {
+            Debug.Log("Opening door");
             if (animationCoroutine != null)
             {
                 StopCoroutine(animationCoroutine);
@@ -97,6 +104,8 @@ public class Door : MonoBehaviour
 
     private IEnumerator DoSlidingOpen()
     {
+        Debug.Log("Started sliding open");
+
         Vector3 endPosition = startPosition + slideAmount * slideDirection;
         Vector3 StartPosition = transform.position;
 
@@ -117,6 +126,8 @@ public class Door : MonoBehaviour
     {
         if (isOpen)
         {
+            Debug.Log("Started closing");
+
             if (animationCoroutine != null)
             {
                 StopCoroutine(animationCoroutine);
@@ -129,7 +140,7 @@ public class Door : MonoBehaviour
             else
             {
                 animationCoroutine = StartCoroutine(DoSlidingClose());
-                    }
+            }
         }
     }
 
@@ -152,6 +163,8 @@ public class Door : MonoBehaviour
 
     private IEnumerator DoSlidingClose()
     {
+        Debug.Log("Started closing sliding");
+
         Vector3 endPosition = startPosition;
         Vector3 StartPosition = transform.position;
         float time = 0;
@@ -171,13 +184,15 @@ public class Door : MonoBehaviour
     // If the door is closed and not in the middle of a coroutine, open it and vice versa
     public void DoorInteraction()
     {
-        if(!isOpen && animationCoroutine == null)
+        if(!isOpen)
         {
             Open(player.transform.position);
+            Debug.Log("Door interaction open");
         }
-        if(isOpen && animationCoroutine == null)
+        else if(isOpen)
         {
             Close();
+            Debug.Log("Door interaction close");
         }
     }
 
