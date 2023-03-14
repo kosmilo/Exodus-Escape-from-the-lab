@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
         healthBar.UpdateHealth(barWidth);
 
         if (playerHealth <= 0) {
+            GetComponent<PlayerSoundEffects>().StopMovementSounds();
             gameOverScreenManager.GameOver();
         }
         else {

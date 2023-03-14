@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     // Key for player prefs
     const string SENS_KEY = "mouseSenstivity";
 
-    float horizontalInput, verticalInput, mouseXInput, mouseYInput, runInput;
+    float mouseXInput, mouseYInput, runInput;
+    Vector2 movementInputs;
     Vector3 cameraRotation, playerRotation, playerMovement; // camera rotation = up-down, player rotation = left-right
     float cameraXAxisClamp;
     float rotationSensitivity;
@@ -29,28 +30,32 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rotationSensitivity = PlayerPrefs.GetFloat(SENS_KEY, 5f); // Find the previous rotation sensitivity from player preffs
+
+        // Get references to components
         rb = GetComponent<Rigidbody>();
         playerSoundEffects = GetComponent<PlayerSoundEffects>();
         cameraObj = transform.GetChild(0).gameObject;
+
+        // Set stamina
         stamina = maxStamina;
     }
 
     void Update()
     {
         // Get input
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        movementInputs.x = Input.GetAxis("Horizontal");
+        movementInputs.y = Input.GetAxis("Vertical");
         mouseXInput = Input.GetAxis("Mouse X");
         mouseYInput = Input.GetAxis("Mouse Y");
         runInput = Input.GetAxis("Run");
 
         HandleRotation();
+        staminaBar.UpdateStamina((stamina/maxStamina));
     }
 
     private void FixedUpdate()
     {
         HandleMovement();
-        staminaBar.UpdateStamina((stamina/maxStamina));
     }
 
     void HandleRotation()
@@ -85,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Check if player should be running and assign movement speed accordingly
         // And play/stop running and walking sounds
-        if (runInput > 0.5 && (Mathf.Abs(horizontalInput) > 0.2f || Mathf.Abs(verticalInput)> 0.2f) && !staminaRegenState)
+        if (runInput > 0.5 && (Mathf.Abs(movementInputs.x) > 0.2f || Mathf.Abs(movementInputs.y)> 0.2f) && !staminaRegenState)
         {
             playerSoundEffects.PlayRunningSound();
             stamina -= staminaDrain;
@@ -93,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            if (Mathf.Abs(horizontalInput) > 0.2f || Mathf.Abs(verticalInput) > 0.2f) {
+            if (Mathf.Abs(movementInputs.x) > 0.2f || Mathf.Abs(movementInputs.y) > 0.2f) {
                 playerSoundEffects.PlayWalkingSound();
             }
             else {
@@ -114,10 +119,14 @@ public class PlayerMovement : MonoBehaviour
         }
         staminaBar.UpdateStamina(stamina/maxStamina);
         
+        // Clamp movement inputs if needed
+        if (movementInputs.x + movementInputs.y > .7f) {
+            movementInputs = Vector2.ClampMagnitude(movementInputs, 1);
+        }
 
         // Get the direction player is moving towards based on player input and the direction player is currently facing
         // and multiply it with movement speed
-        playerMovement = Vector3.ClampMagnitude((transform.forward * verticalInput) + (transform.right * horizontalInput), 1) * movementSpeed;
+        playerMovement = (transform.forward * movementInputs.y + transform.right * movementInputs.x) * movementSpeed;
         playerMovement.y = rb.velocity.y;
 
         rb.velocity = playerMovement;
