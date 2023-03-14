@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
     GameObject cameraObj;
+    PlayerSoundEffects playerSoundEffects;
     [SerializeField] StaminaBar staminaBar;
 
     // Key for player prefs
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rotationSensitivity = PlayerPrefs.GetFloat(SENS_KEY, 5f); // Find the previous rotation sensitivity from player preffs
         rb = GetComponent<Rigidbody>();
+        playerSoundEffects = GetComponent<PlayerSoundEffects>();
         cameraObj = transform.GetChild(0).gameObject;
         stamina = maxStamina;
     }
@@ -82,13 +84,21 @@ public class PlayerMovement : MonoBehaviour
     void HandleMovement()
     {
         // Check if player should be running and assign movement speed accordingly
-        if(runInput > 0.5 && !staminaRegenState)
+        // And play/stop running and walking sounds
+        if (runInput > 0.5 && (Mathf.Abs(horizontalInput) > 0.2f || Mathf.Abs(verticalInput)> 0.2f) && !staminaRegenState)
         {
+            playerSoundEffects.PlayRunningSound();
             stamina -= staminaDrain;
             movementSpeed = runSpeed;
         }
         else
         {
+            if (Mathf.Abs(horizontalInput) > 0.2f || Mathf.Abs(verticalInput) > 0.2f) {
+                playerSoundEffects.PlayWalkingSound();
+            }
+            else {
+                playerSoundEffects.StopMovementSounds();
+            }
             stamina += staminaRegen;
             movementSpeed = walkSpeed;
         }
@@ -97,13 +107,12 @@ public class PlayerMovement : MonoBehaviour
         if(staminaRegenState && stamina > 50)
         {
             staminaRegenState = false;
-            Debug.Log("Player movement stamina regen state: " + staminaRegenState);
         }
         else if(stamina < 1)
         {
             staminaRegenState = true;
-            Debug.Log("Player movement stamina regen state: " + staminaRegenState);
         }
+        staminaBar.UpdateStamina(stamina/maxStamina);
         
 
         // Get the direction player is moving towards based on player input and the direction player is currently facing

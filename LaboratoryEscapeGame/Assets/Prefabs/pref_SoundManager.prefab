@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ecb8b1e4f072d4b96222c0916a1830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 8300000, guid: 3acb6041570474343951332d7928c1b9, type: 3}
+  backgroundMusic: {fileID: 8300000, guid: 2b504fc569454b84c9769abde1d1dc19, type: 3}
 --- !u!82 &1217454864730588688
 AudioSource:
   m_ObjectHideFlags: 0
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0689213e00d7b479cd944cc826fdb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonSound: {fileID: 8300000, guid: 4116546a13dfe374c9d8b92e2d92587a, type: 3}
+  buttonSound: {fileID: 8300000, guid: f60e6badbee6f624ebf0705b76d0872f, type: 3}
 --- !u!82 &1217454865033417522
 AudioSource:
   m_ObjectHideFlags: 0
