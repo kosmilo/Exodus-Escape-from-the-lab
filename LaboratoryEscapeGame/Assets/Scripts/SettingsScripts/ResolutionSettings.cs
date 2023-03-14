@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Options : MonoBehaviour
+public class ResolutionSettings : MonoBehaviour
 {
     [SerializeField] List<ResItem> resolutions = new List<ResItem>(); // List of possible resolutions
     int selectedResolution; // Index of selected resolution
