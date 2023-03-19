@@ -65,6 +65,8 @@ public class EnemyAI : MonoBehaviour
                 Stunned();
                 break;
         }
+
+        transform.forward = new Vector3(0, transform.forward.y, transform.forward.z);
     }
 
     // SETTING THE ENEMY STATE
@@ -154,7 +156,8 @@ public class EnemyAI : MonoBehaviour
         walkPoint = new Vector3(transform.position.x + randomX, transform.position.y, transform.position.z + randomZ);
 
         // Check if walkpoint is valid (not in air or unrechable)
-        walkPointSet = Physics.Raycast(walkPoint, -transform.up, 2f, whatIsGround) ? true : false;
+        // walkPointSet = Physics.Raycast(walkPoint, -transform.up, 0f, whatIsGround) ? true : false;
+        walkPointSet = true;
         Invoke("CheckWalkpointValidity", .5f);
     }
 
