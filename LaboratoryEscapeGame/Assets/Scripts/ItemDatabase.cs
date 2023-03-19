@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Holds information of all items in the game
+// Item id 3 does not exist?
 public class ItemDatabase : MonoBehaviour
 {
     public List<Item> items = new List<Item>();
@@ -12,12 +13,12 @@ public class ItemDatabase : MonoBehaviour
         BuildDatabase();
     }
 
-    public Item GetItem(int id) // find an item by id
+    public Item GetItem(int id) // find and return an item from the created list by id
     {
-        return items.Find(item => item.id == id);
+        return items.Find(item => item.id == id); 
     }
 
-    public Item GetItem(string itemName) // find an item by title
+    public Item GetItem(string itemName) // find and return an item from the created list by title
     {
         return items.Find(item => item.title == itemName);
     }
