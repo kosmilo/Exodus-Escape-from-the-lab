@@ -21,7 +21,8 @@ public class LabMonsterController : MonoBehaviour
     // For testing 
     void Update() {
         if (Input.GetKey(KeyCode.DownArrow)) {
-            SlowEnemy(0.2f, 1f);
+            StunEnemy();
+            Debug.Log("Stunned the enemy (from lab monster controller when pressing down arrow)");
         }
     }
 
@@ -45,10 +46,10 @@ public class LabMonsterController : MonoBehaviour
     }
     public void StateChase() {
         agent.speed = chaseSpeed * speedMultiplier;
+        agent.angularSpeed = 360f;
     }
     public void StateAttack() {
         agent.speed = 0.01f * speedMultiplier;
-        agent.angularSpeed = 360f;
 
         // Make lab monster face the player
         animator.applyRootMotion = false;
@@ -103,6 +104,19 @@ public class LabMonsterController : MonoBehaviour
     public void DidLeaveAttackRange() {
         float distance = Vector3.Distance(transform.position, player.position);
         animator.SetBool("isAttacking", distance < attackStopDistance);
+    }
+
+    // Set state to stun
+    public void StunEnemy() {
+        animator.SetBool("isAttacking", false);
+        animator.SetBool("isStunned", true);
+        agent.speed = 0;
+        Invoke("StopSttunReset", 0.1f);
+    }
+
+    // Invoke to stop stun state from resetting
+    void StopStunReset() {
+        animator.SetBool("isStunned", false);
     }
 
     // Change enemy speed multiplier to create a slow effect
