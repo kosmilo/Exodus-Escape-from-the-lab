@@ -111,7 +111,7 @@ public class LabMonsterController : MonoBehaviour
         animator.SetBool("isAttacking", false);
         animator.SetBool("isStunned", true);
         agent.speed = 0;
-        Invoke("StopSttunReset", 0.1f);
+        Invoke("StopStunReset", 0.05f);
     }
 
     // Invoke to stop stun state from resetting
