@@ -8,12 +8,19 @@ public class PauseMenuManager : MonoBehaviour
     [SerializeField] GameObject hud;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject settings;
-    [SerializeField] PlayerMovement playerMovement;
-    [SerializeField] PlayerInteractor playerInteractor;
+    [SerializeField] GameObject player;
+    PlayerMovement playerMovement;
+    PlayerInteractor playerInteractor;
+    PlayerSoundEffects playerSoundEffects;
+
     bool isGamePaused;
 
     void Start()
     {
+        playerMovement = player.GetComponent<PlayerMovement>();
+        playerInteractor = player.GetComponent<PlayerInteractor>();
+        playerSoundEffects = player.GetComponent<PlayerSoundEffects>();
+
         isGamePaused = false;
         hud.SetActive(true);
         pauseMenu.SetActive(false);
@@ -55,6 +62,8 @@ public class PauseMenuManager : MonoBehaviour
         } else {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            playerSoundEffects.StopMovementSounds();
+            playerSoundEffects.StopOutOfBreathSound();
         }
     }
 
