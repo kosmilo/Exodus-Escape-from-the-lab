@@ -49,19 +49,19 @@ public class EnemyAI : MonoBehaviour
         switch (currentState)
         {
             case EnemyStates.Roam:
-                Debug.Log(gameObject.name + " roaming");
+                //Debug.Log(gameObject.name + " roaming");
                 Roaming();
                 break;
             case EnemyStates.Chase:
-                Debug.Log(gameObject.name + " chasing");
+                //Debug.Log(gameObject.name + " chasing");
                 ChasePlayer();
                 break;
             case EnemyStates.Attack:
-                Debug.Log(gameObject.name + " attacking");
+                //Debug.Log(gameObject.name + " attacking");
                 AttackPlayer();
                 break;
             case EnemyStates.Stunned:
-                Debug.Log(gameObject.name + " stunned");
+                //Debug.Log(gameObject.name + " stunned");
                 Stunned();
                 break;
         }
