@@ -44764,7 +44764,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 1.1166667
+        time: 1.1833333
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -44785,7 +44785,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: AttackCollider
+    path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/AttackColliderL
     classID: 1
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -44874,7 +44874,7 @@ AnimationClip:
       customType: 8
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1943655107
+      path: 3934318318
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -90482,7 +90482,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 1.1166667
+        time: 1.1833333
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -90503,7 +90503,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: AttackCollider
+    path: mixamorig:Hips/mixamorig:Spine/mixamorig:Spine1/mixamorig:Spine2/mixamorig:LeftShoulder/mixamorig:LeftArm/mixamorig:LeftForeArm/mixamorig:LeftHand/AttackColliderL
     classID: 1
     script: {fileID: 0}
   m_EulerEditorCurves: []
