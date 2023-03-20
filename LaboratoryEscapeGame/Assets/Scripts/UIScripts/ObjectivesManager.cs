@@ -14,6 +14,6 @@ public class ObjectivesManager : MonoBehaviour
     }
 
     public void UpdateObjective(string objective) {
-        objectivesText.text = "- " + objective;
+        objectivesText.text = objective;
     }
 }
