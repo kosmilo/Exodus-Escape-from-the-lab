@@ -1,31 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
+using UnityEngine.AI;
 
-public class LabMonsterAttackBehavior : StateMachineBehaviour
+public class LabMonsterChaseBehavior : StateMachineBehaviour
 {
+    NavMeshAgent agent;
     Transform player;
-    labMonsterStateController stateController;
+    LabMonsterController stateController;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        agent = animator.GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        stateController = animator.GetComponent<labMonsterStateController>();
+        stateController = animator.GetComponent<LabMonsterController>();
 
-        stateController.StateAttack();
+        stateController.StateChase();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.transform.LookAt(player);
+        // Update destination to players current position
+        agent.SetDestination(player.position);
 
-        float distance = Vector3.Distance(animator.gameObject.transform.position, player.position);
-
-        if (distance > stateController.attackStopDistance) {
-            animator.SetBool("isAttacking", false);
-        }
+        // Check if player has left the chase range or entered attack range
+        stateController.DidLeaveChaseRange();
+        stateController.DidEnterAttackRange();
     }
 }
