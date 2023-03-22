@@ -7,12 +7,14 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] GameOverScreenManager gameOverScreenManager;
     [SerializeField] GameObject damageFlashPanel;
     [SerializeField] HealthBar healthBar;
+    Rigidbody rb;
     [SerializeField] int playerMaxHealth = 100;
     [SerializeField] int playerHealth;
 
     void Start()
     {
         playerHealth = playerMaxHealth;
+        rb = GetComponent<Rigidbody>();
     }
 
     public void TakeDamage(int damage)
@@ -26,6 +28,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (playerHealth <= 0) {
             GetComponent<PlayerSoundEffects>().StopMovementSounds();
+            rb.velocity = new Vector3(0, 0, 0);
             gameOverScreenManager.GameOver();
         }
         else {

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     AudioSource audioSource;
-    [SerializeField] AudioClip backgroundMusic; // Music by <a href="https://pixabay.com/users/danydory-9903/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=141314">danydory</a> from <a href="https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=141314">Pixabay</a>
+    [SerializeField] AudioClip backgroundMusic; 
 
     private void Awake()
     {
@@ -18,5 +18,4 @@ public class MusicManager : MonoBehaviour
         audioSource.loop = true;
         audioSource.Play();
     }
-
 }

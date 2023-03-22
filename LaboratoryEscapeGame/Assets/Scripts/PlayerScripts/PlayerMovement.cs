@@ -118,6 +118,14 @@ public class PlayerMovement : MonoBehaviour
             staminaRegenState = true;
         }
         staminaBar.UpdateStamina(stamina/maxStamina);
+
+        // Play breathing sound
+        if (stamina < 100) {
+            playerSoundEffects.PlayOutOfBreathSound();
+        }
+        else if (stamina > 150) {
+            playerSoundEffects.StopOutOfBreathSound();
+        }
         
         // Clamp movement inputs if needed
         if (movementInputs.x + movementInputs.y > .7f) {
