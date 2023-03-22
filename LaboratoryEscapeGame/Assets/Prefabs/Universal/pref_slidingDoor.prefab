@@ -96,16 +96,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 925583103271488438}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cce428881e15dd44be91ae75f612885, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fff20325d114d5408bee618b0399609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isOpen: 0
-  isRotatingDoor: 0
-  speed: 1.5
+  isRotatingDoor: 1
+  speed: 1
+  startOpen: 0
   rotationAmount: 90
   forwardDirection: 0
-  slideDirection: {x: 0, y: 0, z: -1}
-  slideAmount: 2.1
+  slideDirection: {x: 0, y: 1, z: 0}
+  slideAmount: 2.6
   doorOpenClip: {fileID: 8300000, guid: 4ede11bb38de0e946aeff834efa544e3, type: 3}
   doorClosedClip: {fileID: 8300000, guid: 4ede11bb38de0e946aeff834efa544e3, type: 3}
 --- !u!114 &8673448770847983859
