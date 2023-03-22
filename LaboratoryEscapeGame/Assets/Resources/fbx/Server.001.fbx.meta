@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 484372080c2b9094d8c70c89c5740df6
+guid: dfcdf1d9854f53b43a99581a4013b5dc
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,28 +7,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: mat_Frame
-    second: {fileID: 2100000, guid: fc7e2f648226bb7479152aa715c4accf, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mat_Grid
+      name: LightEmMat.001
     second: {fileID: 2100000, guid: 1192cd840db0b75489a44659e59f08fe, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: mat_Symbol
+      name: ServerMat.002
+    second: {fileID: 2100000, guid: 883a61eade9034140af39837ecde2ea9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: emRedMat.002
+    second: {fileID: 2100000, guid: 1a3c672910fe64945bfc7a8afdf583c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mat_Symbol.001
     second: {fileID: 2100000, guid: 1192cd840db0b75489a44659e59f08fe, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: mat_cornerPieces
-    second: {fileID: 2100000, guid: 447b038c2e7c5c24c94217788bec2444, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: mat_pieces
-    second: {fileID: 2100000, guid: a9f2641e4946b01429afbd1d936fe482, type: 2}
+      name: mat_pieces.001
+    second: {fileID: 2100000, guid: 5cad8300da11b364285106fd940975a1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

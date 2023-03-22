@@ -13,5 +13,6 @@ public class Interactable : MonoBehaviour
     public void Interact()
     {
         interact.Invoke();
+        Debug.Log("Interacted");
     }
 }

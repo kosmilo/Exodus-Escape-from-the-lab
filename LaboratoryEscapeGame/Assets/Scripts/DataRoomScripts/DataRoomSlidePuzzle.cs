@@ -5,8 +5,9 @@ using UnityEngine;
 public class DataRoomSlidePuzzle : MonoBehaviour
 {
     GameObject[] slidingPieces = new GameObject[9];
-    [SerializeField] DataRoomPuzzleManager dataRoomPuzzleManager;
+    DataRoomPuzzleManager dataRoomPuzzleManager;
     public bool isCompleted = false;
+    [SerializeField] bool noShuffle;
 
     // Collect all sliding pieces to an array
     void Start()
@@ -14,8 +15,7 @@ public class DataRoomSlidePuzzle : MonoBehaviour
         dataRoomPuzzleManager = transform.parent.gameObject.GetComponent<DataRoomPuzzleManager>();
         for (int i = 0; i < slidingPieces.Length; i++)
         {
-            int piece = i + 2;
-            slidingPieces[i] = transform.GetChild(0).GetChild(piece).gameObject;
+            slidingPieces[i] = transform.GetChild(0).GetChild(i).gameObject;
         }
 
         Suffle();
@@ -24,14 +24,17 @@ public class DataRoomSlidePuzzle : MonoBehaviour
     // Change places of random pieces to suffle
     void Suffle()
     {
-        for (int i = 0; i < 10; i++)
+        if (!noShuffle)
         {
-            int randomIndex1 = Random.Range(0, slidingPieces.Length);
-            int randomIndex2 = Random.Range(0, slidingPieces.Length);
-            Vector3 rPosition1 = slidingPieces[randomIndex1].transform.position;
-            Vector3 rPosition2 = slidingPieces[randomIndex2].transform.position;
-            slidingPieces[randomIndex1].transform.position = rPosition2;
-            slidingPieces[randomIndex2].transform.position = rPosition1;
+            for (int i = 0; i < 10; i++)
+            {
+                int randomIndex1 = Random.Range(0, slidingPieces.Length);
+                int randomIndex2 = Random.Range(0, slidingPieces.Length);
+                Vector3 rPosition1 = slidingPieces[randomIndex1].transform.position;
+                Vector3 rPosition2 = slidingPieces[randomIndex2].transform.position;
+                slidingPieces[randomIndex1].transform.position = rPosition2;
+                slidingPieces[randomIndex2].transform.position = rPosition1;
+            }
         }
     }
 
