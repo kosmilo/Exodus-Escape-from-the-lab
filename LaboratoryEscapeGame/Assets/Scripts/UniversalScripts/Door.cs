@@ -19,7 +19,7 @@ public class Door : MonoBehaviour
     [SerializeField]
     private float rotationAmount = 90f;
     [SerializeField]
-    private float forwardDirection;
+    Vector3 turningDirection;
 
     [Header("Sliding Configs")]
     [SerializeField]
@@ -82,7 +82,7 @@ public class Door : MonoBehaviour
         // Change the direction the door opens based on the user's position relative to the door
         // For some reason the door still always opens in only one direction but that might be because the interaction raycast stuff isn't implemented yet
         
-        EndRotation = Quaternion.Euler(new Vector3(0, startRotation.y - rotationAmount, 0));
+        EndRotation = Quaternion.Euler(new Vector3(turningDirection.x, turningDirection.y, turningDirection.z + rotationAmount));
 
         isOpen = true;
 
@@ -183,6 +183,7 @@ public class Door : MonoBehaviour
         {
             Close();
         }
+        GetComponent<Interactable>().interactionText = isOpen ? "Close" : "Open";
     }
 
     /*
