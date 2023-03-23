@@ -32,8 +32,6 @@ public class Door : MonoBehaviour
 
     private Coroutine animationCoroutine;
 
-    GameObject player;
-
     AudioSource audioSource;
     [SerializeField] AudioClip doorOpenClip;
     [SerializeField] AudioClip doorClosedClip;
@@ -41,7 +39,6 @@ public class Door : MonoBehaviour
     private void Awake()
     {
         startRotation = transform.rotation.eulerAngles;
-        player = GameObject.FindGameObjectWithTag("Player");
         startPosition = transform.position;
         audioSource = GetComponent<AudioSource>();
         audioSource.loop = false;
@@ -183,7 +180,11 @@ public class Door : MonoBehaviour
         {
             Close();
         }
-        GetComponent<Interactable>().interactionText = isOpen ? "Close" : "Open";
+
+        if(GetComponent<Interactable>() != null)
+        {
+            GetComponent<Interactable>().interactionText = isOpen ? "Close" : "Open";
+        }
     }
 
     /*
