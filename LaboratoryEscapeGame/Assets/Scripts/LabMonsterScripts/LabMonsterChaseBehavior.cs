@@ -52,7 +52,5 @@ public class LabMonsterChaseBehavior : StateMachineBehaviour
         if (timer >= 4) {
             animator.SetBool("isChasing", false);
         }
-
-        Debug.Log("Timer: " + timer);
     }
 }
