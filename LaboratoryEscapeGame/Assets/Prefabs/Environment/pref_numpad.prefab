@@ -127,6 +127,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: 
 --- !u!65 &7707671850864613096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -267,6 +268,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: 
 --- !u!65 &231510828494562934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -407,6 +409,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: 
 --- !u!65 &7050982511650636605
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -547,6 +550,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: 
 --- !u!65 &4762820147032415292
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -571,6 +575,7 @@ GameObject:
   - component: {fileID: 4330000128748284410}
   - component: {fileID: 1280297850496250719}
   - component: {fileID: 9209366824455087408}
+  - component: {fileID: 811520184907226545}
   m_Layer: 0
   m_Name: Buttons
   m_TagString: Untagged
@@ -643,6 +648,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &811520184907226545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3406366408334918756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ac283e8ee034ad18a694a60be95f0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3513747374697980274
 GameObject:
   m_ObjectHideFlags: 0
@@ -770,6 +787,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: 
 --- !u!65 &2371802491107061299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -910,6 +928,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: 
 --- !u!65 &7911468894744197130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1148,6 +1167,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: 
 --- !u!65 &4654627962310041995
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1386,6 +1406,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: 
 --- !u!65 &2664460497747939630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1526,6 +1547,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: 
 --- !u!65 &3368799218298547076
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1666,6 +1688,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  interactionText: 
 --- !u!65 &6699070601267610232
 BoxCollider:
   m_ObjectHideFlags: 0
