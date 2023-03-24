@@ -14,6 +14,8 @@ public class Door : MonoBehaviour
     private bool isRotatingDoor = true;
     [SerializeField]
     private float speed = 1f;
+    [SerializeField]
+    bool startOpen;
 
     [Header("Rotation configs")]
     [SerializeField]
@@ -42,6 +44,15 @@ public class Door : MonoBehaviour
         startPosition = transform.position;
         audioSource = GetComponent<AudioSource>();
         audioSource.loop = false;
+    }
+
+    private void Start()
+    {
+
+        if (startOpen)
+        {
+            Open();
+        }
     }
 
     // Open the door if it currently isn't open

@@ -38,11 +38,9 @@ public class CellBars : MonoBehaviour
 
     private void Start()
     {
-
         if (startOpen)
         {
             Open();
-            Debug.Log("Should open");
         }
     }
 

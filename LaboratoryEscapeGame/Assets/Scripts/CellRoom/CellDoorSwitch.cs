@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CellDoorSwitch : MonoBehaviour
 {
-    [SerializeField] List<CellBars> baars = new List<CellBars>();
+    [SerializeField] List<CellBars> bars = new List<CellBars>();
     [SerializeField] List<Door> doors = new List<Door>();
 
     public void SwitchInteraction()
     {
-        foreach (CellBars b in baars)
+        foreach (CellBars b in bars)
         {
             b.DoorInteraction();
         }
