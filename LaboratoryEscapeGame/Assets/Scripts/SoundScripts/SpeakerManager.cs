@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class SpeakerManager : MonoBehaviour
 {
@@ -10,7 +12,22 @@ public class SpeakerManager : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
-        PlayAnnouncement();
+    }
+    
+    void OnEnable() {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    
+    void OnDisable() {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
+        Debug.Log("Listening");
+        if (SceneManager.GetActiveScene().buildIndex == 1) {
+            Debug.Log("Announcement");
+            PlayAnnouncement();
+        }
     }
 
     public void PlayAnnouncement() {

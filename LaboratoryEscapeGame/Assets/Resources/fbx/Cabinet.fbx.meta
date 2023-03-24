@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f5af68e3b1aafda4aa4cc5285aa182dc
+guid: 8f91177855c1a1c4fae571259a2509ff
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,13 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Tiles
-    second: {fileID: 2100000, guid: a6b0e8e618a9f9249aba9917aed0e159, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tiles.001
-    second: {fileID: 2100000, guid: a6b0e8e618a9f9249aba9917aed0e159, type: 2}
+      name: ServerRoomCabinet
+    second: {fileID: 2100000, guid: 2288ae950f7ea0041ac46261e2d3d792, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
