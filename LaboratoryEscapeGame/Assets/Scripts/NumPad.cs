@@ -15,6 +15,7 @@ public class NumPad : MonoBehaviour
     private int maxDigits = 4;
     [SerializeField]
     UnityEvent unlock;
+    private NumPadLights numPadLights;
 
     private void Awake()
     {
@@ -22,6 +23,8 @@ public class NumPad : MonoBehaviour
         digitsEntered = 0;
 
         buttons = this.GetComponentsInChildren<NumPadButton>().ToList();
+
+        numPadLights = GetComponentInChildren<NumPadLights>();
     }
 
     public void OnButtonPress(int buttonNumber)
@@ -33,6 +36,8 @@ public class NumPad : MonoBehaviour
         enteredCombination[digitsEntered] = buttonNumber;
         digitsEntered++;
 
+        numPadLights.PressLight();
+
         // Check if the max amount of digits have been entered
         if (digitsEntered == maxDigits)
         {
@@ -40,7 +45,6 @@ public class NumPad : MonoBehaviour
             if (enteredCombination.SequenceEqual(correctCombination))
             {
                 Unlock();
-
             }
             else
             {
@@ -50,12 +54,13 @@ public class NumPad : MonoBehaviour
         
     }
 
+
     public void ResetEnteredCode()
     {
         digitsEntered = 0;
         enteredCombination = new int[correctCombination.Length];
 
-        // Flash red light
+        numPadLights.IncorrectLight();
 
         Debug.Log("Incorrect code");
     }
@@ -67,6 +72,6 @@ public class NumPad : MonoBehaviour
 
         Debug.Log("Correct code");
 
-        // Flash green light
+        numPadLights.UnlockLight();
     }
 }
