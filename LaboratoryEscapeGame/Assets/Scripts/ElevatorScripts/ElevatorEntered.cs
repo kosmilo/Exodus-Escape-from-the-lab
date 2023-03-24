@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class ElevatorEntered : MonoBehaviour
 {
+    [SerializeField] GameObject elevator;
     [SerializeField] Animator elevatorDoorsAnimator;
     [SerializeField] UnityEvent gameWon;
     [SerializeField] Vector3 targetPos;
@@ -19,9 +20,9 @@ public class ElevatorEntered : MonoBehaviour
         yield return new WaitForSeconds(2f); // Wait a few seconds before starting
         gameWon.Invoke();
 
-        while (transform.parent.position != targetPos)
+        while (elevator.transform.position != targetPos)
         {
-            transform.parent.position = Vector3.MoveTowards(transform.parent.position, targetPos, moveSpeed * Time.deltaTime);
+            elevator.transform.position = Vector3.MoveTowards(elevator.transform.position, targetPos, moveSpeed * Time.deltaTime);
             yield return 0; // continue on next frame
         }
 
