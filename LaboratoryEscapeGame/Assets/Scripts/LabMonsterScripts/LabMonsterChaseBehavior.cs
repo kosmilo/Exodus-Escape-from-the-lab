@@ -29,7 +29,10 @@ public class LabMonsterChaseBehavior : StateMachineBehaviour
 
         // Check if player has left the chase range or entered attack range
         stateController.DidLeaveChaseRange();
-        stateController.DidEnterAttackRange();
+
+        if (!animator.GetBool("isAttacking")) {
+            stateController.DidEnterAttackRange();
+        }
 
         // Check with two raycasts if enemy can see the player
         bool playerInSight;
