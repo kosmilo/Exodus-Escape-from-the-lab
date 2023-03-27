@@ -24,24 +24,23 @@ public class ElevatorFuseBox : MonoBehaviour
     public void AddParts() {
 
         // CHECK IF HAS MECHANICAL PARTS SELECTED
-        // 
-        //
+        if (FindObjectOfType<Inventory>().CheckForItem(12) != null) {
 
-        // Disable broken wires
-        extras.SetActive(false);
+            FindObjectOfType<Inventory>().RemoveItem(12);
 
-        // Set one of the mechanical parts models active and increment counter by one
-        mechanicalPartModels[mechanicalPartsCounter].SetActive(true);
+            // Set one of the mechanical parts models active and increment counter by one
+            mechanicalPartModels[mechanicalPartsCounter].SetActive(true);
 
-        // Change light to green
-        
-        var materialsCopy = lights[mechanicalPartsCounter].GetComponent<MeshRenderer>().materials;
-        materialsCopy[1] = emGreen;
-        lights[mechanicalPartsCounter].GetComponent<MeshRenderer>().materials = materialsCopy;
-        mechanicalPartsCounter++;
+            // Change light to green
+            
+            var materialsCopy = lights[mechanicalPartsCounter].GetComponent<MeshRenderer>().materials;
+            materialsCopy[1] = emGreen;
+            lights[mechanicalPartsCounter].GetComponent<MeshRenderer>().materials = materialsCopy;
+            mechanicalPartsCounter++;
 
-        if (mechanicalPartsCounter == 3) {
-            elevatorFixed.Invoke();
+            if (mechanicalPartsCounter == 3) {
+                elevatorFixed.Invoke();
+            }
         }
     }
 }
