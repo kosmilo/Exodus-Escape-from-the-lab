@@ -8,26 +8,19 @@ using UnityEditor;
 
 public class Door : MonoBehaviour
 {
-    [SerializeField]
-    private bool isOpen = false;
-    [SerializeField]
-    private bool isRotatingDoor = true;
-    [SerializeField]
-    private float speed = 1f;
-    [SerializeField]
-    bool startOpen;
+    [SerializeField] private bool isOpen = false;
+    [SerializeField] public bool isLocked = false;
+    [SerializeField] private bool isRotatingDoor = true;
+    [SerializeField] private float speed = 1f;
+    [SerializeField] bool startOpen;
 
     [Header("Rotation configs")]
-    [SerializeField]
-    private float rotationAmount = 90f;
-    [SerializeField]
-    Vector3 turningDirection;
+    [SerializeField] private float rotationAmount = 90f;
+    [SerializeField] Vector3 turningDirection;
 
     [Header("Sliding Configs")]
-    [SerializeField]
-    private Vector3 slideDirection = Vector3.back;
-    [SerializeField]
-    private float slideAmount = 2.6f;
+    [SerializeField] private Vector3 slideDirection = Vector3.back;
+    [SerializeField] private float slideAmount = 2.6f;
 
     private Vector3 startRotation;
     private Vector3 startPosition;
@@ -183,19 +176,25 @@ public class Door : MonoBehaviour
     public void DoorInteraction()
     {
         Debug.Log("Interact with the door");
-        if(!isOpen)
-        {
-            Open();
-        }
-        else if(isOpen)
-        {
-            Close();
-        }
+            if (!isLocked) {
+            if(!isOpen)
+            {
+                Open();
+            }
+            else if(isOpen)
+            {
+                Close();
+            }
 
-        if(GetComponent<Interactable>() != null)
-        {
-            GetComponent<Interactable>().interactionText = isOpen ? "Close" : "Open";
+            if(GetComponent<Interactable>() != null)
+            {
+                GetComponent<Interactable>().interactionText = isOpen ? "Close" : "Open";
+            }
         }
+    }
+
+    public void UnlockDoor() {
+        isLocked = false;
     }
 
     /*
