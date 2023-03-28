@@ -6,18 +6,18 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public List<Item> characterItems = new List<Item>();
+    [SerializeField] List<GameObject> itemPrefs = new List<GameObject>();
     public ItemDatabase itemDatabase;
     public UIInventory inventoryUI;
 
     private void Start()
     {
-        GiveItem(0);
+        GiveItem(1);
         GiveItem(2);
         GiveItem(2);
-        GiveItem(0);
-        GiveItem(0);
-        GiveItem(4);
-        GiveItem(6);
+        GiveItem(11);
+        GiveItem(11);
+        GiveItem(11);
     }
 
     public bool GiveItem(int id) // give the player an item by id (return bool to know if item game object should be restroyed)
@@ -80,5 +80,13 @@ public class Inventory : MonoBehaviour
             inventoryUI.RemoveItem(itemToRemove);
             Debug.Log("Removed item: " + itemToRemove.title);
         }
+    }
+
+    public void DropItemObject(int id) {
+        Vector3 instansiationPos = transform.position + transform.forward * 2;
+        instansiationPos.y = transform.position.y + 0.4f;
+        Instantiate(itemPrefs[id], instansiationPos, Quaternion.identity);
+        Debug.Log("Dropped item " + id);
+        RemoveItem(id);
     }
 }

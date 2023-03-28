@@ -110,7 +110,7 @@ public class UIInventory : MonoBehaviour
         {
             if (uIItems[i].active == true && uIItems[i].item != null)
             {
-                inventory.RemoveItem(uIItems[i].item.id);
+                inventory.DropItemObject(uIItems[i].item.id);
                 Debug.Log("Dropped item");
             }
         }

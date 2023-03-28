@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class ElevatorFuseBox : MonoBehaviour
 {
     [SerializeField] int mechanicalPartsCounter;
+    [SerializeField] int machinePartItemId = 11;
     [SerializeField] GameObject extras;
     [SerializeField] GameObject[] mechanicalPartModels;
     [SerializeField] GameObject[] lights;
@@ -24,24 +25,23 @@ public class ElevatorFuseBox : MonoBehaviour
     public void AddParts() {
 
         // CHECK IF HAS MECHANICAL PARTS SELECTED
-        // 
-        //
+        if (FindObjectOfType<Inventory>().CheckForItem(machinePartItemId) != null) {
 
-        // Disable broken wires
-        extras.SetActive(false);
+            FindObjectOfType<Inventory>().RemoveItem(machinePartItemId);
 
-        // Set one of the mechanical parts models active and increment counter by one
-        mechanicalPartModels[mechanicalPartsCounter].SetActive(true);
+            // Set one of the mechanical parts models active and increment counter by one
+            mechanicalPartModels[mechanicalPartsCounter].SetActive(true);
 
-        // Change light to green
-        
-        var materialsCopy = lights[mechanicalPartsCounter].GetComponent<MeshRenderer>().materials;
-        materialsCopy[1] = emGreen;
-        lights[mechanicalPartsCounter].GetComponent<MeshRenderer>().materials = materialsCopy;
-        mechanicalPartsCounter++;
+            // Change light to green
+            
+            var materialsCopy = lights[mechanicalPartsCounter].GetComponent<MeshRenderer>().materials;
+            materialsCopy[1] = emGreen;
+            lights[mechanicalPartsCounter].GetComponent<MeshRenderer>().materials = materialsCopy;
+            mechanicalPartsCounter++;
 
-        if (mechanicalPartsCounter == 3) {
-            elevatorFixed.Invoke();
+            if (mechanicalPartsCounter == 3) {
+                elevatorFixed.Invoke();
+            }
         }
     }
 }
