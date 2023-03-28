@@ -1,11 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 public class CellDoorSwitch : MonoBehaviour
 {
     [SerializeField] List<CellBars> bars = new List<CellBars>();
     [SerializeField] List<Door> doors = new List<Door>();
+
+    Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public void SwitchInteraction()
     {
@@ -17,6 +25,8 @@ public class CellDoorSwitch : MonoBehaviour
         {
             d.DoorInteraction();
         }
+
+        animator.SetBool("Pulled", !animator.GetBool("Pulled"));
     }
 }
 
