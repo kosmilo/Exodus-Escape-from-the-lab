@@ -6,6 +6,7 @@ using UnityEngine.Events;
 public class ElevatorFuseBox : MonoBehaviour
 {
     [SerializeField] int mechanicalPartsCounter;
+    [SerializeField] int machinePartItemId = 11;
     [SerializeField] GameObject extras;
     [SerializeField] GameObject[] mechanicalPartModels;
     [SerializeField] GameObject[] lights;
@@ -24,9 +25,9 @@ public class ElevatorFuseBox : MonoBehaviour
     public void AddParts() {
 
         // CHECK IF HAS MECHANICAL PARTS SELECTED
-        if (FindObjectOfType<Inventory>().CheckForItem(12) != null) {
+        if (FindObjectOfType<Inventory>().CheckForItem(machinePartItemId) != null) {
 
-            FindObjectOfType<Inventory>().RemoveItem(12);
+            FindObjectOfType<Inventory>().RemoveItem(machinePartItemId);
 
             // Set one of the mechanical parts models active and increment counter by one
             mechanicalPartModels[mechanicalPartsCounter].SetActive(true);
