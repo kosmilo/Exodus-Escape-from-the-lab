@@ -214,7 +214,8 @@ MonoBehaviour:
   isOpen: 0
   isRotatingDoor: 1
   speed: 1
-  rotationAmount: 110
+  startOpen: 0
+  rotationAmount: -110
   turningDirection: {x: 0, y: 0, z: 0}
   slideDirection: {x: 90, y: 0, z: -1}
   slideAmount: 2.6

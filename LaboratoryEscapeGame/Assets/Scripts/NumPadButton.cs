@@ -12,7 +12,7 @@ public class NumPadButton : MonoBehaviour
     private void Awake()
     {
         number = int.Parse(this.gameObject.name);
-        numpad = FindObjectOfType<NumPad>();
+        numpad = transform.parent.GetComponent<NumPad>();
     }
 
     public void ButtonPress()

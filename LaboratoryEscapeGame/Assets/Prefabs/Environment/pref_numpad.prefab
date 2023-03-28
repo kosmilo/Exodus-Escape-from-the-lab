@@ -127,7 +127,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactionText: 
+  interactionText: Press
 --- !u!65 &7707671850864613096
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -268,7 +268,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactionText: 
+  interactionText: Press
 --- !u!65 &231510828494562934
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -409,7 +409,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactionText: 
+  interactionText: Press
 --- !u!65 &7050982511650636605
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -550,7 +550,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactionText: 
+  interactionText: Press
 --- !u!65 &4762820147032415292
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -787,7 +787,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactionText: 
+  interactionText: Press
 --- !u!65 &2371802491107061299
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -928,7 +928,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactionText: 
+  interactionText: Press
 --- !u!65 &7911468894744197130
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1167,7 +1167,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactionText: 
+  interactionText: Press
 --- !u!65 &4654627962310041995
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1406,7 +1406,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactionText: 
+  interactionText: Press
 --- !u!65 &2664460497747939630
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1547,7 +1547,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactionText: 
+  interactionText: Press
 --- !u!65 &3368799218298547076
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1688,7 +1688,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  interactionText: 
+  interactionText: Press
 --- !u!65 &6699070601267610232
 BoxCollider:
   m_ObjectHideFlags: 0
