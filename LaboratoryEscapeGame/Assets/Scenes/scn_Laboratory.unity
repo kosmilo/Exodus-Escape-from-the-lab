@@ -61928,7 +61928,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterItems: []
-  itemPrefs: []
+  itemPrefs:
+  - {fileID: 5571014585689962232, guid: 215bfebad9f3881499f851b41ff78ac4, type: 3}
+  - {fileID: 5561565763228285287, guid: acba279ed92536a44b8a5a5cc42bdf18, type: 3}
+  - {fileID: 895580825876164551, guid: e5e82537198d5674494f4e2bb0bd0091, type: 3}
+  - {fileID: 7783898734051150159, guid: ae1ede12e50c07b488a61a49693e7359, type: 3}
+  - {fileID: 5830350094035742541, guid: fe7853302349bde40860635a25abad06, type: 3}
+  - {fileID: 1371877880647168782, guid: 7eeae74c456469c429b0fdbb5abe7a15, type: 3}
+  - {fileID: 4195583494313724601, guid: 752cf0477bc8d6c47822b895bf6cffd6, type: 3}
+  - {fileID: 5247384722684916503, guid: 836648c0a23cc694d9d2a0b6c01e2ed7, type: 3}
+  - {fileID: 0}
+  - {fileID: 7279817253007214709, guid: 2e94e7e29f95f8e43af94408cced475e, type: 3}
+  - {fileID: 2562172155412134862, guid: 5c5baccf6067b3646a2826d27f580e93, type: 3}
+  - {fileID: 0}
   itemDatabase: {fileID: 1129839264}
   inventoryUI: {fileID: 1779597751}
 --- !u!114 &2079759131 stripped
