@@ -135,24 +135,37 @@ public class LabMonsterController : MonoBehaviour
         animator.SetBool("isStunned", false);
     }
 
+    // Might have to be fixed idk how this works
+    public void StunEnemyFor(float stunTime)
+    {
+        animator.SetBool("isAttacking", false);
+        animator.SetBool("isStunned", true);
+        agent.speed = 0;
+        Invoke("StopStunReset", stunTime);
+    }
+
     // Change enemy speed multiplier to create a slow effect
     public void SlowEnemy(float newSpeedMultiplier, float slowTime)
     {
         // Reset speed instantly before applying the new speed modifier
         if (agent.speed != 0) { agent.speed = agent.speed / speedMultiplier; }
         speedMultiplier = newSpeedMultiplier;
-        agent.speed = agent.speed * speedMultiplier;
-        CancelInvoke("ResetSpeed");
+        agent.speed = agent.speed / speedMultiplier;
+        // CancelInvoke("ResetSpeed");
 
         Invoke("ResetSpeed", slowTime);
+        Debug.Log("Invoked reset enemy speed");
     }
 
     // Invoke to set speed back to normal when slow effect ends
-    void ResetSpeed() { 
-        if (agent.speed != 0) { agent.speed = agent.speed / speedMultiplier; }
-        speedMultiplier = 1f; 
+    void ResetSpeed()
+    {
+        Debug.Log("Reset enemy speed");
+        speedMultiplier = 1f;
+        if (agent.speed != 0) { agent.speed = agent.speed / speedMultiplier; Debug.Log("Set enemy speed to normal"); }
+        StateChase();
     }
-    
+
     // Draw ranges and rays on editor
     private void OnDrawGizmos()
     {

@@ -51820,6 +51820,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 822dd285c30e45a4a8f98b90e1d7c0ca, type: 3}
+--- !u!20 &1669238066 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8402582663173738181, guid: ff6e6d67c017e3543b863284876d69f3, type: 3}
+  m_PrefabInstance: {fileID: 1120113883}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1669518653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56380,6 +56385,7 @@ MonoBehaviour:
   activeSlot: {fileID: 21300000, guid: 8d4b7864b4ed5c244a504588e2e30668, type: 3}
   slotPrefab: {fileID: 1434962022857453263, guid: a55111e2c49bd874fbd4f5b35fe236bf, type: 3}
   slotPanel: {fileID: 834986105}
+  activeItem: {fileID: 0}
   numberOfSlots: 8
   slotKeys: 3100000032000000330000003400000035000000360000003700000038000000
 --- !u!114 &1779597752
@@ -66289,6 +66295,8 @@ MonoBehaviour:
   - {fileID: 888331864231318087, guid: 27d3d34b6a7494442bd55a69cf4843b5, type: 3}
   itemDatabase: {fileID: 1129839264}
   inventoryUI: {fileID: 1779597751}
+  playerHealth: {fileID: 2079759138}
+  cam: {fileID: 1669238066}
 --- !u!114 &2079759131 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7330982306161532561, guid: ff6e6d67c017e3543b863284876d69f3, type: 3}
@@ -66309,6 +66317,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 884d7d6d46f343e4387d1bbb0f426b86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2079759138 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4280438402146064448, guid: ff6e6d67c017e3543b863284876d69f3, type: 3}
+  m_PrefabInstance: {fileID: 1120113883}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002004082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1b93552a35f2f84483b1a72e47bbd03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &2080814751

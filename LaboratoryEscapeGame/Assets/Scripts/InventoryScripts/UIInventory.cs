@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class UIInventory : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class UIInventory : MonoBehaviour
     public Sprite activeSlot;
     public GameObject slotPrefab;
     public Transform slotPanel;
+    public UIItem activeItem;
     public int numberOfSlots = 8;
     public KeyCode[] slotKeys = new KeyCode[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7, KeyCode.Alpha8 };
 
@@ -18,9 +20,9 @@ public class UIInventory : MonoBehaviour
     {
         // Check if any of the number keys are pressed
         for (int i = 0; i < slotKeys.Length; i++)
-        { 
+        {
             // Activate inventory slot if a key is pressed
-            if (Input.GetKeyDown(slotKeys[i])) { ActivateOneSlot(i); }   
+            if (Input.GetKeyDown(slotKeys[i])) { ActivateOneSlot(i); }
         }
 
         if (Input.GetKeyDown(KeyCode.Q))
@@ -28,11 +30,13 @@ public class UIInventory : MonoBehaviour
             DropItem();
         }
 
-        // If player clicks with mouse inactivate all the inventory slots
-        if (Input.GetMouseButtonDown(0)) {
-            for (int i = 0; i < slotKeys.Length; i++)
-            { 
-                uIItems[i].ChangeSlotType(inactiveSlot, false);
+        // If player clicks use currently activated item
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (activeItem != null && activeItem.item != null && activeItem.active)
+            {
+                Debug.Log("Attempted to use item" + activeItem);
+                inventory.ItemUsage(activeItem.item.id);
             }
         }
     }
@@ -40,7 +44,7 @@ public class UIInventory : MonoBehaviour
 
     public void UpdateSlot(int slot, Item item)
     {
-            uIItems[slot].UpdateItem(item);        
+        uIItems[slot].UpdateItem(item);
     }
 
     // Activate slot
@@ -48,6 +52,7 @@ public class UIInventory : MonoBehaviour
     {
         // Activate (or deactivate if already activate) selected slot
         uIItems[slot].ChangeSlotType((!(uIItems[slot].active) ? activeSlot : inactiveSlot), !(uIItems[slot].active));
+        activeItem = uIItems[slot];
 
         // Deactivate all other slots
         for (int i = 0; i < uIItems.Count; i++)
@@ -85,10 +90,10 @@ public class UIInventory : MonoBehaviour
 
     public void RemoveItem(Item item)
     {
-        
-        foreach(UIItem u in uIItems)
+
+        foreach (UIItem u in uIItems)
         {
-            if(u.item == item)
+            if (u.item == item)
             {
                 u.UpdateCount(-1);
                 Debug.Log("Removed count");
@@ -98,8 +103,6 @@ public class UIInventory : MonoBehaviour
                     // uIItems.Remove(u);
                     Debug.Log("Removed " + u);
                 }
-                
-                
             }
         }
     }
