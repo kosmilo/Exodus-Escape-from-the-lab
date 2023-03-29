@@ -12,10 +12,8 @@ public class ElevatorEntered : MonoBehaviour
     [SerializeField] float moveSpeed;
 
     void OnTriggerEnter(Collider col) {
-        if (col.gameObject.tag == "Player") {
-            elevatorDoorsAnimator.Play("Close"); // Close the elevator doors
-            StartCoroutine(MoveElevator()); 
-        }
+        elevatorDoorsAnimator.Play("Close"); // Close the elevator doors
+        StartCoroutine(MoveElevator()); 
     }
 
     IEnumerator MoveElevator() {
