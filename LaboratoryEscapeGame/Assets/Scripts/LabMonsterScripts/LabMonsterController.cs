@@ -102,8 +102,24 @@ public class LabMonsterController : MonoBehaviour
     }
 
     public void DidLeaveAttackRange() {
+
         float distance = Vector3.Distance(transform.position, player.position);
-        animator.SetBool("isAttacking", distance < attackStopDistance);
+
+        // Check with two raycasts if enemy can see the player
+        bool playerInSight;
+
+        if (distance < chaseDistance)
+        {
+            Ray ray_1 = new Ray(transform.position + new Vector3(0, 1f, 0), (player.position + new Vector3(0, 1f, 0)) - (transform.position + new Vector3(0, 1f, 0)));
+            Physics.Raycast(ray_1, out RaycastHit hit_1);
+            Ray ray_2 = new Ray(transform.position + new Vector3(0, 1.6f, 0), (player.position + new Vector3(0, 1.6f, 0)) - (transform.position + new Vector3(0, 1.6f, 0)));
+            Physics.Raycast(ray_2, out RaycastHit hit_2);
+
+            playerInSight = hit_1.collider.gameObject.CompareTag("Player") || hit_2.collider.gameObject.CompareTag("Player");
+        }
+        else { playerInSight = false; }
+
+        animator.SetBool("isAttacking", distance < attackStopDistance && playerInSight);
     }
 
     // Set state to stun
@@ -112,16 +128,6 @@ public class LabMonsterController : MonoBehaviour
         animator.SetBool("isStunned", true);
         agent.speed = 0;
         Invoke("StopStunReset", 0.05f);
-    }
-
-
-    // Might have to be fixed idk how this works
-    public void StunEnemyFor(float stunTime)
-    {
-        animator.SetBool("isAttacking", false);
-        animator.SetBool("isStunned", true);
-        agent.speed = 0;
-        Invoke("StopStunReset", stunTime);
     }
 
     // Invoke to stop stun state from resetting
@@ -135,19 +141,16 @@ public class LabMonsterController : MonoBehaviour
         // Reset speed instantly before applying the new speed modifier
         if (agent.speed != 0) { agent.speed = agent.speed / speedMultiplier; }
         speedMultiplier = newSpeedMultiplier;
-        agent.speed = agent.speed / speedMultiplier;
-        // CancelInvoke("ResetSpeed");
+        agent.speed = agent.speed * speedMultiplier;
+        CancelInvoke("ResetSpeed");
 
         Invoke("ResetSpeed", slowTime);
-        Debug.Log("Invoked reset enemy speed");
     }
 
     // Invoke to set speed back to normal when slow effect ends
-    void ResetSpeed() {
-        Debug.Log("Reset enemy speed");
-        speedMultiplier = 1f;
-        if (agent.speed != 0) { agent.speed = agent.speed / speedMultiplier; Debug.Log("Set enemy speed to normal");  }
-        StateChase();
+    void ResetSpeed() { 
+        if (agent.speed != 0) { agent.speed = agent.speed / speedMultiplier; }
+        speedMultiplier = 1f; 
     }
     
     // Draw ranges and rays on editor
