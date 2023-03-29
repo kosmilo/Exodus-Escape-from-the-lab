@@ -149,8 +149,8 @@ public class LabMonsterController : MonoBehaviour
     {
         // Reset speed instantly before applying the new speed modifier
         if (agent.speed != 0) { agent.speed = agent.speed / speedMultiplier; }
-        speedMultiplier = newSpeedMultiplier;
-        agent.speed = agent.speed / speedMultiplier;
+        speedMultiplier = 1/newSpeedMultiplier;
+        agent.speed = agent.speed * speedMultiplier;
         // CancelInvoke("ResetSpeed");
 
         Invoke("ResetSpeed", slowTime);
