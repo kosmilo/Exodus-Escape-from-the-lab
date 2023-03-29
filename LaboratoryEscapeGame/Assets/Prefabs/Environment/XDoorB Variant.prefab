@@ -242,32 +242,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOpen: 0
+  isLocked: 0
   isRotatingDoor: 0
   speed: 1
+  startOpen: 0
   rotationAmount: 90
   turningDirection: {x: 0, y: 0, z: 0}
   slideDirection: {x: -1, y: 0, z: 0}
   slideAmount: 1.4
   doorOpenClip: {fileID: 0}
   doorClosedClip: {fileID: 0}
---- !u!114 &3911427274674198269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6943957436363690393}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fff20325d114d5408bee618b0399609, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOpen: 0
-  isRotatingDoor: 1
-  speed: 1
-  rotationAmount: 90
-  turningDirection: {x: 0, y: 0, z: 0}
-  slideDirection: {x: 1, y: 0, z: 0}
-  slideAmount: 1.4
-  doorOpenClip: {fileID: 8300000, guid: 4ede11bb38de0e946aeff834efa544e3, type: 3}
-  doorClosedClip: {fileID: 8300000, guid: 4ede11bb38de0e946aeff834efa544e3, type: 3}

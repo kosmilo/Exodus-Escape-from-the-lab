@@ -240,8 +240,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOpen: 0
+  isLocked: 0
   isRotatingDoor: 1
   speed: 1
+  startOpen: 0
   rotationAmount: 110
   turningDirection: {x: 90, y: 0, z: 0}
   slideDirection: {x: 0, y: 0, z: -1}

@@ -102,8 +102,24 @@ public class LabMonsterController : MonoBehaviour
     }
 
     public void DidLeaveAttackRange() {
+
         float distance = Vector3.Distance(transform.position, player.position);
-        animator.SetBool("isAttacking", distance < attackStopDistance);
+
+        // Check with two raycasts if enemy can see the player
+        bool playerInSight;
+
+        if (distance < chaseDistance)
+        {
+            Ray ray_1 = new Ray(transform.position + new Vector3(0, 1f, 0), (player.position + new Vector3(0, 1f, 0)) - (transform.position + new Vector3(0, 1f, 0)));
+            Physics.Raycast(ray_1, out RaycastHit hit_1);
+            Ray ray_2 = new Ray(transform.position + new Vector3(0, 1.6f, 0), (player.position + new Vector3(0, 1.6f, 0)) - (transform.position + new Vector3(0, 1.6f, 0)));
+            Physics.Raycast(ray_2, out RaycastHit hit_2);
+
+            playerInSight = hit_1.collider.gameObject.CompareTag("Player") || hit_2.collider.gameObject.CompareTag("Player");
+        }
+        else { playerInSight = false; }
+
+        animator.SetBool("isAttacking", distance < attackStopDistance && playerInSight);
     }
 
     // Set state to stun

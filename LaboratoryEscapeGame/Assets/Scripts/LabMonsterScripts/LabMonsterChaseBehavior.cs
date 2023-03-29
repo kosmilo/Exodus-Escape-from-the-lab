@@ -50,9 +50,10 @@ public class LabMonsterChaseBehavior : StateMachineBehaviour
         else {
             timer += Time.deltaTime;
         }
+        Debug.Log(timer);
 
         // Stop chasing when enemy hasn't seen player in 6 seconds
-        if (timer >= 4) {
+        if (timer >= 12) {
             animator.SetBool("isChasing", false);
         }
     }
