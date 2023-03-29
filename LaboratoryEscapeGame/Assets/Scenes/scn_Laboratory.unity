@@ -47866,16 +47866,48 @@ PrefabInstance:
     m_TransformParent: {fileID: 1012662012}
     m_Modifications:
     - target: {fileID: 152972475, guid: 4b2b4f217768e1242baabc8da7ba94d4, type: 3}
+      propertyPath: interact.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 152972475, guid: 4b2b4f217768e1242baabc8da7ba94d4, type: 3}
+      propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 152972475, guid: 4b2b4f217768e1242baabc8da7ba94d4, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1557144456}
+    - target: {fileID: 152972475, guid: 4b2b4f217768e1242baabc8da7ba94d4, type: 3}
+      propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1557144455}
+    - target: {fileID: 152972475, guid: 4b2b4f217768e1242baabc8da7ba94d4, type: 3}
+      propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 152972475, guid: 4b2b4f217768e1242baabc8da7ba94d4, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LockInteraction
       objectReference: {fileID: 0}
     - target: {fileID: 152972475, guid: 4b2b4f217768e1242baabc8da7ba94d4, type: 3}
+      propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DoorInteraction
+      objectReference: {fileID: 0}
+    - target: {fileID: 152972475, guid: 4b2b4f217768e1242baabc8da7ba94d4, type: 3}
       propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Lock, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 152972475, guid: 4b2b4f217768e1242baabc8da7ba94d4, type: 3}
+      propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Door, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 152972475, guid: 4b2b4f217768e1242baabc8da7ba94d4, type: 3}
+      propertyPath: interact.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 152972476, guid: 4b2b4f217768e1242baabc8da7ba94d4, type: 3}
+      propertyPath: isLocked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7112029535636699681, guid: 4b2b4f217768e1242baabc8da7ba94d4, type: 3}
       propertyPath: m_RootOrder
@@ -47966,7 +47998,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1557144455}
         m_TargetAssemblyTypeName: Door, Assembly-CSharp
-        m_MethodName: DoorInteraction
+        m_MethodName: UnlockDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1557144455}
+        m_TargetAssemblyTypeName: Door, Assembly-CSharp
+        m_MethodName: Open
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -60830,6 +60874,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1935497703}
     m_Modifications:
+    - target: {fileID: 222584996365858656, guid: ceed1596f3a8a6146873a3ffa6775ade, type: 3}
+      propertyPath: startOpen
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 222584996365858656, guid: ceed1596f3a8a6146873a3ffa6775ade, type: 3}
+      propertyPath: turningDirection.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 222584996365858656, guid: ceed1596f3a8a6146873a3ffa6775ade, type: 3}
+      propertyPath: turningDirection.z
+      value: -90
+      objectReference: {fileID: 0}
     - target: {fileID: 410253706391866212, guid: ceed1596f3a8a6146873a3ffa6775ade, type: 3}
       propertyPath: m_LocalScale.z
       value: 4
@@ -60845,6 +60901,18 @@ PrefabInstance:
     - target: {fileID: 410253706391866212, guid: ceed1596f3a8a6146873a3ffa6775ade, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1.4999974
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795636775985380684, guid: ceed1596f3a8a6146873a3ffa6775ade, type: 3}
+      propertyPath: turningDirection.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795636775985380684, guid: ceed1596f3a8a6146873a3ffa6775ade, type: 3}
+      propertyPath: turningDirection.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1795636775985380684, guid: ceed1596f3a8a6146873a3ffa6775ade, type: 3}
+      propertyPath: turningDirection.z
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 4464441805437687179, guid: ceed1596f3a8a6146873a3ffa6775ade, type: 3}
       propertyPath: m_RootOrder
