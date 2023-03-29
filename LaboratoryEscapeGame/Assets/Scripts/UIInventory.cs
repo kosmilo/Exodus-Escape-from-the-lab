@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class UIInventory : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class UIInventory : MonoBehaviour
     public Sprite activeSlot;
     public GameObject slotPrefab;
     public Transform slotPanel;
+    public UIItem activeItem;
     public int numberOfSlots = 8;
     public KeyCode[] slotKeys = new KeyCode[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7, KeyCode.Alpha8 };
 
@@ -28,11 +30,13 @@ public class UIInventory : MonoBehaviour
             DropItem();
         }
 
-        // If player clicks with mouse inactivate all the inventory slots
-        if (Input.GetMouseButtonDown(0)) {
-            for (int i = 0; i < slotKeys.Length; i++)
-            { 
-                uIItems[i].ChangeSlotType(inactiveSlot, false);
+        // If player clicks use currently activated item
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (activeItem != null && activeItem.item != null && activeItem.active)
+            {
+                Debug.Log("Attempted to use item" + activeItem);
+                inventory.ItemUsage(activeItem.item.id);
             }
         }
     }
@@ -48,6 +52,7 @@ public class UIInventory : MonoBehaviour
     {
         // Activate (or deactivate if already activate) selected slot
         uIItems[slot].ChangeSlotType((!(uIItems[slot].active) ? activeSlot : inactiveSlot), !(uIItems[slot].active));
+        activeItem = uIItems[slot];
 
         // Deactivate all other slots
         for (int i = 0; i < uIItems.Count; i++)
@@ -98,8 +103,6 @@ public class UIInventory : MonoBehaviour
                     // uIItems.Remove(u);
                     Debug.Log("Removed " + u);
                 }
-                
-                
             }
         }
     }
