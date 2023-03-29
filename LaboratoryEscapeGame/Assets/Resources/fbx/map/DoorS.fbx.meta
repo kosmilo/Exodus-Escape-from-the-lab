@@ -8,7 +8,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: DoorFrameMat
-    second: {fileID: 2100000, guid: f02105a6aed7d6f4785ec5f7f045cc29, type: 2}
+    second: {fileID: 2100000, guid: 3eece335a30151c47b9c6bd878786b84, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlassMat
+    second: {fileID: 2100000, guid: 5fc8531c7619a814598fb71bff8bb1dd, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

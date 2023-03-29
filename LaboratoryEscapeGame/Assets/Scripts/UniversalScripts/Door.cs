@@ -46,6 +46,10 @@ public class Door : MonoBehaviour
         {
             Open();
         }
+
+        if (isLocked) {
+            GetComponent<Interactable>().interactionText = "Locked";
+        }
     }
 
     // Open the door if it currently isn't open
