@@ -5,8 +5,12 @@ using UnityEngine;
 public class PlayerInteractor : MonoBehaviour
 {
     [SerializeField] Camera cam;
-    [SerializeField] InteractionIndicator interactionIndicator;
+    [SerializeField] InteractionIndicator intIndicator;
     RaycastHit hit;
+
+    void Awake() {
+        intIndicator = FindObjectOfType<InteractionIndicator>();
+    }
 
     void Update()
     {
@@ -17,16 +21,16 @@ public class PlayerInteractor : MonoBehaviour
             if (hit.collider.gameObject.GetComponent<Interactable>() != null)
             {
                 string text = hit.collider.gameObject.GetComponent<Interactable>().interactionText;
-                interactionIndicator.UpdateIndicator(text);
+                intIndicator.UpdateIndicator(text);
                 if (Input.GetMouseButtonDown(0)) {
                     hit.collider.gameObject.GetComponent<Interactable>().Interact();
                 }
             }
             else {
-                interactionIndicator.UpdateIndicator(" ");
+                intIndicator.UpdateIndicator(" ");
             }
         } else {
-            interactionIndicator.UpdateIndicator(" ");
+            intIndicator.UpdateIndicator(" ");
         }
     }
 }

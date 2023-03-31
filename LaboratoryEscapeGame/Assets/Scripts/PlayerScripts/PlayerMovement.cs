@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     Rigidbody rb;
-    GameObject cameraObj;
+    [SerializeField] GameObject cameraObj;
     PlayerSoundEffects playerSoundEffects;
     [SerializeField] StaminaBar staminaBar;
 
@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     float staminaDrain = 1f;
     float staminaRegen = 0.2f;
 
-    bool allowedToMove = true;
+    public bool allowedToMove = false;
 
     void Start()
     {
@@ -36,7 +36,6 @@ public class PlayerMovement : MonoBehaviour
         // Get references to components
         rb = GetComponent<Rigidbody>();
         playerSoundEffects = GetComponent<PlayerSoundEffects>();
-        cameraObj = transform.GetChild(0).gameObject;
 
         // Set stamina
         stamina = maxStamina;
