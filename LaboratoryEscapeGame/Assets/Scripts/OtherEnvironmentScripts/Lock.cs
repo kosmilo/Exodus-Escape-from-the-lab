@@ -15,6 +15,8 @@ public class Lock : MonoBehaviour
     AudioSource audioSource;
     [SerializeField]
     AudioClip unsuccessfulOpenClip;
+    [SerializeField]
+    bool takesItemsAway = false;
 
     private void Awake()
     {
@@ -31,6 +33,13 @@ public class Lock : MonoBehaviour
         {
             lockOpen.Invoke();
             Debug.Log("Player has all required items, lock opened");
+            if (takesItemsAway)
+            {
+                foreach (int i in requiredItems)
+                {
+                    myInventory.RemoveItem(i);
+                }
+            }
         }
         else
         {
