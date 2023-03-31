@@ -51,10 +51,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2717851563653950712, guid: 9b4c46455a550cf4ea59cec4fe5724c4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a6fbbed54ea4a3242aeb94be968ded4b, type: 2}
+    - target: {fileID: -1642953559226419583, guid: 9b4c46455a550cf4ea59cec4fe5724c4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a6fbbed54ea4a3242aeb94be968ded4b, type: 2}
+    - target: {fileID: -1355197924900740452, guid: 9b4c46455a550cf4ea59cec4fe5724c4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a6fbbed54ea4a3242aeb94be968ded4b, type: 2}
     - target: {fileID: 919132149155446097, guid: 9b4c46455a550cf4ea59cec4fe5724c4, type: 3}
       propertyPath: m_Name
-      value: CrematoriumBox
+      value: CrematoriumBox Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6703263433560972110, guid: 9b4c46455a550cf4ea59cec4fe5724c4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a6fbbed54ea4a3242aeb94be968ded4b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b4c46455a550cf4ea59cec4fe5724c4, type: 3}
 --- !u!1 &4599133830205542733 stripped

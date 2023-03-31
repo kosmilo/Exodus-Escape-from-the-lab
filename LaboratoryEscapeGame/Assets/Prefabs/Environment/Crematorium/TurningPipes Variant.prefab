@@ -59,6 +59,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -3443241828494351989, guid: 7482577717692b14189453c8d101e409, type: 3}
+    - target: {fileID: -4745169384273864255, guid: 7482577717692b14189453c8d101e409, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0cfb4aa2ebd9d42469665a07b3464123, type: 2}
     - target: {fileID: -2817115764365882121, guid: 7482577717692b14189453c8d101e409, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -67,6 +71,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurningPipes Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2597871679684415330, guid: 7482577717692b14189453c8d101e409, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a6fbbed54ea4a3242aeb94be968ded4b, type: 2}
+    - target: {fileID: 2760893355567584376, guid: 7482577717692b14189453c8d101e409, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 278605e126bfe364ab79edc92bfe116e, type: 2}
     - target: {fileID: 5319277604579599869, guid: 7482577717692b14189453c8d101e409, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -139,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9408185bdd0027345963a9a8125fb1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pipeType: 0
   rotationSpeed: 1
 --- !u!114 &7637908905900092473
 MonoBehaviour:
