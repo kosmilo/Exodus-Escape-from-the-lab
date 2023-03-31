@@ -5131,6 +5131,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   unsuccessfulOpenClip: {fileID: 0}
+  takesItemsAway: 1
 --- !u!114 &6419454833383527101 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 152972476, guid: 0e59cebd6aacccc4cb241b826803bf81, type: 3}
