@@ -217,7 +217,7 @@ MonoBehaviour:
         m_CallState: 2
   pipes: []
   correctRotations: []
-  newObjective: Escape the laboratory
+  newObjective: Escape the laboratory using the elevator
 --- !u!1001 &32120176662801418
 PrefabInstance:
   m_ObjectHideFlags: 0
