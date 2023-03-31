@@ -250,5 +250,5 @@ MonoBehaviour:
   turningDirection: {x: 0, y: 0, z: 0}
   slideDirection: {x: -1, y: 0, z: 0}
   slideAmount: 1.4
-  doorOpenClip: {fileID: 0}
-  doorClosedClip: {fileID: 0}
+  doorOpenClip: {fileID: 8300000, guid: 4ede11bb38de0e946aeff834efa544e3, type: 3}
+  doorClosedClip: {fileID: 8300000, guid: 4ede11bb38de0e946aeff834efa544e3, type: 3}

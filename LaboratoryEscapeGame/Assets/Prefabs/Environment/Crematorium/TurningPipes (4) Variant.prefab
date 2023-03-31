@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6061925694444686947
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 474423322880741566, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: pipeType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 908402758593294519, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2138380318209071549, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894942858255947869, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 612242767429569846, guid: 7482577717692b14189453c8d101e409, type: 3}
+    - target: {fileID: 5808972377101445658, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050139838607055787, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050139838607055787, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050139838607055787, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050139838607055787, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050139838607055787, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050139838607055787, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050139838607055787, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050139838607055787, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050139838607055787, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050139838607055787, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6050139838607055787, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394472157655367953, guid: 97bf505a649346048982b53da6996712, type: 3}
+      propertyPath: m_Name
+      value: TurningPipes (4) Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1540965603, guid: 97bf505a649346048982b53da6996712, type: 3}
+    - {fileID: 185189869, guid: 97bf505a649346048982b53da6996712, type: 3}
+    - {fileID: 1923511892, guid: 97bf505a649346048982b53da6996712, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 97bf505a649346048982b53da6996712, type: 3}
