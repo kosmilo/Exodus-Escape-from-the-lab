@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CrematoriumPuzzleManager : MonoBehaviour
 {
+    [SerializeField] UnityEvent cremationDone;
     [SerializeField] List<GameObject> pipes;
     [SerializeField] List<Vector3> correctRotations;
+    [SerializeField] string newObjective; 
 
     // Start is called before the first frame update
     void Awake()
@@ -19,6 +22,10 @@ public class CrematoriumPuzzleManager : MonoBehaviour
         foreach (GameObject pipe in pipes) {
             correctRotations.Add(pipe.transform.eulerAngles);
         }
+    }
+
+    private void Start() {
+        cremationDone.AddListener(UpdateObjs);
     }
 
     public bool CheckCompletion()
@@ -46,6 +53,15 @@ public class CrematoriumPuzzleManager : MonoBehaviour
         }
         Debug.Log(isCompleted);
 
+        if (isCompleted) {
+            cremationDone.Invoke();
+        }
+
         return isCompleted;
+    }
+
+    private void UpdateObjs() {
+        ObjectivesManager objectives = FindObjectOfType<ObjectivesManager>();
+        objectives.UpdateObjective(newObjective);
     }
 }
