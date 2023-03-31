@@ -15,6 +15,8 @@ public class Inventory : MonoBehaviour
     private Item itemToBeUsed;
     RaycastHit hit;
     public Camera cam;
+    public PlayerMovement playerMovement;
+    public ItemUsageBar itemUsageBar;
 
     private void Start()
     {
@@ -102,7 +104,6 @@ public class Inventory : MonoBehaviour
         RemoveItem(id);
     }
 
-
     // this could probably be made shorter but for the sake of clarity (and my own sanity) i made it like this
     // by id, find the item to be used
     public void ItemUsage(int id)
@@ -113,6 +114,11 @@ public class Inventory : MonoBehaviour
         if (itemToBeUsed.canUseOnSelf)
         {
             int healAmount = itemToBeUsed.stats.First(i => i.Key == "Heal").Value;
+            int healTime = itemToBeUsed.stats.First(i => i.Key == "Usage time").Value;
+
+            Debug.Log("Stopped movement for" + healTime);
+            playerMovement.StopMovement((float)healTime);
+            itemUsageBar.StartBar((float)healTime);
             playerHealth.HealPlayer(healAmount);
 
             // Remove a count of the item from the inventory

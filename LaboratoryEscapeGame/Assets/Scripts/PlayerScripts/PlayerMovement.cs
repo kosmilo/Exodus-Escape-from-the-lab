@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     float staminaDrain = 1f;
     float staminaRegen = 0.2f;
 
+    bool allowedToMove = true;
+
     void Start()
     {
         rotationSensitivity = PlayerPrefs.GetFloat(SENS_KEY, 5f); // Find the previous rotation sensitivity from player preffs
@@ -55,7 +57,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        HandleMovement();
+        if (allowedToMove)
+        {
+            HandleMovement();
+        }
+        
     }
 
     void HandleRotation()
@@ -138,6 +144,19 @@ public class PlayerMovement : MonoBehaviour
         playerMovement.y = rb.velocity.y;
 
         rb.velocity = playerMovement;
+    }
+
+    public void StopMovement(float stopTime)
+    {
+        allowedToMove = false;
+        rb.velocity = new Vector3(0, 0, 0);
+        Invoke("ReallowMovement", stopTime);
+    }
+
+    public void ReallowMovement()
+    {
+        allowedToMove = true;
+     
     }
 
     // Set rotation sensitivity (added as a listener in MouseSensitivitySettings.cs)
