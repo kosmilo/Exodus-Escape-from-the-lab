@@ -7,8 +7,7 @@ public class InteractionIndicator : MonoBehaviour
 {
     TextMeshProUGUI indicatorText;
 
-    void Start()
-    {
+    void Awake() {
         indicatorText = gameObject.GetComponent<TextMeshProUGUI>();
     }
 

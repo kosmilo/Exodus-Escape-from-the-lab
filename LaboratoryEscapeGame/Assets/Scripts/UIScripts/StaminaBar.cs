@@ -7,7 +7,7 @@ public class StaminaBar : MonoBehaviour
 {
     Image staminaBar;
 
-    void Start() {
+    void Awake() {
         staminaBar = GetComponent<Image>();
     }
 

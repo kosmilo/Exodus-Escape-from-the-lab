@@ -22,7 +22,6 @@ public class PauseMenuManager : MonoBehaviour
         playerSoundEffects = player.GetComponent<PlayerSoundEffects>();
 
         isGamePaused = false;
-        hud.SetActive(true);
         pauseMenu.SetActive(false);
         settings.SetActive(false);
         playerMovement.enabled = true;
