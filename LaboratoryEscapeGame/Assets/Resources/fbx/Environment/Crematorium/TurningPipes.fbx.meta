@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: MatBase
-    second: {fileID: 2100000, guid: fcf5d12a657db894896e34563690644f, type: 2}
+      name: PipesMat
+    second: {fileID: 2100000, guid: db78e6ac7ff586b4f85074e0b2b5782d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: PipeMat
-    second: {fileID: 2100000, guid: 40df2cb078d106a45b86c90110352815, type: 2}
+      name: PipesRingsMat
+    second: {fileID: 2100000, guid: 412e54bc8189b134e87cc39a8d6bdeaf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

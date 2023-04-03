@@ -5,7 +5,6 @@ using UnityEngine;
 public class TurningPipe : MonoBehaviour
 {
     [SerializeField] public int pipeType;
-    [SerializeField] float rotationSpeed = 4;
 
     private void Start()
     {

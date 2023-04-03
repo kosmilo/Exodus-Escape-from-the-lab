@@ -3,7 +3,32 @@ guid: 9b4c46455a550cf4ea59cec4fe5724c4
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CrematorBoxMat
+    second: {fileID: 2100000, guid: 0a58faa9108c75c4ba3df2038ff3cd64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LeverBottomMat
+    second: {fileID: 2100000, guid: cc8e3db1dbfcf874bb0d56493e060ede, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LeverTopMat
+    second: {fileID: 2100000, guid: a4790ee9bcb20904bb2b56d4dcdd8f05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PipesMat
+    second: {fileID: 2100000, guid: db78e6ac7ff586b4f85074e0b2b5782d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: PipesRingsMat
+    second: {fileID: 2100000, guid: 412e54bc8189b134e87cc39a8d6bdeaf, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
