@@ -4,23 +4,19 @@ using UnityEngine;
 
 public class TurningPipe : MonoBehaviour
 {
-    [SerializeField] public int pipeType;
+    [SerializeField] public int pipeType; // What kind of pipe, used when checking correct rotations
 
-    private void Start()
-    {
+    private void Start() {
+        // Give the pipe a random rotation
         transform.Rotate(new Vector3(0, 0, Random.Range(1, 4) * 90));
     }
 
-    public void RotatePipe()
-    {
+    public void RotatePipe() {
         StartCoroutine(Rotation());
     }
 
-    IEnumerator Rotation()
-    {
+    IEnumerator Rotation() {
         transform.Rotate(new Vector3(0, 0, 90));
-        GetComponentInParent<CrematoriumPuzzleManager>().CheckCompletion();
-        Debug.Log(transform.eulerAngles);
 
         yield return null; // Stop coroutine
     }

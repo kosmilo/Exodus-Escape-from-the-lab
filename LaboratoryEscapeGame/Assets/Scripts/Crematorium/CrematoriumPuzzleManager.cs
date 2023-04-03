@@ -10,7 +10,6 @@ public class CrematoriumPuzzleManager : MonoBehaviour
     [SerializeField] List<Vector3> correctRotations;
     [SerializeField] string newObjective; 
 
-    // Start is called before the first frame update
     void Awake()
     {
         // Get all pipe objs
@@ -19,6 +18,7 @@ public class CrematoriumPuzzleManager : MonoBehaviour
             pipes.Add(pipe.gameObject);
         }
 
+        // Save the correct rotations
         foreach (GameObject pipe in pipes) {
             correctRotations.Add(pipe.transform.eulerAngles);
         }
@@ -32,6 +32,7 @@ public class CrematoriumPuzzleManager : MonoBehaviour
     {
         bool isCompleted = true;
 
+        // Check if all the pipes have the correct rotation
         for (int i = 0; i < pipes.Count; i++) {
             switch (pipes[i].GetComponent<TurningPipe>().pipeType) {
                 case 2: // if pipe type 2, check for two possible correct rotations
@@ -60,6 +61,7 @@ public class CrematoriumPuzzleManager : MonoBehaviour
         return isCompleted;
     }
 
+    // Update objectives
     private void UpdateObjs() {
         ObjectivesManager objectives = FindObjectOfType<ObjectivesManager>();
         objectives.UpdateObjective(newObjective);
