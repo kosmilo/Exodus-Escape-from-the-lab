@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100004, guid: ecb6fbf1148af344fb5bdf5751940c76, type: 3}
       propertyPath: m_Name
-      value: FloorPlant_1
+      value: FloorPlant_1 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: ecb6fbf1148af344fb5bdf5751940c76, type: 3}
       propertyPath: m_RootOrder
@@ -65,3 +65,21 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 957f0f87c3eacab40bc2c25bc9f7f099, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ecb6fbf1148af344fb5bdf5751940c76, type: 3}
+--- !u!1 &8180710651467772436 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: ecb6fbf1148af344fb5bdf5751940c76, type: 3}
+  m_PrefabInstance: {fileID: 8180710651467674804}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3870479933503091148
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8180710651467772436}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11190389, y: 0.25691468, z: 0.10064942}
+  m_Center: {x: 0.0040380913, y: -0.0006236193, z: -0.013894702}
