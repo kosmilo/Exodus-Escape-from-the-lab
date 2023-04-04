@@ -66,6 +66,7 @@ MonoBehaviour:
   puzzles:
   - {fileID: 5829593457803392623}
   boxAnimator: {fileID: 364017022229037121}
+  newObjective: Pick up the key and find the crematorium
 --- !u!1001 &364017022242866566
 PrefabInstance:
   m_ObjectHideFlags: 0
