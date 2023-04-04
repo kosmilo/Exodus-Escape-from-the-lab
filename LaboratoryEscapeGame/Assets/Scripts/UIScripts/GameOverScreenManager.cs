@@ -9,6 +9,7 @@ public class GameOverScreenManager : MonoBehaviour
     [SerializeField] GameObject hud;
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject settings;
+    [SerializeField] GameObject readableNoteUI;
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] PlayerInteractor playerInteractor;
     [SerializeField] PauseMenuManager pauseMenuManager;
@@ -28,6 +29,7 @@ public class GameOverScreenManager : MonoBehaviour
         hud.SetActive(false);
         pauseMenu.SetActive(false);
         settings.SetActive(false);
+        readableNoteUI.SetActive(false);
         playerMovement.enabled = false;
         playerInteractor.enabled = false;
 

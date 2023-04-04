@@ -9,6 +9,7 @@ public class PauseMenuManager : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject settings;
     [SerializeField] GameObject player;
+    [SerializeField] GameObject readableNoteUI;
     PlayerMovement playerMovement;
     PlayerInteractor playerInteractor;
     PlayerSoundEffects playerSoundEffects;
@@ -44,6 +45,7 @@ public class PauseMenuManager : MonoBehaviour
     public void PauseOrResumeGame() {
         isGamePaused = !isGamePaused;
         hud.SetActive(!isGamePaused);
+        readableNoteUI.SetActive(!isGamePaused);
         pauseMenu.SetActive(isGamePaused);
         settings.SetActive(false);
 
