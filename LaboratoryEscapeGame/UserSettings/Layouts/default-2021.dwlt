@@ -189,8 +189,8 @@ MonoBehaviour:
     y: 0
     width: 300
     height: 515
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -272,8 +272,8 @@ MonoBehaviour:
     y: 0
     width: 384
     height: 866
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 20}
@@ -538,9 +538,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1034.7068, y: 710.24384, z: -990.9001}
+    m_Target: {x: -1.4001372, y: 4.8664074, z: 9.499321}
     speed: 2
-    m_Value: {x: 1034.7068, y: 710.24384, z: -990.9001}
+    m_Value: {x: -1.4001372, y: 4.8664074, z: 9.499321}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -587,13 +587,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.05580127, y: 0.00342488, z: 0.0010381917, w: 0.99873424}
+    m_Target: {x: -0.25251436, y: 0.101929106, z: -0.028116338, w: -0.962109}
     speed: 2
-    m_Value: {x: 0.05578463, y: 0.003423859, z: 0.0010378822, w: 0.99843645}
+    m_Value: {x: -0.252439, y: 0.10189868, z: -0.028107945, w: -0.9618218}
   m_Size:
-    m_Target: 0.8660254
+    m_Target: 1.0579112
     speed: 2
-    m_Value: 0.8660254
+    m_Value: 1.0579112
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -648,10 +648,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 202.99286}
-      m_SelectedIDs: a2630000
-      m_LastClickedID: 25506
-      m_ExpandedIDs: 4699ffffac9effff36fbffff3c690000e86900008e6a0000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 26ebffff
+      m_LastClickedID: -5338
+      m_ExpandedIDs: ceeeffff1c6f00002a730000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1116,22 +1116,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/Universal
+    - Assets/Prefabs/Environment
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/Universal
+  - Assets/Prefabs/Environment
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/noora/Documents/GitHub/Exodus---Escape-from-the-lab/LaboratoryEscapeGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 60.84137}
-    m_SelectedIDs: 62b50000
-    m_LastClickedID: 46434
-    m_ExpandedIDs: 0000000004b5000006b5000008b500000ab500000cb500000eb5000014b5000016b5000018b500001ab500001cb500001eb5000000ca9a3b
+    scrollPos: {x: 0, y: 74}
+    m_SelectedIDs: 86b90000
+    m_LastClickedID: 47494
+    m_ExpandedIDs: 0000000076b9000078b900007ab900007cb900007eb9000080b9000082b9000084b9000086b9000088b900008ab900008cb9000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1159,7 +1159,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000004b5000006b5000008b500000ab500000cb500000eb5000010b5000012b5000014b5000016b5000018b500001ab500001cb500001eb50000
+    m_ExpandedIDs: 0000000076b9000078b900007ab900007cb900007eb9000080b9000082b9000084b9000086b9000088b900008ab900008cb90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1309,7 +1309,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 1276
+  m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
