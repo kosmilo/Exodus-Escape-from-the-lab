@@ -14,6 +14,7 @@ public class UIInventory : MonoBehaviour
     public Transform slotPanel;
     public UIItem activeItem;
     public int numberOfSlots = 8;
+    public ToolTipManager toolTipManager;
     public KeyCode[] slotKeys = new KeyCode[] { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5, KeyCode.Alpha6, KeyCode.Alpha7, KeyCode.Alpha8 };
 
     private void Update()
@@ -51,8 +52,18 @@ public class UIInventory : MonoBehaviour
     public void ActivateOneSlot(int slot)
     {
         // Activate (or deactivate if already activate) selected slot
-        uIItems[slot].ChangeSlotType((!(uIItems[slot].active) ? activeSlot : inactiveSlot), !(uIItems[slot].active));
+        uIItems[slot].ChangeSlotType(!uIItems[slot].active ? activeSlot : inactiveSlot, !uIItems[slot].active);
+
+        // Set active item and tooltip
         activeItem = uIItems[slot];
+        if (toolTipManager.toolTipItem != activeItem.item)
+        {
+            toolTipManager.UpdateToolTip(activeItem.item);
+        }
+        else
+        {
+            toolTipManager.HideToolTip();
+        }
 
         // Deactivate all other slots
         for (int i = 0; i < uIItems.Count; i++)
