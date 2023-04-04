@@ -143,10 +143,10 @@ GameObject:
   - component: {fileID: 4324101380142222466}
   - component: {fileID: 4358047197182407582}
   - component: {fileID: 4350185478602113196}
-  - component: {fileID: 4389494619244256590}
   - component: {fileID: 5945004587982710099}
   - component: {fileID: 4708556313693689961}
   - component: {fileID: 8638770048190817532}
+  - component: {fileID: 7635544306847325858}
   m_Layer: 0
   m_Name: Case_Door_L
   m_TagString: Untagged
@@ -219,20 +219,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4389494619244256590
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4326306707687811646}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: ebf1d1e987b0e2a44ab7a755cdba2b47, type: 3}
 --- !u!82 &5945004587982710099
 AudioSource:
   m_ObjectHideFlags: 0
@@ -379,6 +365,19 @@ MonoBehaviour:
   slideAmount: 2.6
   doorOpenClip: {fileID: 8300000, guid: 64001dfe57f9c534594a8ef72b2eed51, type: 3}
   doorClosedClip: {fileID: 8300000, guid: 64001dfe57f9c534594a8ef72b2eed51, type: 3}
+--- !u!65 &7635544306847325858
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4326306707687811646}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.454121, y: 1.8754159, z: 0.076693}
+  m_Center: {x: -0.23047051, y: -0.707033, z: 0.0094535025}
 --- !u!1 &4327739356579686830
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,10 +389,10 @@ GameObject:
   - component: {fileID: 4331823379934014926}
   - component: {fileID: 4357966066903128824}
   - component: {fileID: 4349651395241979404}
-  - component: {fileID: 4389518976022753414}
   - component: {fileID: 8603938712819217798}
   - component: {fileID: 5106183038223975642}
   - component: {fileID: 7108415677805258493}
+  - component: {fileID: 2994740521985160850}
   m_Layer: 0
   m_Name: Case_Door_R
   m_TagString: Untagged
@@ -466,20 +465,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4389518976022753414
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4327739356579686830}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300004, guid: ebf1d1e987b0e2a44ab7a755cdba2b47, type: 3}
 --- !u!82 &8603938712819217798
 AudioSource:
   m_ObjectHideFlags: 0
@@ -626,3 +611,16 @@ MonoBehaviour:
   slideAmount: 2.6
   doorOpenClip: {fileID: 8300000, guid: 64001dfe57f9c534594a8ef72b2eed51, type: 3}
   doorClosedClip: {fileID: 8300000, guid: 64001dfe57f9c534594a8ef72b2eed51, type: 3}
+--- !u!65 &2994740521985160850
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4327739356579686830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.454121, y: 1.8754159, z: 0.076693}
+  m_Center: {x: -0.23047051, y: -0.707033, z: 0.0094535025}

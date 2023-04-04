@@ -6,6 +6,7 @@ public class DataRoomPuzzleManager : MonoBehaviour
 {
     [SerializeField] DataRoomSlidePuzzle[] puzzles;
     [SerializeField] Animator boxAnimator;
+    [SerializeField] string newObjective;
 
     // Check if all puzzles are completed
     public void CheckPuzzleCompletion() {
@@ -17,6 +18,12 @@ public class DataRoomPuzzleManager : MonoBehaviour
 
         if (puzzleFinished) {
             boxAnimator.Play("openPartBox");
+            UpdateObjs();
         }
+    }
+
+    private void UpdateObjs() {
+        ObjectivesManager objectives = FindObjectOfType<ObjectivesManager>();
+        objectives.UpdateObjective(newObjective);
     }
 }

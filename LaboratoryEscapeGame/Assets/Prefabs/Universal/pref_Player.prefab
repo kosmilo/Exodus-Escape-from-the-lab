@@ -200,6 +200,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 3603766545731028025}
   intIndicator: {fileID: 0}
+  ignoreRayMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &3397509532037346785
 MonoBehaviour:
   m_ObjectHideFlags: 0

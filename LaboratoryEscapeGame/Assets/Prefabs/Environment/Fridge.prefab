@@ -109,10 +109,10 @@ GameObject:
   - component: {fileID: 4813721509525424}
   - component: {fileID: 33064254024005862}
   - component: {fileID: 23174303752553326}
-  - component: {fileID: 64153241051208408}
   - component: {fileID: 8951219165140497543}
   - component: {fileID: 7818266443084520349}
   - component: {fileID: 3493300362549575214}
+  - component: {fileID: 5518324259229700867}
   m_Layer: 0
   m_Name: Fridge_DoorD
   m_TagString: Untagged
@@ -185,20 +185,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64153241051208408
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574335585318228}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 7661b0d73cd9aa144a2fcbed3f216530, type: 3}
 --- !u!114 &8951219165140497543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +331,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   interactionText: 
+--- !u!65 &5518324259229700867
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574335585318228}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.780737, y: 1.1239461, z: 0.179865}
+  m_Center: {x: -0.3691655, y: -0.566317, z: 0.00007349998}
 --- !u!1 &1689357584028640
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,10 +389,10 @@ GameObject:
   - component: {fileID: 4773967892278594}
   - component: {fileID: 33172606088989262}
   - component: {fileID: 23287274315827884}
-  - component: {fileID: 64839141575157228}
   - component: {fileID: 5275706658914705037}
   - component: {fileID: 4910159023256183188}
   - component: {fileID: 7980990057587705402}
+  - component: {fileID: 2412554471054482982}
   m_Layer: 0
   m_Name: Fridge_DoorH
   m_TagString: Untagged
@@ -466,20 +465,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64839141575157228
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766792696801854}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300004, guid: 7661b0d73cd9aa144a2fcbed3f216530, type: 3}
 --- !u!114 &5275706658914705037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,3 +611,16 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   interactionText: 
+--- !u!65 &2412554471054482982
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766792696801854}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.780737, y: 0.37034902, z: 0.16465801}
+  m_Center: {x: -0.3691655, y: 0.18991362, z: -0.0075309984}
