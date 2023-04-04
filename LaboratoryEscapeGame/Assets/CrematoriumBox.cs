@@ -12,13 +12,18 @@ public class CrematoriumBox : MonoBehaviour
     }
 
     public void LeverPulled() {
-        // play lever pull animation and check for completion
-        GetComponent<Animator>().Play("PullLever");
+        if (!cremationFinished) {
+            // play lever pull animation and check for completion
+            GetComponent<Animator>().Play("PullLever");
+        }
+        
         cremationFinished = puzzleManager.CheckCompletion(); 
 
-        // Change the door interaction text
+        // Change the interaction text
         if (cremationFinished) {
             transform.GetChild(0).GetChild(0).GetComponent<Interactable>().interactionText = "Open";
+            transform.GetChild(0).GetChild(2).GetComponent<Interactable>().interactionText = "";
+            transform.GetChild(0).GetChild(2).GetComponent<Interactable>().enabled = false;
         }
     }
 
@@ -26,9 +31,9 @@ public class CrematoriumBox : MonoBehaviour
         // Play door open animation
         if (cremationFinished) {
             GetComponent<Animator>().Play("OpenDoor");
+            // Remove interaction text
+            transform.GetChild(0).GetChild(0).GetComponent<Interactable>().interactionText = "";
         }
 
-        // Remove interaction text
-        transform.GetChild(0).GetChild(0).GetComponent<Interactable>().interactionText = "";
     }
 }

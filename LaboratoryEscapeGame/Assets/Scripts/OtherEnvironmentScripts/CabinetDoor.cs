@@ -75,9 +75,12 @@ public class CabinetDoor : MonoBehaviour
             {
                 animationCoroutine = StartCoroutine(DoSlidingOpen());
             }
-            audioSource.Stop();
-            audioSource.clip = doorOpenClip;
-            audioSource.Play(); // Play door sound effect
+
+            if (doorOpenClip != null) {
+                audioSource.Stop();
+                audioSource.clip = doorOpenClip;
+                audioSource.Play(); // Play door sound effect
+            }
         }
     }
 
@@ -125,22 +128,21 @@ public class CabinetDoor : MonoBehaviour
     {
         if (isOpen)
         {
-            if (animationCoroutine != null)
-            {
+            if (animationCoroutine != null) {
                 StopCoroutine(animationCoroutine);
             }
 
-            if (isRotatingDoor)
-            {
+            if (isRotatingDoor) {
                 animationCoroutine = StartCoroutine(DoRotationClose());
             }
-            else
-            {
+            else {
                 animationCoroutine = StartCoroutine(DoSlidingClose());
             }
             audioSource.Stop();
-            audioSource.clip = doorClosedClip;
-            audioSource.Play(); // Play door sound effect
+            if (doorClosedClip != null) {
+                audioSource.clip = doorClosedClip;
+                audioSource.Play(); // Play door sound effect
+            }
         }
     }
 
@@ -183,17 +185,14 @@ public class CabinetDoor : MonoBehaviour
     public void DoorInteraction()
     {
         Debug.Log("Interact with the door");
-        if (!isOpen)
-        {
+        if (!isOpen) {
             Open();
         }
-        else if (isOpen)
-        {
+        else if (isOpen) {
             Close();
         }
 
-        if (GetComponent<Interactable>() != null)
-        {
+        if (GetComponent<Interactable>() != null) {
             GetComponent<Interactable>().interactionText = isOpen ? "Close" : "Open";
         }
     }

@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOpen: 0
+  isLocked: 0
   isRotatingDoor: 1
   speed: 1
   startOpen: 0
@@ -219,8 +220,8 @@ MonoBehaviour:
   turningDirection: {x: 0, y: 0, z: 0}
   slideDirection: {x: 90, y: 0, z: -1}
   slideAmount: 2.6
-  doorOpenClip: {fileID: 0}
-  doorClosedClip: {fileID: 0}
+  doorOpenClip: {fileID: 8300000, guid: 64001dfe57f9c534594a8ef72b2eed51, type: 3}
+  doorClosedClip: {fileID: 8300000, guid: 64001dfe57f9c534594a8ef72b2eed51, type: 3}
 --- !u!114 &472125201
 MonoBehaviour:
   m_ObjectHideFlags: 0

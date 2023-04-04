@@ -27,7 +27,7 @@ public class ItemDatabase : MonoBehaviour
     {
         items = new List<Item>()
         {
-                new Item(0, "Rusty key", "An old, rusty key. Used to unlock the surgery room door.",
+                new Item(0, "Rusty key", "An old, rusty key. Unlocks the crematorium door.",
                 new Dictionary<string, int>
                 {
                     {"Durability", 99 }
@@ -87,7 +87,7 @@ public class ItemDatabase : MonoBehaviour
                 {
                     {"Durability", 99 }
                 }, false, false),
-                new Item(10, "Level 3 keycard", "A keycard with access to the cell and guard wing.",
+                new Item(10, "Level 3 keycard", "A keycard with access to the office upstairs.",
                 new Dictionary<string, int>
                 {
                     {"Durability", 99 }
