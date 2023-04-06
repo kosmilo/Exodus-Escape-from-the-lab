@@ -50,15 +50,20 @@ public class PlayerMovement : MonoBehaviour
         mouseYInput = Input.GetAxis("Mouse Y");
         runInput = Input.GetAxis("Run");
 
-        HandleRotation();
+        if(allowedToMove) {
+            HandleRotation();
+        }
         staminaBar.UpdateStamina((stamina/maxStamina));
     }
 
     private void FixedUpdate()
     {
-        if (allowedToMove)
-        {
+        if (allowedToMove) {
             HandleMovement();
+        }
+        else {
+            rb.velocity = new Vector3(0, rb.velocity.y, 0);
+            playerSoundEffects.StopMovementSounds();
         }
         
     }
@@ -122,7 +127,6 @@ public class PlayerMovement : MonoBehaviour
         {
             staminaRegenState = true;
         }
-        staminaBar.UpdateStamina(stamina/maxStamina);
 
         // Play breathing sound
         if (stamina < 50) {

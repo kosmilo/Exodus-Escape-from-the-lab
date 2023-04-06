@@ -30,6 +30,8 @@ public class ReadableNote : MonoBehaviour
     public void HideNote() {
         noteBackground.enabled = false;
         noteText.text = "";
+        FindObjectOfType<PlayerMovement>().allowedToMove = true;
+
         Debug.Log("Note hid");
     }
 
@@ -39,7 +41,7 @@ public class ReadableNote : MonoBehaviour
 
         while (true) {
             yield return 0;
-            if (Input.GetMouseButtonDown(0)) {
+            if (Input.anyKeyDown) {
                 HideNote();
                 break;
             }

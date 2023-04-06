@@ -20,8 +20,9 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        GiveItem(0);
-        GiveItem(10);
+        GiveItem(11);
+        GiveItem(11);
+        GiveItem(11);
     }
 
 

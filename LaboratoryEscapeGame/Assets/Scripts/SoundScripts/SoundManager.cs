@@ -42,10 +42,12 @@ public class SoundManager : MonoBehaviour
         mixer.SetFloat(SoundSettings.MIXER_GAME, Mathf.Log10(gameVolume) * 20);
     }
 
+    // Start the music fade coroutine
     public void MusicFadeToGame(float delay) {
         StartCoroutine(FadeMusicInOut(delay));
     }
 
+    // Fade the music out, then wait for delay and fade the music back in
      IEnumerator FadeMusicInOut(float delay) {
         while (musicSource.volume > 0) {
             musicSource.volume -= Time.deltaTime * .5f;

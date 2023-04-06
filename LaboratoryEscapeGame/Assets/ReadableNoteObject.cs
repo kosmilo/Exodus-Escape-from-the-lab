@@ -12,6 +12,7 @@ public class ReadableNoteObject : MonoBehaviour
     }
 
     public void ShowTextInNote() {
+        FindObjectOfType<PlayerMovement>().allowedToMove = false;
         readableNoteUI.ShowNote(noteText);
     }
 }

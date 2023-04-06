@@ -17,7 +17,7 @@ public class ToCredits : MonoBehaviour
 
     IEnumerator RollCredits() {
         yield return new WaitForSeconds(2f);
-        animator.Play("SceneFadeToCredits");
+        animator.Play("SceneFadeOut");
         yield return new WaitForSeconds(3f);
         SceneManager.LoadScene(2);
         yield return null;

@@ -89,5 +89,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interact:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 9136656074757685675}
+        m_TargetAssemblyTypeName: ReadableNoteObject, Assembly-CSharp
+        m_MethodName: ShowTextInNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   interactionText: Read
+--- !u!114 &9136656074757685675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4933817581713581001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0799304ef81bfe14c84a70750821e622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteText: ergbpUERGBERG

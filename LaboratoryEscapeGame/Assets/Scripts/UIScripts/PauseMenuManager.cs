@@ -45,7 +45,8 @@ public class PauseMenuManager : MonoBehaviour
     public void PauseOrResumeGame() {
         isGamePaused = !isGamePaused;
         hud.SetActive(!isGamePaused);
-        readableNoteUI.SetActive(!isGamePaused);
+        if (isGamePaused) { }
+        readableNoteUI.GetComponent<ReadableNote>().HideNote();
         pauseMenu.SetActive(isGamePaused);
         settings.SetActive(false);
 
