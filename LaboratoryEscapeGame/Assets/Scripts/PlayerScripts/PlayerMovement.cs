@@ -125,10 +125,10 @@ public class PlayerMovement : MonoBehaviour
         staminaBar.UpdateStamina(stamina/maxStamina);
 
         // Play breathing sound
-        if (stamina < 100) {
+        if (stamina < 50) {
             playerSoundEffects.PlayOutOfBreathSound();
         }
-        else if (stamina > 150) {
+        else if (stamina > 80) {
             playerSoundEffects.StopOutOfBreathSound();
         }
         

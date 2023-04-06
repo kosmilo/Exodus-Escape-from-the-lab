@@ -7,6 +7,7 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance; // Instance that can be accessed from other scripts
     [SerializeField] public AudioMixer mixer;
+    [SerializeField] AudioSource musicSource;
 
     // Keys for player prefs
     public const string MUSIC_KEY = "musicVolume";
@@ -27,6 +28,7 @@ public class SoundManager : MonoBehaviour
         }
 
         LoadVolume();
+        musicSource = transform.GetChild(0).GetComponent<AudioSource>();
     }
 
     // Load and set volume settings from player prefs
@@ -38,5 +40,26 @@ public class SoundManager : MonoBehaviour
         mixer.SetFloat(SoundSettings.MIXER_MUSIC, Mathf.Log10(musicVolume) * 20);
         mixer.SetFloat(SoundSettings.MIXER_UI, Mathf.Log10(uiVolume) * 20);
         mixer.SetFloat(SoundSettings.MIXER_GAME, Mathf.Log10(gameVolume) * 20);
+    }
+
+    public void MusicFadeToGame(float delay) {
+        StartCoroutine(FadeMusicInOut(delay));
+    }
+
+     IEnumerator FadeMusicInOut(float delay) {
+        while (musicSource.volume > 0) {
+            musicSource.volume -= Time.deltaTime * .5f;
+            yield return 0;
+        }
+
+        yield return new WaitForSeconds(delay);
+
+        while (musicSource.volume < 1)
+        {
+            musicSource.volume += Time.deltaTime * .2f;
+            yield return 0;
+        }
+
+        yield return null;
     }
 }

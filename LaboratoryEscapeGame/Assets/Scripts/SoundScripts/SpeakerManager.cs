@@ -23,7 +23,6 @@ public class SpeakerManager : MonoBehaviour
     }
     
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) {
-        Debug.Log("Listening");
         if (SceneManager.GetActiveScene().buildIndex == 1) {
             Debug.Log("Announcement");
             PlayAnnouncement();

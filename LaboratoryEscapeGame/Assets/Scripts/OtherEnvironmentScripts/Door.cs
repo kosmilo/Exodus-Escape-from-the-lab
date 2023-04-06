@@ -13,6 +13,7 @@ public class Door : MonoBehaviour
     [SerializeField] private bool isRotatingDoor = true;
     [SerializeField] private float speed = 1f;
     [SerializeField] bool startOpen;
+    bool makeSound; // Not to be changed, used so that the doors don't make a sound when game is started
 
     [Header("Rotation configs")]
     [SerializeField] private float rotationAmount = 90f;
@@ -50,6 +51,8 @@ public class Door : MonoBehaviour
         if (isLocked) {
             GetComponent<Interactable>().interactionText = "Locked";
         }
+
+        makeSound = true;
     }
 
     // Open the door if it currently isn't open
@@ -72,9 +75,12 @@ public class Door : MonoBehaviour
             {
                 animationCoroutine = StartCoroutine(DoSlidingOpen());
             }
-            audioSource.Stop();
-            audioSource.clip = doorOpenClip;
-            audioSource.Play(); // Play door sound effect
+            
+            if (makeSound) {
+                audioSource.Stop();
+                audioSource.clip = doorOpenClip;
+                audioSource.Play(); // Play door sound effect
+            }
         }
     }
 

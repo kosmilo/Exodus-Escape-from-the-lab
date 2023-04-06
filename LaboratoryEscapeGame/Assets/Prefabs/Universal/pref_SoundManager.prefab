@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38ecb8b1e4f072d4b96222c0916a1830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusic: {fileID: 8300000, guid: 2b504fc569454b84c9769abde1d1dc19, type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: 0728bdf6bf2588442bc489252d5eeb92, type: 3}
+  gameAmbient: {fileID: 8300000, guid: 815372c60b4cf6b48935e6822b62113f, type: 3}
 --- !u!82 &1217454864730588688
 AudioSource:
   m_ObjectHideFlags: 0
@@ -332,6 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 43daa459772de214dbbb2564b9f030ff, type: 2}
+  musicSource: {fileID: 0}
 --- !u!1 &5910189835399637183
 GameObject:
   m_ObjectHideFlags: 0
