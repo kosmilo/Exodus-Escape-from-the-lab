@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
-using static UnityEditor.Progress;
 
 // Inventory in player game object
 public class Inventory : MonoBehaviour
