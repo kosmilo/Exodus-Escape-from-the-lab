@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlidingPiece : MonoBehaviour
 {
     [SerializeField] GameObject emptySpace;
-    Vector3 correctPosition;
+    [SerializeField] Vector3 correctPosition;
     float moveSpeed = 2f;
 
     void Awake()
@@ -17,17 +17,15 @@ public class SlidingPiece : MonoBehaviour
     // Switch places with [EmptySpace] gameobject if it is close enough
     public void SlidePiece()
     {
-        Debug.Log("Sliding");
         if (Vector3.Distance(emptySpace.transform.position, transform.position) < 0.3)
         {
-            Debug.Log("Sliding 2");
             Vector3 lastPosition = transform.position;
             StartCoroutine(Slide(emptySpace.transform.position)); // Start a coroutine that moves the block
             emptySpace.transform.position = lastPosition;
         }
     }
 
-    public bool CheckPlace() { return transform.position == correctPosition; }
+    public bool CheckPlace() { return Vector3.Distance(transform.position, correctPosition) < 0.2; }
     
     // Slide piece to the empty space
     IEnumerator Slide(Vector3 targetPos)
@@ -39,8 +37,7 @@ public class SlidingPiece : MonoBehaviour
         }
 
         // Check for completion
-        if (transform.position == correctPosition)
-        {
+        if (CheckPlace()) {
             transform.parent.parent.GetComponent<DataRoomSlidePuzzle>().CheckSectionCompletion();
         }
         yield return null; // Stop coroutine

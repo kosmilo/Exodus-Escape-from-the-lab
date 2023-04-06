@@ -26,7 +26,7 @@ public class DataRoomSlidePuzzle : MonoBehaviour
     {
         if (!noShuffle)
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 4; i++)
             {
                 int randomIndex1 = Random.Range(0, slidingPieces.Length);
                 int randomIndex2 = Random.Range(0, slidingPieces.Length);
