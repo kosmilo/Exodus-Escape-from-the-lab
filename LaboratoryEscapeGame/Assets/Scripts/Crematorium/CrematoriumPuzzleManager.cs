@@ -66,4 +66,10 @@ public class CrematoriumPuzzleManager : MonoBehaviour
         ObjectivesManager objectives = FindObjectOfType<ObjectivesManager>();
         objectives.UpdateObjective(newObjective);
     }
+
+    private void PipesUninteractable() {
+        foreach (GameObject pipe in pipes) {
+            pipe.GetComponent<Interactable>().enabled = false;
+        }
+    }
 }

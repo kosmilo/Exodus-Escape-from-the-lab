@@ -1,0 +1,277 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8608014958402343417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8608014958402343414}
+  m_Layer: 0
+  m_Name: ReadablePapers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8608014958402343414
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8608014958402343417}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.8784742, y: -10.622007, z: 8.528211}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3676194436362195139}
+  - {fileID: 3676194436093354642}
+  - {fileID: 3676194435520835794}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8608014957252136417
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8608014958402343414}
+    m_Modifications:
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -33.991375
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10.622007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 47.845985
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9037093
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.4281466
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 50.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933817581713581001, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_Name
+      value: PaperReadable Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136656074757685675, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: noteText
+      value: 'Research note #9
+
+        Date: 2/4/2024
+
+        Subject: 006
+
+        Subject
+        006 was infected with the pathogen at 08:49 this morning. Ten minutes after
+        the initial infection 006 became unresponsive to all verbal commands. Twenty
+        minutes after the infection subject became aggressive towards research staff
+        and was able to break out of its restraints. No personel was injured during
+        the incident, however a notable amount of research equipment was destroyd
+        while trying to subdue 006. The attempt was unsuccessful as subject 006 suffered
+        a lethal blunt force to the head. The body of 006 was discarded after an
+        autopsy was performed. The research is '
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+--- !u!4 &3676194435520835794 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+  m_PrefabInstance: {fileID: 8608014957252136417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8608014958164402081
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8608014958402343414}
+    m_Modifications:
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -44.20908
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.602007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 31.64677
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9927678
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.120050184
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 13.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933817581713581001, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_Name
+      value: PaperReadable Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136656074757685675, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: noteText
+      value: 'Research note #12
+
+        Date: 17/4/2024
+
+        Subject: 009
+
+        Preventing
+        cell deteriodation by introducing a new pathogen has proven to be unsuccessful.
+        The pathogen spread too quicly through the cells and no control measurements
+        were able to prevent it from entering the nervous system and the brain. Subjects
+        brain function ceased three hours after the initial infection. An autopsy
+        revealed changes in the structure of the brain. 099 was sent to be discarded
+        and a new subject has been requested.'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+--- !u!4 &3676194436093354642 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+  m_PrefabInstance: {fileID: 8608014958164402081}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8608014958432431600
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8608014958402343414}
+    m_Modifications:
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.6594744
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11.602007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.3462105
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9770642
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.2129451
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -24.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4933817581713581001, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: m_Name
+      value: PaperReadable Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9136656074757685675, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+      propertyPath: noteText
+      value: 'Hold SHIFT to sprint.
+
+        Use NUMBER BUTTONS to select items in
+        the inventory.
+
+        Click MOUSE LEFT to use the selected item.
+
+
+        Good
+        luck'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+--- !u!4 &3676194436362195139 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4931926079486033203, guid: f6abbc0d3b5a31d46a35b9aa85503519, type: 3}
+  m_PrefabInstance: {fileID: 8608014958432431600}
+  m_PrefabAsset: {fileID: 0}
