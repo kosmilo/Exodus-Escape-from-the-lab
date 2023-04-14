@@ -5,6 +5,7 @@ using UnityEngine;
 public class ReadableNoteObject : MonoBehaviour
 {
     ReadableNote readableNoteUI;
+    [TextArea(15,20)]
     [SerializeField] string noteText;
 
     void Start() {
