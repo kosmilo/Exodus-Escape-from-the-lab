@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Data holder for settings
-public static class SettingsData
+public class SettingsData : MonoBehaviour
 {
-    public static float mouseSens = 5f;
+    public float mouseSens = 5f;
+    void Awake()
+    {
+        mouseSens = 5f;
+    }
 }

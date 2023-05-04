@@ -1612,6 +1612,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2328214548754759160, guid: 96bedef4d7728194fbdb926e1ba67988, type: 3}
   m_PrefabInstance: {fileID: 1962505491}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1646475054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1217454865532533571, guid: 3ee4753e70c0ed14ca0a42643c4cd0d2, type: 3}
+  m_PrefabInstance: {fileID: 1217454864648669213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1646475057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646475054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b5e12751f916245af3583a13297437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSens: 5
 --- !u!1 &1678713058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2204,6 +2222,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6578315303641636272, guid: 34c3a385b807adb4b9fd143530fa62da, type: 3}
+      propertyPath: settingsData
+      value: 
+      objectReference: {fileID: 1646475057}
     - target: {fileID: 7856927719082420906, guid: 34c3a385b807adb4b9fd143530fa62da, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
