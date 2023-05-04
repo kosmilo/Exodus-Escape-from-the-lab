@@ -9,14 +9,15 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject settings;
     [SerializeField] GameObject sceneFade;
 
-    void Start() {
+    private void OnEnable()
+    {
         settings.SetActive(false);
-        sceneFade = GameObject.Find("SceneFade");
-        sceneFade.GetComponent<Animator>().Play("SceneFadeToMainMenu");
 
         // Make sure the cursor is visible
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        Time.timeScale= 1f;
     }
 
     public void StartGame() {

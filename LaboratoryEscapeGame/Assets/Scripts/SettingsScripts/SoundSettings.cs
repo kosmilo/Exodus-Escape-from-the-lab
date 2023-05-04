@@ -28,6 +28,7 @@ public class SoundSettings : MonoBehaviour
         musicSlider.value = PlayerPrefs.GetFloat(SoundManager.MUSIC_KEY, 0.8f);
         uiSfxSlider.value = PlayerPrefs.GetFloat(SoundManager.UISFX_KEY, 0.8f);
         gameSfxSlider.value = PlayerPrefs.GetFloat(SoundManager.GAMESFX_KEY, 0.8f);
+        Debug.Log("Music vol: " + PlayerPrefs.GetFloat(SoundManager.MUSIC_KEY, 0.8f));
     }
 
     // Set the volumes

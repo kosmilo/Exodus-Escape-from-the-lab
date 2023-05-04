@@ -109,9 +109,7 @@ GameObject:
   - component: {fileID: 4813721509525424}
   - component: {fileID: 33064254024005862}
   - component: {fileID: 23174303752553326}
-  - component: {fileID: 8951219165140497543}
   - component: {fileID: 7818266443084520349}
-  - component: {fileID: 3493300362549575214}
   - component: {fileID: 5518324259229700867}
   m_Layer: 0
   m_Name: Fridge_DoorD
@@ -185,28 +183,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8951219165140497543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574335585318228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31dca0293c6764957892d4153c7d7b0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOpen: 0
-  isRotatingDoor: 1
-  speed: 1
-  startOpen: 0
-  rotationAmount: -90
-  forwardDirection: 0
-  slideDirection: {x: 0, y: 0, z: -1}
-  slideAmount: 2.6
-  doorOpenClip: {fileID: 0}
-  doorClosedClip: {fileID: 0}
 --- !u!82 &7818266443084520349
 AudioSource:
   m_ObjectHideFlags: 0
@@ -303,34 +279,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3493300362549575214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1574335585318228}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb64e60a693c0c846b35c552a38aece5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interact:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8951219165140497543}
-        m_TargetAssemblyTypeName: CabinetDoor, Assembly-CSharp
-        m_MethodName: DoorInteraction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  interactionText: 
 --- !u!65 &5518324259229700867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -389,9 +337,7 @@ GameObject:
   - component: {fileID: 4773967892278594}
   - component: {fileID: 33172606088989262}
   - component: {fileID: 23287274315827884}
-  - component: {fileID: 5275706658914705037}
   - component: {fileID: 4910159023256183188}
-  - component: {fileID: 7980990057587705402}
   - component: {fileID: 2412554471054482982}
   m_Layer: 0
   m_Name: Fridge_DoorH
@@ -465,28 +411,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5275706658914705037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766792696801854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31dca0293c6764957892d4153c7d7b0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isOpen: 0
-  isRotatingDoor: 1
-  speed: 1
-  startOpen: 0
-  rotationAmount: -90
-  forwardDirection: 0
-  slideDirection: {x: 0, y: 0, z: -1}
-  slideAmount: 2.6
-  doorOpenClip: {fileID: 0}
-  doorClosedClip: {fileID: 0}
 --- !u!82 &4910159023256183188
 AudioSource:
   m_ObjectHideFlags: 0
@@ -583,34 +507,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &7980990057587705402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766792696801854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb64e60a693c0c846b35c552a38aece5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interact:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5275706658914705037}
-        m_TargetAssemblyTypeName: CabinetDoor, Assembly-CSharp
-        m_MethodName: DoorInteraction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  interactionText: 
 --- !u!65 &2412554471054482982
 BoxCollider:
   m_ObjectHideFlags: 0
